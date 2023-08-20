@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
-import { StoryblokComponent, getStoryblokApi } from "@storyblok/react/rsc";
+import { getStoryblokApi } from "@storyblok/react/rsc";
+import StoryblokStory from "@storyblok/react/story";
 
 export default async function Home() {
   const { data } = await fetchData();
@@ -10,8 +11,7 @@ export default async function Home() {
         <Navbar />
       </header>
       <main>
-        <h1>Story: {data.story.name}</h1>
-        <StoryblokComponent blok={data.story.content} />
+        <StoryblokStory story={data.story} />
       </main>
     </>
   );
