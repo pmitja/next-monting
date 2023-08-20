@@ -1,12 +1,19 @@
-import { getStoryblokApi } from "@storyblok/react/rsc";
+import Navbar from "@/components/Navbar";
+import { StoryblokComponent, getStoryblokApi } from "@storyblok/react/rsc";
 
 export default async function Home() {
   const { data } = await fetchData();
-
+  console.log(data.story.content);
   return (
-    <div>
-      <h1>Story: {data.story.name}</h1>
-    </div>
+    <>
+      <header>
+        <Navbar />
+      </header>
+      <main>
+        <h1>Story: {data.story.name}</h1>
+        <StoryblokComponent blok={data.story.content} />
+      </main>
+    </>
   );
 }
 

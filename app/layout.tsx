@@ -5,10 +5,20 @@ import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 
 import StoryblokProvider from "@/components/StoryblokProvider";
 import Navbar from "@/components/Navbar";
+import Page from "@/components/Page";
+import Grid from "@/components/Grid";
+import Feature from "@/components/Feature";
+import Teaser from "@/components/Teaser";
 
 storyblokInit({
   accessToken: process.env.STORYBLOK_TOKEN,
   use: [apiPlugin],
+  components: {
+    page: Page,
+    grid: Grid,
+    feature: Feature,
+    teaser: Teaser,
+  },
 });
 
 const inter = Poppins({
@@ -29,9 +39,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <header>
-        <Navbar />
-      </header>
       <body className={inter.className}>{children}</body>
     </html>
   );
