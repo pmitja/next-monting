@@ -5,6 +5,7 @@ import Teaser from "./Teaser";
 import Page from "./Page";
 import Grid from "./Grid";
 import Feature from "./Feature";
+import Hero from "./Hero";
 
 /** 2. Initialize it as usual */
 storyblokInit({
@@ -15,6 +16,7 @@ storyblokInit({
     page: Page,
     grid: Grid,
     feature: Feature,
+    hero: Hero,
   },
 });
 

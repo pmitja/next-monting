@@ -8,6 +8,7 @@ import Page from "@/components/Page";
 import Grid from "@/components/Grid";
 import Feature from "@/components/Feature";
 import Teaser from "@/components/Teaser";
+import Hero from "@/components/Hero";
 
 storyblokInit({
   accessToken: process.env.STORYBLOK_TOKEN,
@@ -17,6 +18,7 @@ storyblokInit({
     grid: Grid,
     feature: Feature,
     teaser: Teaser,
+    hero: Hero,
   },
 });
 
