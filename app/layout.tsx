@@ -4,7 +4,6 @@ import { Poppins } from "next/font/google";
 import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 
 import StoryblokProvider from "@/components/StoryblokProvider";
-import Navbar from "@/components/Navbar";
 import Page from "@/components/Page";
 import Grid from "@/components/Grid";
 import Feature from "@/components/Feature";
@@ -38,8 +37,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
+    <StoryblokProvider>
+      <html lang="en">
+        <body className={inter.className}>{children}</body>
+      </html>
+    </StoryblokProvider>
   );
 }
