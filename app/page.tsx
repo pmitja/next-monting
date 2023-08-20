@@ -3,7 +3,7 @@ import { StoryblokComponent, getStoryblokApi } from "@storyblok/react/rsc";
 
 export default async function Home() {
   const { data } = await fetchData();
-  console.log(data.story.content);
+
   return (
     <>
       <header>
