@@ -2,7 +2,9 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
+
 import StoryblokProvider from "@/components/StoryblokProvider";
+import Navbar from "@/components/Navbar";
 
 storyblokInit({
   accessToken: process.env.STORYBLOK_TOKEN,
@@ -26,10 +28,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <StoryblokProvider>
-      <html lang="en">
-        <body className={inter.className}>{children}</body>
-      </html>
-    </StoryblokProvider>
+    <html lang="en">
+      <header>
+        <Navbar />
+      </header>
+      <body className={inter.className}>{children}</body>
+    </html>
   );
 }
