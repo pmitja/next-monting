@@ -8,6 +8,23 @@ export interface ButtonStoryblok {
   [k: string]: any;
 }
 
+export type MultiassetStoryblok = {
+  alt?: string;
+  copyright?: string;
+  id: number;
+  filename: string;
+  name: string;
+  title?: string;
+  [k: string]: any;
+}[];
+
+export interface CompaniesBannerStoryblok {
+  companiesLogo: MultiassetStoryblok;
+  _uid: string;
+  component: "companiesBanner";
+  [k: string]: any;
+}
+
 export interface FeatureStoryblok {
   name?: string;
   _uid: string;
@@ -21,16 +38,6 @@ export interface GridStoryblok {
   component: "grid";
   [k: string]: any;
 }
-
-export type MultiassetStoryblok = {
-  alt?: string;
-  copyright?: string;
-  id: number;
-  filename: string;
-  name: string;
-  title?: string;
-  [k: string]: any;
-}[];
 
 export interface HeroStoryblok {
   title: string;
