@@ -62,7 +62,7 @@ const Carousel: React.FC<CarouselProps> = ({
       </div>
 
       <div className='absolute inset-0 flex max-w-2xl flex-col items-start justify-center gap-8 px-4 text-left md:max-w-4xl md:px-8 lg:px-20'>
-        <h2 className='text-2xl uppercase text-white md:text-4xl'>
+        <h2 className='font-inter text-2xl uppercase text-white md:text-4xl'>
           {content.title}
         </h2>
         <p className='text-base text-white md:text-lg'>{content.subtitle}</p>
