@@ -2,10 +2,11 @@ import { storyblokEditable } from '@storyblok/react/rsc';
 import Carousel from './Carousel';
 
 const Hero = ({ blok }: any) => {
+  if (!blok) return null;
   const carouselContent = {
     title: blok.title,
     subtitle: blok.subtitle,
-    images: blok.image.map((img) => img.filename),
+    images: blok.image.map((img: any) => img.filename),
     primaryButton: {
       text: blok.primaryButton.at(0).text,
       url: blok.primaryButton.at(0).link,
@@ -15,7 +16,7 @@ const Hero = ({ blok }: any) => {
       url: blok.secondaryButton.at(0).link,
     },
   };
-  console.log(blok);
+
   return (
     <div {...storyblokEditable(blok)}>
       <Carousel
