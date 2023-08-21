@@ -24,7 +24,7 @@ const Navbar = () => {
           </Link>
         </div>
         <div
-          className={`z-9999 absolute left-0 min-h-[30vh] bg-white md:static md:min-h-fit ${
+          className={`absolute left-0 z-40 min-h-[30vh] bg-white md:static md:min-h-fit ${
             isMobileMenuOpen ? 'top-[9%]' : 'top-[-100%]'
           } flex w-full items-center px-5 md:w-auto md:px-6`}
         >
