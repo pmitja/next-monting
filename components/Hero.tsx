@@ -1,8 +1,10 @@
 import { storyblokEditable } from '@storyblok/react/rsc';
 import Carousel from './Carousel';
+import { HeroStoryblok } from '@/component-types-sb';
 
-const Hero = ({ blok }: any) => {
+const Hero = ({ blok }: HeroStoryblok) => {
   if (!blok) return null;
+
   const carouselContent = {
     title: blok.title,
     subtitle: blok.subtitle,
