@@ -24,8 +24,8 @@ const Navbar = () => {
       </div>
       <div
         className={`absolute left-0 min-h-[26vh] bg-white md:static md:min-h-fit ${
-          isMobileMenuOpen ? 'top-[9%]' : 'top-[-100%]'
-        } flex w-full items-center px-5 md:w-auto md:px-6`}
+          isMobileMenuOpen ? 'top-[7%]' : 'top-[-100%]'
+        } z-50 flex w-full items-center px-5 md:w-auto md:px-6`}
       >
         <ul className='flex flex-col gap-6 md:flex-row md:items-center md:gap-8'>
           <li>

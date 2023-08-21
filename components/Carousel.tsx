@@ -10,8 +10,8 @@ interface CarouselProps {
     title: string;
     subtitle: string;
     images: string[];
-    primaryButtonText: string;
-    secondaryButtonText: string;
+    primaryButton: { text: string; url: string };
+    secondaryButton: { text: string; url: string };
   };
   autoSlide: boolean;
   autoSlideInterval: number;
@@ -25,9 +25,7 @@ const Carousel: React.FC<CarouselProps> = ({
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const next = () => {
-    setCurrentSlide(
-      currentSlide === content.images.length - 1 ? 0 : currentSlide + 1
-    );
+    setCurrentSlide((prevSlide) => (prevSlide + 1) % content.images.length);
   };
 
   const prev = () => {
@@ -41,20 +39,29 @@ const Carousel: React.FC<CarouselProps> = ({
 
     const slideInterval = setInterval(next, autoSlideInterval);
     return () => clearInterval(slideInterval);
-  });
+  }, []);
+
   return (
     <div className='relative overflow-hidden'>
-      <div
-        className='flex h-[80vh] w-full transition-transform duration-700 ease-out'
-        style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-      >
-        <Image
-          src={content.images[currentSlide]}
-          alt={content.images[currentSlide]}
-          key={content.images[currentSlide]}
-          fill={true}
-          className='object-cover'
-        />
+      <div className='flex w-full'>
+        {content.images.map((image, index) => (
+          <div key={index}>
+            <div className='absolute inset-0 bg-gradient-to-r from-black to-transparent' />
+            {image.includes('mp4') ? (
+              <video src={image} autoPlay muted loop />
+            ) : (
+              <Image
+                src={image}
+                alt={'asd'}
+                fill={true}
+                priority={true}
+                className={`object-cover transition-all duration-700 ease-out ${
+                  index === currentSlide ? 'opacity-100' : 'opacity-0'
+                }`}
+              />
+            )}
+          </div>
+        ))}
       </div>
 
       <div className='absolute inset-0 flex max-w-2xl flex-col items-start justify-center gap-8 px-20 text-left md:max-w-4xl md:px-24'>
@@ -63,16 +70,20 @@ const Carousel: React.FC<CarouselProps> = ({
         </h2>
         <p className='text-lg text-white md:text-xl'>{content.subtitle}</p>
         <div className='flex gap-4'>
-          <button className='text-wite rounded-full bg-[#f70000] p-4 px-4 text-white'>
-            {content.primaryButtonText}
+          <Button className='text-wite rounded-full bg-[#f70000] p-4 px-4 text-white'>
+            <a href={content.primaryButton.text}>
+              {content.primaryButton.text}
+            </a>
             <ChevronRight className='ml-2 inline h-6 w-6' />
-          </button>
-          <button
+          </Button>
+          <Button
             type='button'
             className='rounded-full border-[1px] border-white bg-transparent p-4 text-white hover:bg-white hover:text-black'
           >
-            {content.secondaryButtonText}
-          </button>
+            <a href={content.secondaryButton.url}>
+              {content.secondaryButton.text}
+            </a>
+          </Button>
         </div>
       </div>
 
