@@ -19,11 +19,12 @@ const CompaniesBanner = ({ blok }: CompaniesBannerStoryblok) => {
     >
       {blok.companiesLogo.map((company: AssetStoryblok) => (
         <Image
+          key={company.id}
           src={company.filename}
           alt={company.alt}
           width={120}
           height={60}
-          className=''
+          className='h-auto w-auto'
         />
       ))}
     </div>
