@@ -114,7 +114,6 @@ const Hero = ({ blok }: HeroStoryblok) => {
           </div>
         </div>
       </div>
-      );
     </div>
   );
 };
