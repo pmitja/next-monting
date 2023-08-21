@@ -18,7 +18,7 @@ const Footer = () => {
                 className='mb-6'
               />
             </Link>
-            <p className='mt-6 max-w-lg text-left text-neutral-300 md:text-lg'>
+            <p className='mt-6 max-w-lg text-left text-neutral-300'>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Vestibulum blandit nisi leo, suscipit auctor ipsum luctus sed.
               Praesent placerat orci a sapien dignissim, a lacinia ex varius.
