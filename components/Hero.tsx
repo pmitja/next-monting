@@ -24,7 +24,6 @@ const Hero = ({ blok }: { blok: HeroStoryblok }) => {
 
   return (
     <div {...storyblokEditable(blok)}>
-      {0 && <div>asf</div>}
       <div className='relative overflow-hidden'>
         <div className='flex h-[35vh] w-full md:h-[50vh] lg:h-[80vh]'>
           {blok.image.map((img, index: number) => (

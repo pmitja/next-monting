@@ -8,7 +8,6 @@ const CompaniesBanner = ({ blok }: { blok: CompaniesBannerStoryblok }) => {
       className='flex h-[120] flex-row flex-wrap justify-between gap-[8px] bg-gray-300 p-7'
       {...storyblokEditable(blok)}
     >
-      {blok.component}
       {blok.companiesLogo.map((company) => (
         <Image
           key={company.id}
