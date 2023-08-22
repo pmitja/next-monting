@@ -4,20 +4,24 @@
       "name": "about",
       "display_name": null,
       "created_at": "2023-08-22T20:27:20.403Z",
-      "updated_at": "2023-08-22T20:27:54.436Z",
+      "updated_at": "2023-08-22T20:40:34.280Z",
       "id": 4460374,
       "schema": {
         "title": {
-          "type": "text"
+          "type": "text",
+          "required": true
         },
         "text": {
-          "type": "textarea"
+          "type": "textarea",
+          "required": true
         },
         "years": {
-          "type": "text"
+          "type": "text",
+          "required": true
         },
         "image": {
-          "type": "asset"
+          "type": "asset",
+          "required": true
         }
       },
       "image": null,

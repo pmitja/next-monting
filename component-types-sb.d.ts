@@ -12,10 +12,10 @@ export interface AssetStoryblok {
 }
 
 export interface AboutStoryblok {
-  title?: string;
-  text?: string;
-  years?: string;
-  image?: AssetStoryblok;
+  title: string;
+  text: string;
+  years: string;
+  image: AssetStoryblok;
   _uid: string;
   component: "about";
   [k: string]: any;

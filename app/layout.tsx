@@ -10,6 +10,7 @@ import Feature from '@/components/Feature';
 import Teaser from '@/components/Teaser';
 import Hero from '@/components/Hero';
 import CompaniesBanner from '@/components/CompaniesBanner';
+import About from '@/components/About';
 
 storyblokInit({
   accessToken: process.env.STORYBLOK_TOKEN,
@@ -21,6 +22,7 @@ storyblokInit({
     teaser: Teaser,
     hero: Hero,
     companiesBanner: CompaniesBanner,
+    about: About
   },
 });
 
