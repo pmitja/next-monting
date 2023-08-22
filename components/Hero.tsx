@@ -2,19 +2,10 @@
 
 import { useState } from 'react';
 import { storyblokEditable } from '@storyblok/react/rsc';
-import { HeroStoryblok, MultiassetStoryblok } from '@/component-types-sb';
+import { HeroStoryblok } from '@/component-types-sb';
 import Image from 'next/image';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from './ui/button';
-
-type AssetStoryblok = {
-  alt?: string;
-  copyright?: string;
-  id: number;
-  filename: string;
-  name: string;
-  title?: string;
-};
 
 const Hero = ({ blok }: { blok: HeroStoryblok }) => {
   if (!!blok.length) return null;
