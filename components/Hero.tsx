@@ -16,8 +16,8 @@ type AssetStoryblok = {
   title?: string;
 };
 
-const Hero = ({ blok }: HeroStoryblok) => {
-  if (!blok) return null;
+const Hero = ({ blok }: { blok: HeroStoryblok }) => {
+  if (!!blok.length) return null;
 
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -33,9 +33,10 @@ const Hero = ({ blok }: HeroStoryblok) => {
 
   return (
     <div {...storyblokEditable(blok)}>
+      {0 && <div>asf</div>}
       <div className='relative overflow-hidden'>
         <div className='flex h-[35vh] w-full md:h-[50vh] lg:h-[80vh]'>
-          {blok.image.map((img: AssetStoryblok, index: number) => (
+          {blok.image.map((img, index: number) => (
             <div
               key={index}
               className='absolute inset-0 bg-gradient-to-r from-black to-transparent'
@@ -59,8 +60,8 @@ const Hero = ({ blok }: HeroStoryblok) => {
           <p className='text-base text-white md:text-lg'>{blok.subtitle}</p>
           <div className='flex gap-2 md:gap-4'>
             <Button className='rounded-full bg-[#f70000] p-4 px-4 text-white'>
-              <a href={blok.primaryButton.at(0).url}>
-                {blok.primaryButton.at(0).text}
+              <a href={blok.primaryButton[0].url}>
+                {blok.primaryButton[0].text}
               </a>
               <ChevronRight className='ml-2 inline h-6 w-6' />
             </Button>
@@ -68,8 +69,8 @@ const Hero = ({ blok }: HeroStoryblok) => {
               type='button'
               className='rounded-full border-[1px] border-white bg-transparent p-4 text-white hover:bg-white hover:text-black'
             >
-              <a href={blok.secondaryButton.at(0).url}>
-                {blok.secondaryButton.at(0).text}
+              <a href={blok.secondaryButton[0].url}>
+                {blok.secondaryButton[0].text}
               </a>
             </Button>
           </div>

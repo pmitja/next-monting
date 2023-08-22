@@ -10,7 +10,7 @@ import CompaniesBanner from './CompaniesBanner';
 
 /** 2. Initialize it as usual */
 storyblokInit({
-  accessToken: 'your_preview_token',
+  accessToken: process.env.STORYBLOK_TOKEN,
   use: [apiPlugin],
   components: {
     teaser: Teaser,
