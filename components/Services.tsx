@@ -4,8 +4,6 @@ import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 
 const Services = ({ blok }: { blok: ServicesStoryblok }) => {
-  if (!!blok.length) return null;
-
   return (
     <div className='px-10 py-20' {...storyblokEditable(blok)}>
       <div className='flex flex-col items-center justify-center'>
