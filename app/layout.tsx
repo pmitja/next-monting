@@ -10,6 +10,7 @@ import Feature from '@/components/Feature';
 import Teaser from '@/components/Teaser';
 import Hero from '@/components/Hero';
 import CompaniesBanner from '@/components/CompaniesBanner';
+import About from '@/components/About';
 import Services from '@/components/Services';
 
 storyblokInit({
@@ -23,6 +24,7 @@ storyblokInit({
     hero: Hero,
     companiesBanner: CompaniesBanner,
     services: Services,
+    about: About,
   },
 });
 

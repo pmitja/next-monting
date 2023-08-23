@@ -8,6 +8,7 @@ import Feature from './Feature';
 import Hero from './Hero';
 import CompaniesBanner from './CompaniesBanner';
 import Services from './Services';
+import About from './About';
 
 /** 2. Initialize it as usual */
 storyblokInit({
@@ -21,6 +22,7 @@ storyblokInit({
     hero: Hero,
     companiesBanner: CompaniesBanner,
     services: Services,
+    about: About,
   },
 });
 
