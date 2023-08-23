@@ -12,6 +12,7 @@ import Hero from '@/components/Hero';
 import CompaniesBanner from '@/components/CompaniesBanner';
 import About from '@/components/About';
 import Services from '@/components/Services';
+import CostumersSaying from '@/components/CostumersSaying';
 
 storyblokInit({
   accessToken: process.env.STORYBLOK_TOKEN,
@@ -25,6 +26,7 @@ storyblokInit({
     companiesBanner: CompaniesBanner,
     services: Services,
     about: About,
+    whatCostumersAreSaying: CostumersSaying,
   },
 });
 
