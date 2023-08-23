@@ -7,6 +7,7 @@ import Grid from './Grid';
 import Feature from './Feature';
 import Hero from './Hero';
 import CompaniesBanner from './CompaniesBanner';
+import Services from './Services';
 
 /** 2. Initialize it as usual */
 storyblokInit({
@@ -19,6 +20,7 @@ storyblokInit({
     feature: Feature,
     hero: Hero,
     companiesBanner: CompaniesBanner,
+    services: Services,
   },
 });
 
