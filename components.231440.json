@@ -228,6 +228,71 @@
       "icon": null
     },
     {
+      "name": "services",
+      "display_name": null,
+      "created_at": "2023-08-23T17:16:49.068Z",
+      "updated_at": "2023-08-23T17:38:52.958Z",
+      "id": 4467448,
+      "schema": {
+        "primaryText": {
+          "type": "text",
+          "default_value": "From bespoke homes to large business centres, we have developed some eye-catching projects across London and the Home Counties, creating both a unique living and business environment.",
+          "required": true
+        },
+        "secondaryText": {
+          "type": "text",
+          "description": "",
+          "default_value": "From bespoke homes to large business centres, we have developed some eye-catching projects across London and the Home Counties, creating both a unique living and business environment.",
+          "required": true
+        },
+        "tertiaryText": {
+          "type": "text",
+          "default_value": "From bespoke homes to large business centres, we have developed some eye-catching projects across London and the Home Counties, creating both a unique living and business environment.",
+          "required": true
+        },
+        "primaryTitle": {
+          "type": "text",
+          "default_value": "Apartments Projects",
+          "required": true
+        },
+        "secondaryTitle": {
+          "type": "text",
+          "default_value": "Housing Projects",
+          "required": true
+        },
+        "tertiaryTitle": {
+          "type": "text",
+          "default_value": "Office Projects",
+          "required": true
+        },
+        "icons": {
+          "type": "multiasset",
+          "filetypes": [
+            "images"
+          ],
+          "required": true,
+          "allow_external_url": false,
+          "tooltip": false
+        },
+        "title": {
+          "type": "text",
+          "default_value": "Our Services"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "services",
+      "component_group_uuid": "ddfba326-cfdd-4a31-8adc-89e15e8a6fd8",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Services"
+    },
+    {
       "name": "teaser",
       "display_name": null,
       "created_at": "2023-05-20T08:17:36.490Z",

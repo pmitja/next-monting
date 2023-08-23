@@ -11,6 +11,7 @@ import Teaser from '@/components/Teaser';
 import Hero from '@/components/Hero';
 import CompaniesBanner from '@/components/CompaniesBanner';
 import About from '@/components/About';
+import Services from '@/components/Services';
 
 storyblokInit({
   accessToken: process.env.STORYBLOK_TOKEN,
@@ -22,7 +23,8 @@ storyblokInit({
     teaser: Teaser,
     hero: Hero,
     companiesBanner: CompaniesBanner,
-    about: About
+    services: Services,
+    about: About,
   },
 });
 

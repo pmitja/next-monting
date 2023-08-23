@@ -79,6 +79,20 @@ export interface PageStoryblok {
   [k: string]: any;
 }
 
+export interface ServicesStoryblok {
+  primaryText: string;
+  secondaryText: string;
+  tertiaryText: string;
+  primaryTitle: string;
+  secondaryTitle: string;
+  tertiaryTitle: string;
+  icons: MultiassetStoryblok;
+  title?: string;
+  _uid: string;
+  component: "services";
+  [k: string]: any;
+}
+
 export interface TeaserStoryblok {
   headline?: string;
   _uid: string;
