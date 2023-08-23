@@ -1,5 +1,26 @@
 import {StoryblokStory} from 'storyblok-generate-ts'
 
+export interface AssetStoryblok {
+  alt?: string;
+  copyright?: string;
+  id: number;
+  filename: string;
+  name: string;
+  title?: string;
+  focus?: string;
+  [k: string]: any;
+}
+
+export interface AboutStoryblok {
+  title: string;
+  text: string;
+  years: string;
+  image: AssetStoryblok;
+  _uid: string;
+  component: "about";
+  [k: string]: any;
+}
+
 export interface ButtonStoryblok {
   text?: string;
   link?: string;
@@ -55,6 +76,20 @@ export interface PageStoryblok {
   _uid: string;
   component: "page";
   uuid?: string;
+  [k: string]: any;
+}
+
+export interface ServicesStoryblok {
+  primaryText: string;
+  secondaryText: string;
+  tertiaryText: string;
+  primaryTitle: string;
+  secondaryTitle: string;
+  tertiaryTitle: string;
+  icons: MultiassetStoryblok;
+  title?: string;
+  _uid: string;
+  component: "services";
   [k: string]: any;
 }
 
