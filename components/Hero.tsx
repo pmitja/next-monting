@@ -25,7 +25,7 @@ const Hero = ({ blok }: { blok: HeroStoryblok }) => {
   return (
     <div {...storyblokEditable(blok)}>
       <div className='relative overflow-hidden'>
-        <div className='flex h-[35vh] w-full md:h-[50vh] lg:h-[80vh]'>
+        <div className='flex h-[80vh] w-full'>
           {blok.image.map((img, index: number) => (
             <div
               key={index}
@@ -49,7 +49,7 @@ const Hero = ({ blok }: { blok: HeroStoryblok }) => {
           </h2>
           <p className='text-base text-white md:text-lg'>{blok.subtitle}</p>
           <div className='flex gap-2 md:gap-4'>
-            <Button className='rounded-full bg-[#f70000] p-4 px-4 text-white'>
+            <Button className='rounded-full bg-red-600 p-4 px-4 text-white'>
               <a href={blok.primaryButton[0].url}>
                 {blok.primaryButton[0].text}
               </a>
@@ -70,7 +70,7 @@ const Hero = ({ blok }: { blok: HeroStoryblok }) => {
           onClick={prev}
           className={`absolute left-4 top-1/2 flex h-8 w-8 -translate-y-1/2 transform items-center justify-center rounded-full border-[1px] p-1 text-white md:h-10 md:w-10 ${
             currentSlide === blok.image.length - 1
-              ? 'border-[#f70000] bg-[#f70000]'
+              ? 'border-red-600 bg-red-600'
               : 'border-white bg-transparent'
           } ${'hidden lg:flex'}`}
           type='button'
@@ -82,7 +82,7 @@ const Hero = ({ blok }: { blok: HeroStoryblok }) => {
           onClick={next}
           className={`absolute right-4 top-1/2 flex h-8 w-8 -translate-y-1/2 transform items-center justify-center rounded-full border-[1px] p-1 text-white md:h-10 md:w-10 ${
             currentSlide === 0
-              ? 'border-[#f70000] bg-[#f70000]'
+              ? 'bg-red-600] border-red-600'
               : 'border-white bg-transparent'
           } ${'hidden lg:flex'}`}
           type='button'
@@ -97,7 +97,7 @@ const Hero = ({ blok }: { blok: HeroStoryblok }) => {
                 key={index}
                 onClick={() => setCurrentSlide(index)}
                 className={`h-3 w-3 rounded-full shadow ${
-                  index === currentSlide ? 'bg-[#f70000]' : 'bg-white'
+                  index === currentSlide ? 'bg-red-600' : 'bg-white'
                 }`}
                 type='button'
               ></button>

@@ -24,8 +24,8 @@ const Navbar = () => {
           </Link>
         </div>
         <div
-          className={`absolute left-0 z-40 min-h-[30vh] bg-white md:static md:min-h-fit ${
-            isMobileMenuOpen ? 'top-[9%]' : 'top-[-100%]'
+          className={`absolute left-0 z-40 min-h-[18rem] bg-white md:static md:min-h-fit ${
+            isMobileMenuOpen ? 'top-[5rem]' : 'top-[-100%]'
           } flex w-full items-center px-5 md:w-auto md:px-6`}
         >
           <ul className='flex flex-col gap-6 md:flex-row md:items-center md:gap-8'>
@@ -59,7 +59,7 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Button className='rounded-full bg-[#f70000] px-7 uppercase'>
+              <Button className='rounded-full bg-red-600 px-7 uppercase'>
                 Hire us
               </Button>
             </li>

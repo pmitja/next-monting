@@ -7,7 +7,7 @@ import Image from 'next/image';
 const About = ({ blok }: { blok: AboutStoryblok }) => {
   return (
     <div
-      className='md:px-18 relative flex flex-col justify-center gap-8 px-12 py-16 text-left lg:flex-row lg:px-24'
+      className='lg:px-18 relative flex flex-col justify-center gap-8 px-8 py-12 text-left md:px-12 md:py-16 lg:flex-row'
       {...storyblokEditable(blok)}
     >
       <div className='flex flex-col place-content-center gap-4 sm:gap-5 md:gap-6 lg:gap-8'>
@@ -15,12 +15,10 @@ const About = ({ blok }: { blok: AboutStoryblok }) => {
           <div className='w-10 border-t border-gray-400'></div>
           <span className='mx-2 flex-shrink text-lg'>About us</span>
         </div>
-        <h2 className='text-2xl font-bold sm:text-3xl md:text-4xl lg:text-5xl'>
+        <h2 className='text-3xl font-bold uppercase md:text-4xl lg:text-5xl'>
           {blok.title}
         </h2>
-        <p className='text-xs sm:text-base md:text-lg lg:text-lg'>
-          {blok.text}
-        </p>
+        <p>{blok.text}</p>
       </div>
       <div className='relative w-fit self-center lg:pt-2'>
         <span className='absolute left-[-7%] top-[-5%] flex flex-col rounded-xl bg-white px-2 text-2xl font-bold text-red-600 sm:text-3xl md:text-4xl lg:top-[-3%] lg:text-5xl'>
