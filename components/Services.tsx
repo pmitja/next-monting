@@ -5,10 +5,7 @@ import Image from 'next/image';
 
 const Services = ({ blok }: { blok: ServicesStoryblok }) => {
   return (
-    <div
-      className='lg:px-18 px-8 py-12 md:px-12 md:py-16'
-      {...storyblokEditable(blok)}
-    >
+    <div className='px-8 py-16 md:px-16 lg:px-24' {...storyblokEditable(blok)}>
       <div className='flex flex-col items-center justify-center'>
         <h2 className='text-3xl font-bold uppercase md:text-4xl lg:text-5xl'>
           {blok.title}

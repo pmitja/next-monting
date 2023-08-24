@@ -44,12 +44,14 @@ const Hero = ({ blok }: { blok: HeroStoryblok }) => {
         </div>
 
         <div className='absolute inset-0 flex max-w-2xl flex-col items-start justify-center gap-8 px-4 text-left md:max-w-4xl md:px-8 lg:px-20'>
-          <h2 className='font-inter text-2xl uppercase text-white md:text-4xl'>
+          <h2 className='font-inter text-3xl uppercase text-white md:text-4xl lg:text-5xl'>
             {blok.title}
           </h2>
-          <p className='text-base text-white md:text-lg'>{blok.subtitle}</p>
+          <p className='text-lg text-white md:text-xl lg:text-2xl'>
+            {blok.subtitle}
+          </p>
           <div className='flex gap-2 md:gap-4'>
-            <Button className='rounded-full bg-red-600 p-4 px-4 text-white'>
+            <Button className='rounded-full bg-red-600 p-6 text-base text-white'>
               <a href={blok.primaryButton[0].url}>
                 {blok.primaryButton[0].text}
               </a>
@@ -57,7 +59,7 @@ const Hero = ({ blok }: { blok: HeroStoryblok }) => {
             </Button>
             <Button
               type='button'
-              className='rounded-full border-[1px] border-white bg-transparent p-4 text-white hover:bg-white hover:text-black'
+              className='rounded-full border-[1px] border-white bg-transparent p-6 text-base text-white hover:bg-white hover:text-black'
             >
               <a href={blok.secondaryButton[0].url}>
                 {blok.secondaryButton[0].text}
@@ -82,7 +84,7 @@ const Hero = ({ blok }: { blok: HeroStoryblok }) => {
           onClick={next}
           className={`absolute right-4 top-1/2 flex h-8 w-8 -translate-y-1/2 transform items-center justify-center rounded-full border-[1px] p-1 text-white md:h-10 md:w-10 ${
             currentSlide === 0
-              ? 'bg-red-600] border-red-600'
+              ? 'border-red-600 bg-red-600'
               : 'border-white bg-transparent'
           } ${'hidden lg:flex'}`}
           type='button'
