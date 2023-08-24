@@ -2,7 +2,6 @@ import { storyblokEditable } from '@storyblok/react/rsc';
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 
 const Testimonial = ({ blok }) => {
-  console.log(blok);
   return (
     <div className='flex flex-col gap-3' {...storyblokEditable(blok)}>
       <h3 className='text-start text-sm font-bold text-red-600 sm:text-base md:text-lg lg:text-xl'>
@@ -13,7 +12,10 @@ const Testimonial = ({ blok }) => {
       </div>
       <div className='flex flex-row place-items-center gap-2'>
         <Avatar>
-          <AvatarImage src='https://github.com/shadcn.png' alt='@shadcn' />
+          <AvatarImage
+            src={blok.author[0].image.filename}
+            alt={blok.author[0].image.alt}
+          />
           <AvatarFallback>CN</AvatarFallback>
         </Avatar>
         <div className='flex flex-col justify-start gap-1'>
