@@ -21,6 +21,15 @@ export interface AboutStoryblok {
   [k: string]: any;
 }
 
+export interface AuthorStoryblok {
+  name: string;
+  position: string;
+  image: AssetStoryblok;
+  _uid: string;
+  component: "author";
+  [k: string]: any;
+}
+
 export interface ButtonStoryblok {
   text?: string;
   link?: string;
@@ -80,14 +89,15 @@ export interface PageStoryblok {
 }
 
 export interface ServicesStoryblok {
-  primaryText: string;
-  secondaryText: string;
-  tertiaryText: string;
-  primaryTitle: string;
-  secondaryTitle: string;
-  tertiaryTitle: string;
-  icons: MultiassetStoryblok;
   title?: string;
+  primaryTitle: string;
+  primaryText: string;
+  secondaryTitle: string;
+  secondaryText: string;
+  tertiaryTitle: string;
+  tertiaryText: string;
+  icons: MultiassetStoryblok;
+  items?: any;
   _uid: string;
   component: "services";
   [k: string]: any;
@@ -97,5 +107,22 @@ export interface TeaserStoryblok {
   headline?: string;
   _uid: string;
   component: "teaser";
+  [k: string]: any;
+}
+
+export interface TestimonialStoryblok {
+  title: string;
+  text: string;
+  author: AuthorStoryblok[];
+  _uid: string;
+  component: "testimonial";
+  [k: string]: any;
+}
+
+export interface WhatCostumersAreSayingStoryblok {
+  title: string;
+  testimonials: TestimonialStoryblok[];
+  _uid: string;
+  component: "whatCostumersAreSaying";
   [k: string]: any;
 }

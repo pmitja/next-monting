@@ -5,8 +5,13 @@ import { ArrowLeft, ArrowRight, Quote } from 'lucide-react';
 import Testimonial from './Testimonial';
 import { useState } from 'react';
 import clsx from 'clsx';
+import { WhatCostumersAreSayingStoryblok } from '@/component-types-sb';
 
-const CostumersSaying = ({ blok }: any) => {
+const CostumersSaying = ({
+  blok,
+}: {
+  blok: WhatCostumersAreSayingStoryblok;
+}) => {
   const [nextTwo, setNextTwo] = useState(false);
 
   const handleClick = () => {
@@ -46,56 +51,44 @@ const CostumersSaying = ({ blok }: any) => {
           </div>
         </div>
         <div className='grid grid-cols-2 gap-3 transition-all'>
-          {blok.testimonials.map((testimonial: any, index: number) => {
-            return (
-              <div
-                key={index}
-                className={clsx(
-                  index === 0 || index % 2 === 0
-                    ? 'border-r-2 border-gray-400 pr-8 transition-opacity'
-                    : 'pl-8 transition-opacity',
-                  index <= 1 && !nextTwo
-                    ? 'bg-red-500 opacity-75'
-                    : 'bg-black opacity-0',
-                  index > 1 && nextTwo
-                    ? 'bg-red-500 opacity-75'
-                    : 'bg-black opacity-0'
-                )}
-              >
-                <Testimonial blok={testimonial} />
-              </div>
-            );
-            // if (nextTwo && index <= 1) {
-            //   return (
-            //     <div
-            //       key={testimonial.author[0].name}
-            //       className={clsx(
-            //         index === 0 || index % 2 === 0
-            //           ? 'border-r-2 border-gray-400 pr-8 transition-opacity'
-            //           : 'pl-8 transition-opacity',
-            //         nextTwo && 'opacity-100',
-            //         !nextTwo && 'opacity-0'
-            //       )}
-            //     >
-            //       <Testimonial blok={testimonial} />
-            //     </div>
-            //   );
-            // } else if (!nextTwo && index > 1) {
-            //   return (
-            //     <div
-            //       key={testimonial.author[0].name}
-            //       className={clsx(
-            //         index === 0 || index % 2 === 0
-            //           ? 'border-r-2 border-gray-400 pr-8 transition-opacity'
-            //           : 'pl-8 transition-opacity',
-            //         !nextTwo ? 'opacity-100' : 'opacity-0'
-            //       )}
-            //     >
-            //       <Testimonial blok={testimonial} />
-            //     </div>
-            //   );
-            // }
-          })}
+          {nextTwo &&
+            blok.testimonials.map((testimonial: any, index: number) => {
+              if (index <= 1) {
+                return (
+                  <div
+                    key={testimonial.author[0].name}
+                    className={clsx(
+                      index === 0 || index % 2 === 0
+                        ? 'border-r-2 border-gray-400 pr-8 transition-opacity'
+                        : 'pl-8 transition-opacity',
+                      nextTwo && 'opacity-100',
+                      !nextTwo && 'opacity-0'
+                    )}
+                  >
+                    <Testimonial blok={testimonial} />
+                  </div>
+                );
+              }
+            })}
+          {!nextTwo &&
+            blok.testimonials.map((testimonial: any, index: number) => {
+              if (!nextTwo && index > 1) {
+                return (
+                  <div
+                    key={testimonial.author[0].name}
+                    className={clsx(
+                      index === 0 || index % 2 === 0
+                        ? 'border-r-2 border-gray-400 pr-8 transition-opacity'
+                        : 'pl-8 transition-opacity',
+                      !nextTwo ? 'opacity-100' : 'opacity-0'
+                    )}
+                  >
+                    {' '}
+                    <Testimonial blok={testimonial} />
+                  </div>
+                );
+              }
+            })}
         </div>
       </div>
     </div>

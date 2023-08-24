@@ -1,9 +1,17 @@
 import { storyblokEditable } from '@storyblok/react/rsc';
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
+import { motion } from 'framer-motion';
+import { TestimonialStoryblok } from '@/component-types-sb';
 
-const Testimonial = ({ blok }) => {
+const Testimonial = ({ blok }: { blok: TestimonialStoryblok }) => {
   return (
-    <div className='flex flex-col gap-3' {...storyblokEditable(blok)}>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.6, delay: 0.1 }}
+      className='flex flex-col gap-3'
+      {...storyblokEditable(blok)}
+    >
       <h3 className='text-start text-sm font-bold text-red-600 sm:text-base md:text-lg lg:text-xl'>
         {blok.title}
       </h3>
@@ -27,7 +35,7 @@ const Testimonial = ({ blok }) => {
           </span>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
