@@ -2,6 +2,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { getStoryblokApi } from '@storyblok/react/rsc';
 import StoryblokStory from '@storyblok/react/story';
+import Feedback from '@/components/Feedback';
 
 export default async function Home() {
   const { data } = await fetchData();
@@ -11,6 +12,7 @@ export default async function Home() {
       <Navbar />
       <main>
         <StoryblokStory story={data.story} />
+        <Feedback></Feedback>
       </main>
       <Footer />
     </>

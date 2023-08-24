@@ -5,7 +5,10 @@ import Image from 'next/image';
 
 const Services = ({ blok }: { blok: ServicesStoryblok }) => {
   return (
-    <div className='px-10 py-20' {...storyblokEditable(blok)}>
+    <div
+      className='lg:px-18 px-8 py-12 md:px-12 md:py-16'
+      {...storyblokEditable(blok)}
+    >
       <div className='flex flex-col items-center justify-center'>
         <h2 className='text-3xl font-bold uppercase md:text-4xl lg:text-5xl'>
           {blok.title}
@@ -19,7 +22,7 @@ const Services = ({ blok }: { blok: ServicesStoryblok }) => {
               alt={blok.icons[0].alt ?? 'Building icon'}
               width={100}
               height={100}
-              className='object-cover'
+              className='object-cover '
             />
             <h3 className='text-xl font-bold md:text-2xl'>
               {blok.primaryTitle}
@@ -27,7 +30,7 @@ const Services = ({ blok }: { blok: ServicesStoryblok }) => {
             <p className='max-w-md text-base text-neutral-500 md:text-lg'>
               {blok.primaryText}
             </p>
-            <Button className='rounded-full bg-[#f70000] p-6 text-base uppercase'>
+            <Button className='rounded-full bg-red-600 p-6 text-base uppercase'>
               See Apartment projects
             </Button>
           </div>
@@ -45,7 +48,7 @@ const Services = ({ blok }: { blok: ServicesStoryblok }) => {
             <p className='max-w-md text-base text-neutral-500 md:text-lg'>
               {blok.secondaryText}
             </p>
-            <Button className='rounded-full bg-[#f70000] p-6 text-base uppercase'>
+            <Button className='rounded-full bg-red-600 p-6 text-base uppercase'>
               See Housing Projects
             </Button>
           </div>
@@ -63,7 +66,7 @@ const Services = ({ blok }: { blok: ServicesStoryblok }) => {
             <p className='max-w-md text-base text-neutral-500 md:text-lg'>
               {blok.tertiaryText}
             </p>
-            <Button className='rounded-full bg-[#f70000] p-6 text-base uppercase'>
+            <Button className='rounded-full bg-red-600 p-6 text-base uppercase'>
               See Business Projects
             </Button>
           </div>

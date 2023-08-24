@@ -13,6 +13,7 @@
     "generate-sb-types": "storyblok-generate-ts source=./components.231440.json target=./component-types-sb"
   },
   "dependencies": {
+    "@radix-ui/react-separator": "^1.0.3",
     "@radix-ui/react-avatar": "^1.0.3",
     "@radix-ui/react-slot": "^1.0.2",
     "@storyblok/react": "^2.4.4",
