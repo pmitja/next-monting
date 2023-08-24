@@ -21,11 +21,11 @@ const CostumersSaying = ({
   return (
     <div
       {...storyblokEditable(blok)}
-      className=' flex place-content-center bg-slate-200 py-20'
+      className=' flex place-content-center bg-slate-200 py-10'
     >
-      <div className='md:px-18 flex w-full max-w-[1534px] flex-col place-items-center justify-center gap-16 px-12 pb-10 pt-10 lg:px-24'>
-        <div className='flex w-full flex-row justify-between gap-2'>
-          <h2 className='relative flex w-fit max-w-[40%] flex-row justify-between gap-2 justify-self-center pl-9 text-start text-2xl font-bold sm:text-3xl md:text-4xl lg:text-5xl'>
+      <div className='md:px-18 flex w-full max-w-[1534px] flex-col place-items-center justify-center gap-8 px-8 pb-3 pt-3 lg:gap-16 lg:px-24'>
+        <div className='flex w-full flex-col place-items-center justify-between gap-5'>
+          <h2 className='relative flex w-fit min-w-fit max-w-[40%] flex-row justify-between gap-2 justify-self-center pl-9 text-start text-2xl font-bold sm:text-3xl md:text-4xl lg:text-5xl'>
             <span className='absolute left-0 h-8 w-8 rounded-full bg-red-600'></span>
             <Quote
               className='absolute left-[2%] top-[10%] z-10 text-white'
@@ -33,7 +33,7 @@ const CostumersSaying = ({
             />
             {blok.title}
           </h2>
-          <div className='flex gap-10'>
+          <div className='flex w-full justify-between lg:gap-10'>
             <button
               onClick={handleClick}
               disabled={nextTwo}
@@ -50,7 +50,7 @@ const CostumersSaying = ({
             </button>
           </div>
         </div>
-        <div className='grid grid-cols-2 gap-3 transition-all'>
+        <div className='grid grid-cols-1 gap-3 transition-all md:grid-cols-2'>
           {nextTwo &&
             blok.testimonials.map((testimonial: any, index: number) => {
               if (index <= 1) {
@@ -59,8 +59,8 @@ const CostumersSaying = ({
                     key={testimonial.author[0].name}
                     className={clsx(
                       index === 0 || index % 2 === 0
-                        ? 'border-r-2 border-gray-400 pr-8 transition-opacity'
-                        : 'pl-8 transition-opacity',
+                        ? 'border-b-2 border-gray-400 transition-opacity md:border-b-0 md:border-r-2 md:pr-8'
+                        : 'transition-opacity md:pl-8',
                       nextTwo && 'opacity-100',
                       !nextTwo && 'opacity-0'
                     )}
@@ -78,8 +78,8 @@ const CostumersSaying = ({
                     key={testimonial.author[0].name}
                     className={clsx(
                       index === 0 || index % 2 === 0
-                        ? 'border-r-2 border-gray-400 pr-8 transition-opacity'
-                        : 'pl-8 transition-opacity',
+                        ? 'border-b-2 border-gray-400 pb-5 transition-opacity md:border-b-0 md:border-r-2 md:pr-8'
+                        : 'transition-opacity md:pl-8',
                       !nextTwo ? 'opacity-100' : 'opacity-0'
                     )}
                   >
