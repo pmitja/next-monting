@@ -1,12 +1,5 @@
 import ContactForm from './ContactForm';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Facebook, Linkedin } from 'lucide-react';
 import Image from 'next/image';
 

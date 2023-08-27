@@ -6,9 +6,7 @@ import { HeroStoryblok } from '@/component-types-sb';
 import Image from 'next/image';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from './ui/button';
-import Contact from './Contact';
 import { motion } from 'framer-motion';
-
 
 const Hero = ({ blok }: { blok: HeroStoryblok }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -35,7 +33,6 @@ const Hero = ({ blok }: { blok: HeroStoryblok }) => {
 
   return (
     <div {...storyblokEditable(blok)}>
-      <Contact />
       <div className='relative overflow-hidden'>
         <div className='flex h-[45vh] w-full sm:h-[65vh] lg:h-[75vh]'>
           {blok.image.map((img, index: number) => (
