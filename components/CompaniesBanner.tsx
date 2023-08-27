@@ -1,3 +1,5 @@
+'use client';
+
 import { CompaniesBannerStoryblok } from '@/component-types-sb';
 import { storyblokEditable } from '@storyblok/react/rsc';
 import Image from 'next/image';

@@ -1,3 +1,5 @@
+'use client';
+
 import { RecentProjectSectionStoryblok } from '@/component-types-sb';
 import { storyblokEditable } from '@storyblok/react';
 import clsx from 'clsx';
