@@ -49,7 +49,7 @@ const Contact = () => {
             Get in touch with us
           </h2>
           <p className='mb-4 text-lg'>
-            Your project deserves nothing less than the best, and I'm here to
+            Your project deserves nothing less than the best, and I&apos;m here to
             ensure that happens. Let&apos;s create something extraordinary together 
             please don&apos;t hesitate to contact me at test@test.com
           </p>
