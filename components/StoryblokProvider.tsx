@@ -9,6 +9,7 @@ import About from './About';
 import CostumersSaying from './CostumersSaying';
 import RecentProjectsSection from './RecentProjectsSection';
 import CtaSection from './CtaSection';
+import Contact from './Contact';
 
 /** 2. Initialize it as usual */
 storyblokInit({
@@ -23,6 +24,7 @@ storyblokInit({
     whatCostumersAreSaying: CostumersSaying,
     recentProjectSection: RecentProjectsSection,
     ctaSection: CtaSection,
+    contact: Contact,
   },
 });
 
