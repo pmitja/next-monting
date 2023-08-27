@@ -10,6 +10,7 @@ import CompaniesBanner from './CompaniesBanner';
 import Services from './Services';
 import About from './About';
 import CostumersSaying from './CostumersSaying';
+import RecentProjectsSection from './RecentProjectsSection';
 
 /** 2. Initialize it as usual */
 storyblokInit({
@@ -25,6 +26,7 @@ storyblokInit({
     services: Services,
     about: About,
     whatCostumersAreSaying: CostumersSaying,
+    recentProjectSection: RecentProjectsSection,
   },
 });
 

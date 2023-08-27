@@ -13,6 +13,7 @@ import CompaniesBanner from '@/components/CompaniesBanner';
 import About from '@/components/About';
 import Services from '@/components/Services';
 import CostumersSaying from '@/components/CostumersSaying';
+import RecentProjectsSection from '@/components/RecentProjectsSection';
 
 storyblokInit({
   accessToken: process.env.STORYBLOK_TOKEN,
@@ -27,6 +28,7 @@ storyblokInit({
     services: Services,
     about: About,
     whatCostumersAreSaying: CostumersSaying,
+    recentProjectSection: RecentProjectsSection,
   },
 });
 
