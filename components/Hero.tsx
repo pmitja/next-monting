@@ -103,7 +103,7 @@ const Hero = ({ blok }: { blok: HeroStoryblok }) => {
 
         <div className='absolute bottom-4 left-0 right-0'>
           <div className='flex items-start justify-center gap-2'>
-            {blok.image.map((_: any, index: number) => (
+            {blok.image.map((_: unknown, index: number) => (
               <button
                 key={index}
                 onClick={() => setCurrentSlide(index)}

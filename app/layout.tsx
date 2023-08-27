@@ -1,5 +1,3 @@
-'use client';
-
 import './globals.css';
 import type { Metadata } from 'next';
 import { Lexend } from 'next/font/google';
@@ -7,9 +5,6 @@ import { storyblokInit, apiPlugin } from '@storyblok/react/rsc';
 
 import StoryblokProvider from '@/components/StoryblokProvider';
 import Page from '@/components/Page';
-import Grid from '@/components/Grid';
-import Feature from '@/components/Feature';
-import Teaser from '@/components/Teaser';
 import Hero from '@/components/Hero';
 import CompaniesBanner from '@/components/CompaniesBanner';
 import About from '@/components/About';
@@ -23,9 +18,6 @@ storyblokInit({
   use: [apiPlugin],
   components: {
     page: Page,
-    grid: Grid,
-    feature: Feature,
-    teaser: Teaser,
     hero: Hero,
     companiesBanner: CompaniesBanner,
     services: Services,

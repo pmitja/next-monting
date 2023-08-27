@@ -5,7 +5,10 @@ import { ArrowLeft, ArrowRight, Quote } from 'lucide-react';
 import Testimonial from './Testimonial';
 import { useState } from 'react';
 import clsx from 'clsx';
-import { WhatCostumersAreSayingStoryblok } from '@/component-types-sb';
+import {
+  TestimonialStoryblok,
+  WhatCostumersAreSayingStoryblok,
+} from '@/component-types-sb';
 
 const CostumersSaying = ({
   blok,
@@ -52,43 +55,47 @@ const CostumersSaying = ({
         </div>
         <div className='grid grid-cols-1 gap-3 transition-all md:grid-cols-2'>
           {nextTwo &&
-            blok.testimonials.map((testimonial: any, index: number) => {
-              if (index <= 1) {
-                return (
-                  <div
-                    key={testimonial.author[0].name}
-                    className={clsx(
-                      index === 0 || index % 2 === 0
-                        ? 'border-b-2 border-gray-400 pb-5 transition-opacity md:border-b-0 md:border-r-2 md:pr-8'
-                        : 'transition-opacity md:pl-8',
-                      nextTwo && 'opacity-100',
-                      !nextTwo && 'opacity-0'
-                    )}
-                  >
-                    <Testimonial blok={testimonial} />
-                  </div>
-                );
+            blok.testimonials.map(
+              (testimonial: TestimonialStoryblok, index: number) => {
+                if (index <= 1) {
+                  return (
+                    <div
+                      key={testimonial.author[0].name}
+                      className={clsx(
+                        index === 0 || index % 2 === 0
+                          ? 'border-b-2 border-gray-400 pb-5 transition-opacity md:border-b-0 md:border-r-2 md:pr-8'
+                          : 'transition-opacity md:pl-8',
+                        nextTwo && 'opacity-100',
+                        !nextTwo && 'opacity-0'
+                      )}
+                    >
+                      <Testimonial blok={testimonial} />
+                    </div>
+                  );
+                }
               }
-            })}
+            )}
           {!nextTwo &&
-            blok.testimonials.map((testimonial: any, index: number) => {
-              if (!nextTwo && index > 1) {
-                return (
-                  <div
-                    key={testimonial.author[0].name}
-                    className={clsx(
-                      index === 0 || index % 2 === 0
-                        ? 'border-b-2 border-gray-400 pb-5 transition-opacity md:border-b-0 md:border-r-2 md:pr-8'
-                        : 'transition-opacity md:pl-8',
-                      !nextTwo ? 'opacity-100' : 'opacity-0'
-                    )}
-                  >
-                    {' '}
-                    <Testimonial blok={testimonial} />
-                  </div>
-                );
+            blok.testimonials.map(
+              (testimonial: TestimonialStoryblok, index: number) => {
+                if (!nextTwo && index > 1) {
+                  return (
+                    <div
+                      key={testimonial.author[0].name}
+                      className={clsx(
+                        index === 0 || index % 2 === 0
+                          ? 'border-b-2 border-gray-400 pb-5 transition-opacity md:border-b-0 md:border-r-2 md:pr-8'
+                          : 'transition-opacity md:pl-8',
+                        !nextTwo ? 'opacity-100' : 'opacity-0'
+                      )}
+                    >
+                      {' '}
+                      <Testimonial blok={testimonial} />
+                    </div>
+                  );
+                }
               }
-            })}
+            )}
         </div>
       </div>
     </div>
