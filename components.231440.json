@@ -38,6 +38,47 @@
       "component_group_name": "About"
     },
     {
+      "name": "author",
+      "display_name": null,
+      "created_at": "2023-08-23T20:55:15.451Z",
+      "updated_at": "2023-08-23T20:57:23.817Z",
+      "id": 4468548,
+      "schema": {
+        "name": {
+          "type": "text",
+          "required": true
+        },
+        "position": {
+          "type": "text",
+          "required": true
+        },
+        "tab-2c4a600c-b32c-43a1-a20a-c756214824dc": {
+          "display_name": "Image",
+          "keys": [
+            "image"
+          ],
+          "pos": 0,
+          "type": "tab"
+        },
+        "image": {
+          "type": "asset",
+          "required": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "author",
+      "component_group_uuid": "e4a8aaee-cd49-4d30-8b5a-3492395c2baf",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Costumers"
+    },
+    {
       "name": "button",
       "display_name": null,
       "created_at": "2023-08-20T11:22:38.314Z",
@@ -231,39 +272,50 @@
       "name": "services",
       "display_name": null,
       "created_at": "2023-08-23T17:16:49.068Z",
-      "updated_at": "2023-08-23T17:38:52.958Z",
+      "updated_at": "2023-08-23T18:33:26.919Z",
       "id": 4467448,
       "schema": {
-        "primaryText": {
+        "title": {
           "type": "text",
-          "default_value": "From bespoke homes to large business centres, we have developed some eye-catching projects across London and the Home Counties, creating both a unique living and business environment.",
-          "required": true
-        },
-        "secondaryText": {
-          "type": "text",
-          "description": "",
-          "default_value": "From bespoke homes to large business centres, we have developed some eye-catching projects across London and the Home Counties, creating both a unique living and business environment.",
-          "required": true
-        },
-        "tertiaryText": {
-          "type": "text",
-          "default_value": "From bespoke homes to large business centres, we have developed some eye-catching projects across London and the Home Counties, creating both a unique living and business environment.",
-          "required": true
+          "default_value": "Our Services",
+          "pos": 0
         },
         "primaryTitle": {
           "type": "text",
           "default_value": "Apartments Projects",
-          "required": true
+          "required": true,
+          "pos": 1
+        },
+        "primaryText": {
+          "type": "text",
+          "default_value": "From bespoke homes to large business centres, we have developed some eye-catching projects across London and the Home Countries, creating both a unique living and business environment.",
+          "required": true,
+          "pos": 2
         },
         "secondaryTitle": {
           "type": "text",
           "default_value": "Housing Projects",
-          "required": true
+          "required": true,
+          "pos": 3
+        },
+        "secondaryText": {
+          "type": "text",
+          "description": "",
+          "default_value": "From bespoke homes to large business centres, we have developed some eye-catching projects across London and the Home Countries, creating both a unique living and business environment.",
+          "required": true,
+          "pos": 4
         },
         "tertiaryTitle": {
           "type": "text",
           "default_value": "Office Projects",
-          "required": true
+          "required": true,
+          "pos": 5
+        },
+        "tertiaryText": {
+          "type": "text",
+          "default_value": "From bespoke homes to large business centres, we have developed some eye-catching projects across London and the Home Countries, creating both a unique living and business environment.",
+          "required": true,
+          "pos": 6
         },
         "icons": {
           "type": "multiasset",
@@ -272,11 +324,26 @@
           ],
           "required": true,
           "allow_external_url": false,
-          "tooltip": false
+          "tooltip": false,
+          "pos": 7
         },
-        "title": {
-          "type": "text",
-          "default_value": "Our Services"
+        "items": {
+          "type": "section",
+          "restrict_type": "",
+          "restrict_components": false,
+          "component_whitelist": [],
+          "component_group_whitelist": [],
+          "keys": [
+            "primaryText",
+            "secondaryText",
+            "tertiaryText",
+            "secondaryTitle",
+            "primaryTitle",
+            "tertiaryTitle",
+            "icons"
+          ],
+          "display_name": "items",
+          "pos": 8
         }
       },
       "image": null,
@@ -314,6 +381,103 @@
       "component_group_uuid": null,
       "color": null,
       "icon": null
+    },
+    {
+      "name": "testimonial",
+      "display_name": null,
+      "created_at": "2023-08-23T20:53:59.220Z",
+      "updated_at": "2023-08-23T20:56:14.022Z",
+      "id": 4468547,
+      "schema": {
+        "title": {
+          "type": "text",
+          "required": true,
+          "pos": 0
+        },
+        "text": {
+          "type": "textarea",
+          "required": true,
+          "pos": 1
+        },
+        "author": {
+          "type": "bloks",
+          "required": true,
+          "minimum": 1,
+          "maximum": 1,
+          "default_value": "author",
+          "pos": 2,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "author"
+          ]
+        },
+        "tab-ba44168d-e2a6-43f0-96a4-69403097925a": {
+          "display_name": "Author",
+          "keys": [
+            "author"
+          ],
+          "pos": 3,
+          "type": "tab"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "testimonial",
+      "component_group_uuid": "e4a8aaee-cd49-4d30-8b5a-3492395c2baf",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Costumers"
+    },
+    {
+      "name": "whatCostumersAreSaying",
+      "display_name": null,
+      "created_at": "2023-08-23T20:53:36.936Z",
+      "updated_at": "2023-08-23T20:55:54.776Z",
+      "id": 4468546,
+      "schema": {
+        "title": {
+          "type": "text",
+          "required": true,
+          "pos": 0
+        },
+        "testimonials": {
+          "type": "bloks",
+          "required": true,
+          "pos": 1,
+          "minimum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "testimonial"
+          ]
+        },
+        "tab-b5d19919-0d41-43a2-bb32-6fecb7ce8d7c": {
+          "display_name": "Testimonials",
+          "keys": [
+            "testimonials"
+          ],
+          "pos": 2,
+          "type": "tab"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "whatCostumersAreSaying",
+      "component_group_uuid": "e4a8aaee-cd49-4d30-8b5a-3492395c2baf",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Costumers"
     }
   ]
 }

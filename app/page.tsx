@@ -12,7 +12,6 @@ export default async function Home() {
       <Navbar />
       <main>
         <StoryblokStory story={data.story} />
-        <Feedback></Feedback>
       </main>
       <Footer />
     </>
