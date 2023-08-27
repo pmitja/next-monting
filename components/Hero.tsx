@@ -6,6 +6,7 @@ import { HeroStoryblok } from '@/component-types-sb';
 import Image from 'next/image';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from './ui/button';
+import Contact from './Contact';
 
 const Hero = ({ blok }: { blok: HeroStoryblok }) => {
   if (!!blok.length) return null;
@@ -24,6 +25,7 @@ const Hero = ({ blok }: { blok: HeroStoryblok }) => {
 
   return (
     <div {...storyblokEditable(blok)}>
+      <Contact />
       <div className='relative overflow-hidden'>
         <div className='flex h-[80vh] w-full'>
           {blok.image.map((img, index: number) => (
