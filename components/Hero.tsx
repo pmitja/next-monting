@@ -1,20 +1,25 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { storyblokEditable } from '@storyblok/react/rsc';
 import { HeroStoryblok } from '@/component-types-sb';
 import Image from 'next/image';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from './ui/button';
+import { motion } from 'framer-motion';
 
 const Hero = ({ blok }: { blok: HeroStoryblok }) => {
-  if (!!blok.length) return null;
-
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  const next = () => {
-    setCurrentSlide((prevSlide) => (prevSlide + 1) % blok.image.length);
-  };
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prevSlide) => (prevSlide + 1) % blok.image.length);
+    }, 3000); // Auto-change interval: 3 seconds
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [blok.image.length]);
 
   const prev = () => {
     setCurrentSlide(
@@ -22,12 +27,16 @@ const Hero = ({ blok }: { blok: HeroStoryblok }) => {
     );
   };
 
+  const next = () => {
+    setCurrentSlide((prevSlide) => (prevSlide + 1) % blok.image.length);
+  };
+
   return (
     <div {...storyblokEditable(blok)}>
       <div className='relative overflow-hidden'>
-        <div className='flex h-[80vh] w-full'>
+        <div className='flex h-[45vh] w-full sm:h-[65vh] lg:h-[75vh]'>
           {blok.image.map((img, index: number) => (
-            <div
+            <motion.div
               key={index}
               className='absolute inset-0 bg-gradient-to-r from-black to-transparent'
             >
@@ -39,12 +48,12 @@ const Hero = ({ blok }: { blok: HeroStoryblok }) => {
                   index === currentSlide ? 'opacity-100' : 'opacity-0'
                 }`}
               />
-            </div>
+            </motion.div>
           ))}
         </div>
 
         <div className='absolute inset-0 flex max-w-2xl flex-col items-start justify-center gap-8 px-4 text-left md:max-w-4xl md:px-8 lg:px-20'>
-          <h2 className='font-inter text-2xl uppercase text-white md:text-4xl'>
+          <h2 className='font-inter text-3xl font-bold uppercase text-white md:text-4xl lg:text-5xl'>
             {blok.title}
           </h2>
           <p className='text-base text-white md:text-lg'>{blok.subtitle}</p>
@@ -82,7 +91,7 @@ const Hero = ({ blok }: { blok: HeroStoryblok }) => {
           onClick={next}
           className={`absolute right-4 top-1/2 flex h-8 w-8 -translate-y-1/2 transform items-center justify-center rounded-full border-[1px] p-1 text-white md:h-10 md:w-10 ${
             currentSlide === 0
-              ? 'bg-red-600] border-red-600'
+              ? 'border-red-600 bg-red-600'
               : 'border-white bg-transparent'
           } ${'hidden lg:flex'}`}
           type='button'
