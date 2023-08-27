@@ -55,26 +55,18 @@ export interface CompaniesBannerStoryblok {
   [k: string]: any;
 }
 
+export interface ContactStoryblok {
+  _uid: string;
+  component: 'contact';
+  [k: string]: any;
+}
+
 export interface CtaSectionStoryblok {
   title: string;
   image: AssetStoryblok;
   text: string;
   _uid: string;
   component: 'ctaSection';
-  [k: string]: any;
-}
-
-export interface FeatureStoryblok {
-  name?: string;
-  _uid: string;
-  component: 'feature';
-  [k: string]: any;
-}
-
-export interface GridStoryblok {
-  columns?: any[];
-  _uid: string;
-  component: 'grid';
   [k: string]: any;
 }
 
@@ -90,7 +82,7 @@ export interface HeroStoryblok {
 }
 
 export interface PageStoryblok {
-  body: any[];
+  body?: any[];
   _uid: string;
   component: 'page';
   uuid?: string;
@@ -117,13 +109,6 @@ export interface ServicesStoryblok {
   items?: any;
   _uid: string;
   component: 'services';
-  [k: string]: any;
-}
-
-export interface TeaserStoryblok {
-  headline?: string;
-  _uid: string;
-  component: 'teaser';
   [k: string]: any;
 }
 

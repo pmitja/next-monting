@@ -5,8 +5,8 @@ import Image from 'next/image';
 
 const Contact = () => {
   return (
-    <div className='lg:px-18 px-8 py-12 md:px-12 md:py-16'>
-      <div className='grid grid-cols-1 gap-4 md:grid-cols-2 md:justify-items-center md:gap-8'>
+    <div className='container mx-auto py-12 md:py-16' id={'hire'}>
+      <div className='grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-8'>
         <div className='w-full text-left md:w-2/3'>
           <div className='relative pb-24'>
             <Image
@@ -49,9 +49,9 @@ const Contact = () => {
             Get in touch with us
           </h2>
           <p className='mb-4 text-lg'>
-            Your project deserves nothing less than the best, and I&apos;m here to
-            ensure that happens. Let&apos;s create something extraordinary together 
-            please don&apos;t hesitate to contact me at test@test.com
+            Your project deserves nothing less than the best, and I&apos;m here
+            to ensure that happens. Let&apos;s create something extraordinary
+            together please don&apos;t hesitate to contact me at test@test.com
           </p>
           <div className='flex gap-4'>
             <Facebook
