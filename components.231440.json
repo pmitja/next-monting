@@ -133,6 +133,57 @@
       "component_group_name": "CompanyBanner"
     },
     {
+      "name": "ctaSection",
+      "display_name": null,
+      "created_at": "2023-08-27T08:48:01.874Z",
+      "updated_at": "2023-08-27T09:10:08.625Z",
+      "id": 4481471,
+      "schema": {
+        "title": {
+          "type": "text",
+          "required": true,
+          "pos": 0
+        },
+        "tab-fa8aac4e-62c5-44bb-b124-376ffe7feb2b": {
+          "display_name": "Button",
+          "keys": [
+            "text"
+          ],
+          "pos": 0,
+          "type": "tab"
+        },
+        "image": {
+          "type": "asset",
+          "required": true,
+          "pos": 1
+        },
+        "tab-311b25f2-9fdd-4e51-bc55-117e22a7b753": {
+          "display_name": "Image",
+          "keys": [
+            "image"
+          ],
+          "pos": 2,
+          "type": "tab"
+        },
+        "text": {
+          "type": "text",
+          "required": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "ctaSection",
+      "component_group_uuid": "9bcc1cc7-ec6f-451f-84a6-d32e2fd7fdb8",
+      "color": null,
+      "icon": null,
+      "component_group_name": "CTA"
+    },
+    {
       "name": "feature",
       "display_name": null,
       "created_at": "2023-05-20T08:17:36.522Z",
@@ -267,6 +318,48 @@
       "component_group_uuid": null,
       "color": null,
       "icon": null
+    },
+    {
+      "name": "recentProjectSection",
+      "display_name": null,
+      "created_at": "2023-08-27T06:59:51.255Z",
+      "updated_at": "2023-08-27T07:00:29.344Z",
+      "id": 4481350,
+      "schema": {
+        "title": {
+          "type": "text",
+          "required": true,
+          "pos": 0
+        },
+        "images": {
+          "type": "multiasset",
+          "required": true,
+          "filetypes": [
+            "images"
+          ],
+          "pos": 1
+        },
+        "tab-79f9bf88-4718-4d3d-b8f3-dd9813be7303": {
+          "display_name": "Images",
+          "keys": [
+            "images"
+          ],
+          "pos": 2,
+          "type": "tab"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "recentProjectSection",
+      "component_group_uuid": "767ec5c9-65b9-4aae-a8e1-7b0e627e8cc1",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Recent Projects"
     },
     {
       "name": "services",
