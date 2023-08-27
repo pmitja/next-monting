@@ -11,6 +11,7 @@ import Services from './Services';
 import About from './About';
 import CostumersSaying from './CostumersSaying';
 import RecentProjectsSection from './RecentProjectsSection';
+import CtaSection from './CtaSection';
 
 /** 2. Initialize it as usual */
 storyblokInit({
@@ -27,6 +28,7 @@ storyblokInit({
     about: About,
     whatCostumersAreSaying: CostumersSaying,
     recentProjectSection: RecentProjectsSection,
+    ctaSection: CtaSection,
   },
 });
 

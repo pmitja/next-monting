@@ -14,6 +14,7 @@ import About from '@/components/About';
 import Services from '@/components/Services';
 import CostumersSaying from '@/components/CostumersSaying';
 import RecentProjectsSection from '@/components/RecentProjectsSection';
+import CtaSection from '@/components/CtaSection';
 
 storyblokInit({
   accessToken: process.env.STORYBLOK_TOKEN,
@@ -29,6 +30,7 @@ storyblokInit({
     about: About,
     whatCostumersAreSaying: CostumersSaying,
     recentProjectSection: RecentProjectsSection,
+    ctaSection: CtaSection,
   },
 });
 

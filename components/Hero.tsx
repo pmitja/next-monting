@@ -91,7 +91,7 @@ const Hero = ({ blok }: { blok: HeroStoryblok }) => {
 
         <button
           onClick={next}
-          className={`absolute left-4 top-1/2 flex h-8 w-8 -translate-y-1/2 transform items-center justify-center rounded-full border-[1px] p-1 text-white md:h-10 md:w-10 ${
+          className={`absolute bottom-1/2 right-4 flex h-8 w-8 translate-y-1/2 transform items-center justify-center rounded-full border-[1px] p-1 text-white md:h-10 md:w-10 ${
             currentSlide === blok.image.length - 1
               ? 'border-red-600 bg-red-600'
               : 'border-white bg-transparent'

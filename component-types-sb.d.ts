@@ -55,6 +55,15 @@ export interface CompaniesBannerStoryblok {
   [k: string]: any;
 }
 
+export interface CtaSectionStoryblok {
+  title: string;
+  image: AssetStoryblok;
+  text: string;
+  _uid: string;
+  component: "ctaSection";
+  [k: string]: any;
+}
+
 export interface FeatureStoryblok {
   name?: string;
   _uid: string;
@@ -85,6 +94,14 @@ export interface PageStoryblok {
   _uid: string;
   component: "page";
   uuid?: string;
+  [k: string]: any;
+}
+
+export interface RecentProjectSectionStoryblok {
+  title: string;
+  images: MultiassetStoryblok;
+  _uid: string;
+  component: "recentProjectSection";
   [k: string]: any;
 }
 
