@@ -15,6 +15,7 @@ import {
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import { ContactStoryblok, FormElementStoryblok } from '@/component-types-sb';
 
 const phoneRegex = new RegExp(
   /^\+?(386)?0([1-7][0-9]{7}|([347]0|[3457]1|6[4589]){6})$/
@@ -38,7 +39,7 @@ const FormSchema = z.object({
   }),
 });
 
-const ContactForm = () => {
+const ContactForm = ({ formElements }: { formElements: ContactStoryblok }) => {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
@@ -54,6 +55,8 @@ const ContactForm = () => {
     console.log(data);
   };
 
+  console.log(formElements);
+
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-6'>
@@ -62,11 +65,11 @@ const ContactForm = () => {
           name='name'
           render={({ field }) => (
             <FormItem className='text-left'>
-              <FormLabel>Name</FormLabel>
+              <FormLabel>{formElements.nameLabel}</FormLabel>
               <FormControl>
                 <Input
                   type='text'
-                  placeholder='Please enter your full name'
+                  placeholder={formElements.namePlaceholder}
                   {...field}
                 />
               </FormControl>
@@ -79,11 +82,11 @@ const ContactForm = () => {
           name='email'
           render={({ field }) => (
             <FormItem className='text-left'>
-              <FormLabel>Email address</FormLabel>
+              <FormLabel>{formElements.emailLabel}</FormLabel>
               <FormControl>
                 <Input
                   type='email'
-                  placeholder='Please enter your email address'
+                  placeholder={formElements.emailPlaceholder}
                   {...field}
                 />
               </FormControl>
@@ -96,11 +99,11 @@ const ContactForm = () => {
           name='phoneNumber'
           render={({ field }) => (
             <FormItem className='text-left'>
-              <FormLabel>Phone number</FormLabel>
+              <FormLabel>{formElements.phoneNumberLabel}</FormLabel>
               <FormControl>
                 <Input
                   type='tel'
-                  placeholder='Please enter your phone number'
+                  placeholder={formElements.numberPlaceholder}
                   {...field}
                 />
               </FormControl>
@@ -113,11 +116,11 @@ const ContactForm = () => {
           name='subject'
           render={({ field }) => (
             <FormItem className='text-left'>
-              <FormLabel>Subject</FormLabel>
+              <FormLabel>{formElements.subjectLabel}</FormLabel>
               <FormControl>
                 <Input
                   type='text'
-                  placeholder='Please enter a subject for your message.'
+                  placeholder={formElements.subjectPlaceholder}
                   {...field}
                 />
               </FormControl>
@@ -130,10 +133,10 @@ const ContactForm = () => {
           name='message'
           render={({ field }) => (
             <FormItem className='text-left'>
-              <FormLabel>Message</FormLabel>
+              <FormLabel>{formElements.messageLabel}</FormLabel>
               <FormControl>
                 <Textarea
-                  placeholder='Please type your message here'
+                  placeholder={formElements.messagePlaceholder}
                   {...field}
                 />
               </FormControl>

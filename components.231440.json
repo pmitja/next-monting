@@ -133,6 +133,117 @@
       "component_group_name": "CompanyBanner"
     },
     {
+      "name": "contact",
+      "display_name": "Contact",
+      "created_at": "2023-08-27T12:26:37.832Z",
+      "updated_at": "2023-08-27T14:40:08.792Z",
+      "id": 4481821,
+      "schema": {
+        "subjectLabel": {
+          "type": "text",
+          "key": "subjectLabel",
+          "pos": 0
+        },
+        "title": {
+          "type": "text",
+          "required": true,
+          "pos": 1,
+          "key": "title"
+        },
+        "text": {
+          "type": "textarea",
+          "required": true,
+          "pos": 2,
+          "key": "text"
+        },
+        "numberPlaceholder": {
+          "type": "text",
+          "pos": 3,
+          "key": "placeholderNumber"
+        },
+        "subjectPlaceholder": {
+          "type": "text",
+          "pos": 4,
+          "key": "placeholderSubject"
+        },
+        "namePlaceholder": {
+          "type": "text",
+          "pos": 5,
+          "key": "placeholderName"
+        },
+        "nameLabel": {
+          "type": "text",
+          "key": "nameLabel",
+          "pos": 6
+        },
+        "emailPlaceholder": {
+          "type": "text",
+          "pos": 7,
+          "key": "placeholderEmail"
+        },
+        "messagePlaceholder": {
+          "type": "text",
+          "pos": 8,
+          "key": "placeholderMessage"
+        },
+        "emailLabel": {
+          "type": "text",
+          "key": "emailLabel",
+          "pos": 9
+        },
+        "phoneNumberLabel": {
+          "type": "text",
+          "key": "phoneNumberLabel",
+          "pos": 10
+        },
+        "messageLabel": {
+          "type": "text",
+          "key": "messageLabel",
+          "pos": 11
+        },
+        "tab-ed1b0543-2c37-4965-be8a-ee12d20516ce": {
+          "display_name": "Form",
+          "keys": [
+            "emailLabel",
+            "phoneNumberLabel",
+            "subject",
+            "messageLabel",
+            "placeholderName",
+            "placeholderEmail",
+            "placeholderNumber",
+            "placeholderSubject",
+            "placeholderMessage",
+            "messagePlaceholder",
+            "emailPlaceholder",
+            "nameLabel",
+            "namePlaceholder",
+            "subjectPlaceholder",
+            "numberPlaceholder",
+            "subjectLabel"
+          ],
+          "pos": 12,
+          "type": "tab",
+          "key": "tab-ed1b0543-2c37-4965-be8a-ee12d20516ce"
+        },
+        "formTitle": {
+          "type": "text",
+          "required": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Contact",
+      "component_group_uuid": "3bd621c9-df59-4c6c-b5ec-d3410a166d15",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Form"
+    },
+    {
       "name": "ctaSection",
       "display_name": null,
       "created_at": "2023-08-27T08:48:01.874Z",
@@ -184,14 +295,53 @@
       "component_group_name": "CTA"
     },
     {
-      "name": "feature",
+      "name": "formElement",
       "display_name": null,
-      "created_at": "2023-05-20T08:17:36.522Z",
-      "updated_at": "2023-05-20T08:17:36.522Z",
-      "id": 4005005,
+      "created_at": "2023-08-27T13:55:40.257Z",
+      "updated_at": "2023-08-27T14:04:23.297Z",
+      "id": 4481920,
       "schema": {
-        "name": {
-          "type": "text"
+        "type": {
+          "type": "option",
+          "use_uuid": true,
+          "pos": 0,
+          "required": true,
+          "options": [
+            {
+              "_uid": "4e92568a-6ecc-4517-b3b5-71b209f5685d",
+              "name": "Text",
+              "value": "text"
+            },
+            {
+              "_uid": "37ee03a1-b7f7-41df-92d2-1bdb7a77aaf6",
+              "value": "email",
+              "name": "Email"
+            },
+            {
+              "_uid": "9b66131d-a85f-4e97-a489-dde432360d0f",
+              "value": "tel",
+              "name": "Phone"
+            },
+            {
+              "_uid": "091aab15-5c36-44cd-bbb5-9664a70d7993",
+              "value": "textarea",
+              "name": "Text area"
+            }
+          ],
+          "default_value": "text"
+        },
+        "label": {
+          "type": "text",
+          "required": true,
+          "pos": 1
+        },
+        "tab-9172cbc7-670b-4f05-83eb-7ac138103123": {
+          "display_name": "Type",
+          "keys": [
+            "type"
+          ],
+          "pos": 2,
+          "type": "tab"
         }
       },
       "image": null,
@@ -201,45 +351,24 @@
       "is_nestable": true,
       "all_presets": [],
       "preset_id": null,
-      "real_name": "feature",
-      "component_group_uuid": null,
+      "real_name": "formElement",
+      "component_group_uuid": "3bd621c9-df59-4c6c-b5ec-d3410a166d15",
       "color": null,
-      "icon": null
-    },
-    {
-      "name": "grid",
-      "display_name": null,
-      "created_at": "2023-05-20T08:17:36.503Z",
-      "updated_at": "2023-05-20T08:17:36.503Z",
-      "id": 4005004,
-      "schema": {
-        "columns": {
-          "type": "bloks"
-        }
-      },
-      "image": null,
-      "preview_field": null,
-      "is_root": false,
-      "preview_tmpl": null,
-      "is_nestable": true,
-      "all_presets": [],
-      "preset_id": null,
-      "real_name": "grid",
-      "component_group_uuid": null,
-      "color": null,
-      "icon": null
+      "icon": null,
+      "component_group_name": "Form"
     },
     {
       "name": "hero",
       "display_name": null,
       "created_at": "2023-08-20T11:21:54.470Z",
-      "updated_at": "2023-08-21T18:22:18.618Z",
+      "updated_at": "2023-08-27T14:20:15.989Z",
       "id": 4446231,
       "schema": {
         "title": {
           "type": "text",
           "pos": 0,
-          "required": true
+          "required": true,
+          "translatable": true
         },
         "subtitle": {
           "type": "text",
@@ -451,29 +580,6 @@
       "color": null,
       "icon": null,
       "component_group_name": "Services"
-    },
-    {
-      "name": "teaser",
-      "display_name": null,
-      "created_at": "2023-05-20T08:17:36.490Z",
-      "updated_at": "2023-05-20T08:17:36.490Z",
-      "id": 4005003,
-      "schema": {
-        "headline": {
-          "type": "text"
-        }
-      },
-      "image": null,
-      "preview_field": null,
-      "is_root": false,
-      "preview_tmpl": null,
-      "is_nestable": true,
-      "all_presets": [],
-      "preset_id": null,
-      "real_name": "teaser",
-      "component_group_uuid": null,
-      "color": null,
-      "icon": null
     },
     {
       "name": "testimonial",

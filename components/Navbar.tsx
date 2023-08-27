@@ -6,6 +6,7 @@ import { useState } from 'react';
 
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { scrollToElement } from '@/utils/scrollIntoView';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -30,51 +31,55 @@ const Navbar = () => {
         >
           <ul className='flex flex-col gap-6 md:flex-row md:items-center md:gap-8'>
             <li>
-              <Link
+              <Button
+                variant='link'
                 className='text-lg font-medium text-black md:text-base'
-                href='/'
               >
                 Home
-              </Link>
+              </Button>
             </li>
             <li>
-              <Link
+              <Button
+                variant='link'
                 className='text-lg font-medium text-gray-400 hover:text-black md:text-base'
-                href='/about'
               >
                 About us
-              </Link>
+              </Button>
             </li>
             <li>
-              <Link
+              <Button
+                variant='link'
                 className='text-lg font-medium text-gray-400 hover:text-black md:text-base'
-                href='/team'
               >
                 Our Team
-              </Link>
+              </Button>
             </li>
             <li>
-              <Link
+              <Button
+                variant='link'
                 className='text-lg font-medium text-gray-400 hover:text-black md:text-base'
-                href='/projects'
               >
                 Projects
-              </Link>
+              </Button>
             </li>
             <li>
-              <Button className='rounded-full bg-red-600 px-6 py-4 text-base uppercase'>
+              <Button
+                className='rounded-full bg-red-600 px-6 py-4 text-base uppercase'
+                variant='link'
+                onClick={() => scrollToElement('hire')}
+              >
                 Hire us
               </Button>
             </li>
           </ul>
         </div>
         <div className='flex items-center gap-6 md:hidden'>
-          <button
+          <Button
+            variant='primary'
             onClick={() => setIsMobileMenuOpen((prev) => !prev)}
-            type='button'
           >
             {!isMobileMenuOpen ? <Menu size={32} /> : <X size={32} />}
-          </button>
+          </Button>
         </div>
       </nav>
     </header>

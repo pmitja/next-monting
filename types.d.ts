@@ -14,6 +14,7 @@ export interface NestedBlok {
     | 'services'
     | 'teaser'
     | 'testimonial'
-    | 'whatCostumersAreSaying';
+    | 'whatCostumersAreSaying'
+    | 'contact';
   [k: string]: any;
 }
