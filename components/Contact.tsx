@@ -50,8 +50,8 @@ const Contact = () => {
           </h2>
           <p className='mb-4 text-lg'>
             Your project deserves nothing less than the best, and I'm here to
-            ensure that happens. Let's create something extraordinary together –
-            please don't hesitate to contact me at leanerdoheyman@gmail.com
+            ensure that happens. Let&apos;s create something extraordinary together 
+            please don&apos;t hesitate to contact me at test@test.com
           </p>
           <div className='flex gap-4'>
             <Facebook
