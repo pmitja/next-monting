@@ -7,7 +7,7 @@ import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
 const Page = ({ blok }: { blok: PageStoryblok }) => (
   <main {...storyblokEditable(blok)} className='text-center'>
     {blok.body.map((nestedBlok: NestedBlok) => (
-      <StoryblokComponent blok={nestedBlok} key={nestedBlok._uuid} />
+      <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
     ))}
   </main>
 );
