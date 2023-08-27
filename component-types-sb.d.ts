@@ -1,4 +1,4 @@
-import {StoryblokStory} from 'storyblok-generate-ts'
+import { StoryblokStory } from 'storyblok-generate-ts';
 
 export interface AssetStoryblok {
   alt?: string;
@@ -17,7 +17,7 @@ export interface AboutStoryblok {
   years: string;
   image: AssetStoryblok;
   _uid: string;
-  component: "about";
+  component: 'about';
   [k: string]: any;
 }
 
@@ -26,7 +26,7 @@ export interface AuthorStoryblok {
   position: string;
   image: AssetStoryblok;
   _uid: string;
-  component: "author";
+  component: 'author';
   [k: string]: any;
 }
 
@@ -34,7 +34,7 @@ export interface ButtonStoryblok {
   text?: string;
   link?: string;
   _uid: string;
-  component: "button";
+  component: 'button';
   [k: string]: any;
 }
 
@@ -51,21 +51,30 @@ export type MultiassetStoryblok = {
 export interface CompaniesBannerStoryblok {
   companiesLogo: MultiassetStoryblok;
   _uid: string;
-  component: "companiesBanner";
+  component: 'companiesBanner';
+  [k: string]: any;
+}
+
+export interface CtaSectionStoryblok {
+  title: string;
+  image: AssetStoryblok;
+  text: string;
+  _uid: string;
+  component: 'ctaSection';
   [k: string]: any;
 }
 
 export interface FeatureStoryblok {
   name?: string;
   _uid: string;
-  component: "feature";
+  component: 'feature';
   [k: string]: any;
 }
 
 export interface GridStoryblok {
   columns?: any[];
   _uid: string;
-  component: "grid";
+  component: 'grid';
   [k: string]: any;
 }
 
@@ -76,15 +85,23 @@ export interface HeroStoryblok {
   primaryButton: ButtonStoryblok[];
   secondaryButton: ButtonStoryblok[];
   _uid: string;
-  component: "hero";
+  component: 'hero';
   [k: string]: any;
 }
 
 export interface PageStoryblok {
-  body?: any[];
+  body: any[];
   _uid: string;
-  component: "page";
+  component: 'page';
   uuid?: string;
+  [k: string]: any;
+}
+
+export interface RecentProjectSectionStoryblok {
+  title: string;
+  images: MultiassetStoryblok;
+  _uid: string;
+  component: 'recentProjectSection';
   [k: string]: any;
 }
 
@@ -99,14 +116,14 @@ export interface ServicesStoryblok {
   icons: MultiassetStoryblok;
   items?: any;
   _uid: string;
-  component: "services";
+  component: 'services';
   [k: string]: any;
 }
 
 export interface TeaserStoryblok {
   headline?: string;
   _uid: string;
-  component: "teaser";
+  component: 'teaser';
   [k: string]: any;
 }
 
@@ -115,7 +132,7 @@ export interface TestimonialStoryblok {
   text: string;
   author: AuthorStoryblok[];
   _uid: string;
-  component: "testimonial";
+  component: 'testimonial';
   [k: string]: any;
 }
 
@@ -123,6 +140,6 @@ export interface WhatCostumersAreSayingStoryblok {
   title: string;
   testimonials: TestimonialStoryblok[];
   _uid: string;
-  component: "whatCostumersAreSaying";
+  component: 'whatCostumersAreSaying';
   [k: string]: any;
 }

@@ -5,28 +5,26 @@ import { storyblokInit, apiPlugin } from '@storyblok/react/rsc';
 
 import StoryblokProvider from '@/components/StoryblokProvider';
 import Page from '@/components/Page';
-import Grid from '@/components/Grid';
-import Feature from '@/components/Feature';
-import Teaser from '@/components/Teaser';
 import Hero from '@/components/Hero';
 import CompaniesBanner from '@/components/CompaniesBanner';
 import About from '@/components/About';
 import Services from '@/components/Services';
 import CostumersSaying from '@/components/CostumersSaying';
+import RecentProjectsSection from '@/components/RecentProjectsSection';
+import CtaSection from '@/components/CtaSection';
 
 storyblokInit({
   accessToken: process.env.STORYBLOK_TOKEN,
   use: [apiPlugin],
   components: {
     page: Page,
-    grid: Grid,
-    feature: Feature,
-    teaser: Teaser,
     hero: Hero,
     companiesBanner: CompaniesBanner,
     services: Services,
     about: About,
     whatCostumersAreSaying: CostumersSaying,
+    recentProjectSection: RecentProjectsSection,
+    ctaSection: CtaSection,
   },
 });
 

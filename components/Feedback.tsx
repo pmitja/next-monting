@@ -1,10 +1,12 @@
+'use client';
+
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
 import Image from 'next/image';
 
 const Feedback = () => {
   return (
-    <div className='lg:px-18 bg-[#f3f3f3] px-8 py-12 md:px-12 md:py-16 lg:flex-row'>
+    <div className='bg-[#f3f3f3] px-8 py-12 md:px-16 md:py-16 lg:flex-row lg:px-24'>
       <div className='grid gap-8 md:gap-16'>
         <div className='flex flex-wrap justify-center gap-8 md:justify-between md:gap-0'>
           <h2 className='max-w-xl text-center text-3xl font-bold md:text-left md:text-4xl lg:text-5xl'>

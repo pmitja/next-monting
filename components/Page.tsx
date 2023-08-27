@@ -1,9 +1,13 @@
-import { storyblokEditable, StoryblokComponent } from "@storyblok/react/rsc";
+'use client';
 
-const Page = ({ blok }: any) => (
-  <main {...storyblokEditable(blok)} className="text-center">
-    {blok.body.map((nestedBlok: any) => (
-      <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
+import { PageStoryblok } from '@/component-types-sb';
+import { NestedBlok } from '@/types';
+import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
+
+const Page = ({ blok }: { blok: PageStoryblok }) => (
+  <main {...storyblokEditable(blok)} className='text-center'>
+    {blok.body.map((nestedBlok: NestedBlok) => (
+      <StoryblokComponent blok={nestedBlok} key={nestedBlok._uuid} />
     ))}
   </main>
 );

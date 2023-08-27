@@ -30,13 +30,16 @@ const Navbar = () => {
         >
           <ul className='flex flex-col gap-6 md:flex-row md:items-center md:gap-8'>
             <li>
-              <Link className='font-medium text-black' href='/'>
+              <Link
+                className='text-lg font-medium text-black md:text-base'
+                href='/'
+              >
                 Home
               </Link>
             </li>
             <li>
               <Link
-                className='font-medium text-gray-400 hover:text-black'
+                className='text-lg font-medium text-gray-400 hover:text-black md:text-base'
                 href='/about'
               >
                 About us
@@ -44,7 +47,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                className='font-medium text-gray-400 hover:text-black'
+                className='text-lg font-medium text-gray-400 hover:text-black md:text-base'
                 href='/team'
               >
                 Our Team
@@ -52,14 +55,14 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                className='font-medium text-gray-400 hover:text-black'
+                className='text-lg font-medium text-gray-400 hover:text-black md:text-base'
                 href='/projects'
               >
                 Projects
               </Link>
             </li>
             <li>
-              <Button className='rounded-full bg-red-600 px-7 uppercase'>
+              <Button className='rounded-full bg-red-600 px-6 py-4 text-base uppercase'>
                 Hire us
               </Button>
             </li>
