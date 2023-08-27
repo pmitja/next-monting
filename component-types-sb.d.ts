@@ -103,7 +103,7 @@ export interface HeroStoryblok {
 }
 
 export interface PageStoryblok {
-  body?: any[];
+  body: any[];
   _uid: string;
   component: "page";
   uuid?: string;

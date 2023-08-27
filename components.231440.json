@@ -429,11 +429,12 @@
       "name": "page",
       "display_name": null,
       "created_at": "2023-05-20T08:17:36.475Z",
-      "updated_at": "2023-05-20T08:17:36.475Z",
+      "updated_at": "2023-08-27T14:45:19.446Z",
       "id": 4005002,
       "schema": {
         "body": {
-          "type": "bloks"
+          "type": "bloks",
+          "required": true
         }
       },
       "image": null,
