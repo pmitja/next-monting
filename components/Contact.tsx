@@ -1,9 +1,11 @@
+import { ContactStoryblok } from '@/component-types-sb';
 import ContactForm from './ContactForm';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Facebook, Linkedin } from 'lucide-react';
 import Image from 'next/image';
 
-const Contact = () => {
+const Contact = ({ blok }: { blok: ContactStoryblok }) => {
+  console.log(blok);
   return (
     <div className='container mx-auto py-12 md:py-16' id={'hire'}>
       <div className='grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-8'>
@@ -46,13 +48,9 @@ const Contact = () => {
             ></Image>
           </div>
           <h2 className='mb-4 max-w-xl text-3xl font-bold text-red-600 md:text-left md:text-4xl lg:text-5xl'>
-            Get in touch with us
+            {blok.title}
           </h2>
-          <p className='mb-4 text-lg'>
-            Your project deserves nothing less than the best, and I&apos;m here
-            to ensure that happens. Let&apos;s create something extraordinary
-            together please don&apos;t hesitate to contact me at test@test.com
-          </p>
+          <p className='mb-4 text-lg'>{blok.text}</p>
           <div className='flex gap-4'>
             <Facebook
               className='cursor-pointer fill-black transition-all hover:fill-transparent'
@@ -66,10 +64,10 @@ const Contact = () => {
         </div>
         <Card className='w-full shadow-lg'>
           <CardHeader>
-            <CardTitle>Contact us</CardTitle>
+            <CardTitle>{blok.formTitle}</CardTitle>
           </CardHeader>
           <CardContent>
-            <ContactForm />
+            <ContactForm formElements={blok} />
           </CardContent>
         </Card>
       </div>
