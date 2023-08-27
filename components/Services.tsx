@@ -22,7 +22,7 @@ const Services = ({ blok }: { blok: ServicesStoryblok }) => {
               alt={blok.icons[0].alt ?? 'Building icon'}
               width={100}
               height={100}
-              className='object-cover '
+              className='h-auto w-24'
             />
             <h3 className='text-xl font-bold md:text-2xl'>
               {blok.primaryTitle}
@@ -30,7 +30,7 @@ const Services = ({ blok }: { blok: ServicesStoryblok }) => {
             <p className='max-w-md text-base text-neutral-500 md:text-lg'>
               {blok.primaryText}
             </p>
-            <Button className='rounded-full bg-red-600 p-6 text-base uppercase'>
+            <Button variant='primary' className='uppercase'>
               See Apartment projects
             </Button>
           </div>
@@ -40,7 +40,7 @@ const Services = ({ blok }: { blok: ServicesStoryblok }) => {
               alt={blok.icons[1].alt ?? 'Building icon'}
               width={100}
               height={100}
-              className='object-cover'
+              className='h-auto w-24'
             />
             <h3 className='text-xl font-bold md:text-2xl'>
               {blok.secondaryTitle}
@@ -48,7 +48,7 @@ const Services = ({ blok }: { blok: ServicesStoryblok }) => {
             <p className='max-w-md text-base text-neutral-500 md:text-lg'>
               {blok.secondaryText}
             </p>
-            <Button className='rounded-full bg-red-600 p-6 text-base uppercase'>
+            <Button variant='primary' className='uppercase'>
               See Housing Projects
             </Button>
           </div>
@@ -58,7 +58,7 @@ const Services = ({ blok }: { blok: ServicesStoryblok }) => {
               alt={blok.icons[2].alt ?? 'Building icon'}
               width={100}
               height={100}
-              className='object-cover'
+              className='h-auto w-24'
             />
             <h3 className='text-xl font-bold md:text-2xl'>
               {blok.tertiaryTitle}
@@ -66,7 +66,7 @@ const Services = ({ blok }: { blok: ServicesStoryblok }) => {
             <p className='max-w-md text-base text-neutral-500 md:text-lg'>
               {blok.tertiaryText}
             </p>
-            <Button className='rounded-full bg-red-600 p-6 text-base uppercase'>
+            <Button variant='primary' className='uppercase'>
               See Business Projects
             </Button>
           </div>

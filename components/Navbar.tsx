@@ -63,11 +63,7 @@ const Navbar = () => {
               </Button>
             </li>
             <li>
-              <Button
-                className='rounded-full bg-red-600 px-6 py-4 text-base uppercase'
-                variant='link'
-                onClick={() => scrollToElement('hire')}
-              >
+              <Button variant='primary' onClick={() => scrollToElement('hire')}>
                 Hire us
               </Button>
             </li>
@@ -76,6 +72,7 @@ const Navbar = () => {
         <div className='flex items-center gap-6 md:hidden'>
           <Button
             variant='primary'
+            className='bg-transparent text-black focus:bg-transparent active:bg-transparent'
             onClick={() => setIsMobileMenuOpen((prev) => !prev)}
           >
             {!isMobileMenuOpen ? <Menu size={32} /> : <X size={32} />}

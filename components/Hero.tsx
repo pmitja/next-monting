@@ -1,6 +1,7 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { MouseEvent } from 'react';
+import { useEffect, useState, useCallback, useRef } from 'react';
 import { storyblokEditable } from '@storyblok/react/rsc';
 import { HeroStoryblok } from '@/component-types-sb';
 import Image from 'next/image';
@@ -10,16 +11,19 @@ import { motion } from 'framer-motion';
 
 const Hero = ({ blok }: { blok: HeroStoryblok }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const carouselRef = useRef<HTMLDivElement>(null);
+
+  const changeSlide = useCallback(() => {
+    setCurrentSlide((prevSlide) => (prevSlide + 1) % blok.image.length);
+  }, [blok.image.length]);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prevSlide) => (prevSlide + 1) % blok.image.length);
-    }, 3000); // Auto-change interval: 3 seconds
+    const interval = setInterval(changeSlide, 5000);
 
     return () => {
       clearInterval(interval);
     };
-  }, [blok.image.length]);
+  }, [changeSlide]);
 
   const prev = () => {
     setCurrentSlide(
@@ -31,9 +35,27 @@ const Hero = ({ blok }: { blok: HeroStoryblok }) => {
     setCurrentSlide((prevSlide) => (prevSlide + 1) % blok.image.length);
   };
 
+  const handleChangeSlide = (e: MouseEvent<HTMLDivElement>) => {
+    if (!carouselRef.current) return;
+
+    const carouselWidth = carouselRef.current.getBoundingClientRect().width;
+    const halfWidth = carouselWidth / 2;
+    const mouseXPos = e.nativeEvent.offsetX;
+
+    if (mouseXPos <= halfWidth) {
+      prev();
+    } else {
+      next();
+    }
+  };
+
   return (
     <div {...storyblokEditable(blok)}>
-      <div className='relative overflow-hidden'>
+      <div
+        className='relative cursor-pointer overflow-hidden'
+        ref={carouselRef}
+        onClick={handleChangeSlide}
+      >
         <div className='flex h-[45vh] w-full sm:h-[65vh] lg:h-[75vh]'>
           {blok.image.map((img, index: number) => (
             <motion.div
@@ -41,8 +63,9 @@ const Hero = ({ blok }: { blok: HeroStoryblok }) => {
               className='absolute inset-0 bg-gradient-to-r from-black to-transparent'
             >
               <Image
+                priority
                 src={img.filename}
-                alt={'asd'}
+                alt={img.alt ?? 'Hero image'}
                 fill
                 className={`object-cover transition-all duration-700 ease-out ${
                   index === currentSlide ? 'opacity-100' : 'opacity-0'
@@ -60,38 +83,33 @@ const Hero = ({ blok }: { blok: HeroStoryblok }) => {
             {blok.subtitle}
           </p>
           <div className='flex gap-2 md:gap-4'>
-            <Button className='rounded-full bg-red-600 p-6 text-base text-white'>
-              <a href={blok.primaryButton[0].url}>
-                {blok.primaryButton[0].text}
-              </a>
+            <Button variant='primary' type='button'>
+              {blok.primaryButton[0].text}
               <ChevronRight className='ml-2 inline h-6 w-6' />
             </Button>
-            <Button
-              type='button'
-              className='rounded-full border-[1px] border-white bg-transparent p-6 text-base text-white hover:bg-white hover:text-black'
-            >
-              <a href={blok.secondaryButton[0].url}>
-                {blok.secondaryButton[0].text}
-              </a>
+            <Button type='button' variant='secondary'>
+              {blok.secondaryButton[0].text}
             </Button>
           </div>
         </div>
 
-        <button
+        <Button
           onClick={prev}
-          className={`absolute left-4 top-1/2 flex h-8 w-8 -translate-y-1/2 transform items-center justify-center rounded-full border-[1px] p-1 text-white md:h-10 md:w-10 ${
-            currentSlide === blok.image.length - 1
+          variant='primary'
+          className={`absolute left-4 top-1/2 flex h-8 w-8 -translate-y-1/2 transform items-center justify-center rounded-full border-[1px] p-1 hover:border-red-700 md:h-10 md:w-10 ${
+            currentSlide === 0
               ? 'border-red-600 bg-red-600'
               : 'border-white bg-transparent'
           } ${'hidden lg:flex'}`}
           type='button'
         >
           <ChevronLeft />
-        </button>
+        </Button>
 
-        <button
+        <Button
           onClick={next}
-          className={`absolute bottom-1/2 right-4 flex h-8 w-8 translate-y-1/2 transform items-center justify-center rounded-full border-[1px] p-1 text-white md:h-10 md:w-10 ${
+          variant='primary'
+          className={`absolute bottom-1/2 right-4 flex h-8 w-8 translate-y-1/2 transform items-center justify-center rounded-full border-[1px] p-1 hover:border-red-700 md:h-10 md:w-10 ${
             currentSlide === blok.image.length - 1
               ? 'border-red-600 bg-red-600'
               : 'border-white bg-transparent'
@@ -99,7 +117,7 @@ const Hero = ({ blok }: { blok: HeroStoryblok }) => {
           type='button'
         >
           <ChevronRight />
-        </button>
+        </Button>
 
         <div className='absolute bottom-4 left-0 right-0'>
           <div className='flex items-start justify-center gap-2'>
