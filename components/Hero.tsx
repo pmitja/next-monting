@@ -1,6 +1,6 @@
 'use client';
 
-import { MouseEvent } from 'react';
+import { MouseEvent, TouchEvent } from 'react';
 import { useEffect, useState, useCallback, useRef } from 'react';
 import { storyblokEditable } from '@storyblok/react/rsc';
 import { HeroStoryblok } from '@/component-types-sb';
@@ -18,7 +18,7 @@ const Hero = ({ blok }: { blok: HeroStoryblok }) => {
   }, [blok.image.length]);
 
   useEffect(() => {
-    const interval = setInterval(changeSlide, 5000);
+    const interval = setInterval(changeSlide, 7000);
 
     return () => {
       clearInterval(interval);
@@ -32,20 +32,34 @@ const Hero = ({ blok }: { blok: HeroStoryblok }) => {
   };
 
   const next = () => {
-    setCurrentSlide((prevSlide) => (prevSlide + 1) % blok.image.length);
+    setCurrentSlide(
+      currentSlide === blok.image.length - 1 ? 0 : currentSlide + 1
+    );
   };
 
-  const handleChangeSlide = (e: MouseEvent<HTMLDivElement>) => {
+  const handleChangeSlide = (
+    e: MouseEvent<HTMLDivElement> | TouchEvent<HTMLDivElement>
+  ) => {
     if (!carouselRef.current) return;
 
     const carouselWidth = carouselRef.current.getBoundingClientRect().width;
     const halfWidth = carouselWidth / 2;
-    const mouseXPos = e.nativeEvent.offsetX;
+    let targetPos: number = 0;
 
-    if (mouseXPos <= halfWidth) {
-      prev();
+    if (e.type === 'touchend') {
+      const touch = e as TouchEvent<HTMLDivElement>;
+      targetPos = touch.changedTouches[0].clientX;
+    } else if (e.type === 'click') {
+      const mouse = e as MouseEvent<HTMLDivElement>;
+      targetPos = mouse.clientX;
     } else {
+      return;
+    }
+
+    if (targetPos >= halfWidth) {
       next();
+    } else {
+      prev();
     }
   };
 
@@ -55,8 +69,9 @@ const Hero = ({ blok }: { blok: HeroStoryblok }) => {
         className='relative cursor-pointer overflow-hidden'
         ref={carouselRef}
         onClick={handleChangeSlide}
+        onTouchEnd={handleChangeSlide}
       >
-        <div className='flex h-[45vh] w-full sm:h-[65vh] lg:h-[75vh]'>
+        <div className='flex h-[75vh] w-full'>
           {blok.image.map((img, index: number) => (
             <motion.div
               key={index}

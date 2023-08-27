@@ -71,8 +71,7 @@ const Navbar = () => {
         </div>
         <div className='flex items-center gap-6 md:hidden'>
           <Button
-            variant='primary'
-            className='bg-transparent text-black focus:bg-transparent active:bg-transparent'
+            variant='link'
             onClick={() => setIsMobileMenuOpen((prev) => !prev)}
           >
             {!isMobileMenuOpen ? <Menu size={32} /> : <X size={32} />}
