@@ -27,7 +27,7 @@ const Footer = () => {
           </div>
 
           <div className='mb-6 basis-1/2 md:basis-1/4'>
-            <h5 className='mb-4 text-xl font-bold md:text-2xl'>Quick Links</h5>
+            <h3 className='mb-4 text-xl font-bold md:text-2xl'>Quick Links</h3>
 
             <ul className='flex list-none flex-col gap-3'>
               <li>
@@ -82,24 +82,26 @@ const Footer = () => {
           </div>
 
           <div className='mb-6 basis-1/2 md:basis-1/4'>
-            <h5 className='mb-4 text-xl font-bold md:text-2xl'>Socials</h5>
+            <h3 className='mb-4 text-xl font-bold md:text-2xl'>Socials</h3>
 
             <ul className='flex list-none items-center gap-2'>
               <li>
-                <Button variant='link'>
+                <Link href='https://facebook.com'>
+                  <span className='sr-only'>Facebook</span>
                   <Facebook
                     className='text-neutral-300 transition-colors duration-300 hover:text-white'
                     size={26}
                   />
-                </Button>
+                </Link>
               </li>
               <li>
-                <Button variant='link'>
+                <Link href='https://linkedin.com'>
+                  <span className='sr-only'>Linkedin</span>
                   <Linkedin
                     className='text-neutral-300 transition-colors duration-300 hover:text-white'
                     size={26}
                   />
-                </Button>
+                </Link>
               </li>
             </ul>
           </div>

@@ -117,6 +117,7 @@ const Hero = ({ blok }: { blok: HeroStoryblok }) => {
               : 'border-white bg-transparent'
           } ${'hidden lg:flex'}`}
           type='button'
+          aria-label='Previous slide'
         >
           <ChevronLeft />
         </Button>
@@ -130,6 +131,7 @@ const Hero = ({ blok }: { blok: HeroStoryblok }) => {
               : 'border-white bg-transparent'
           } ${'hidden lg:flex'}`}
           type='button'
+          aria-label='Next slide'
         >
           <ChevronRight />
         </Button>
@@ -137,14 +139,15 @@ const Hero = ({ blok }: { blok: HeroStoryblok }) => {
         <div className='absolute bottom-4 left-0 right-0'>
           <div className='flex items-start justify-center gap-2'>
             {blok.image.map((_: unknown, index: number) => (
-              <button
+              <Button
                 key={index}
                 onClick={() => setCurrentSlide(index)}
                 className={`h-3 w-3 rounded-full shadow ${
                   index === currentSlide ? 'bg-red-600' : 'bg-white'
                 }`}
                 type='button'
-              ></button>
+                aria-label='Change slide'
+              ></Button>
             ))}
           </div>
         </div>

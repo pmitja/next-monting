@@ -41,7 +41,7 @@ const Navbar = () => {
             <li>
               <Button
                 variant='link'
-                className='text-lg font-medium text-gray-400 hover:text-black md:text-base'
+                className='text-lg font-medium text-gray-500 hover:text-black md:text-base'
               >
                 About us
               </Button>
@@ -49,7 +49,7 @@ const Navbar = () => {
             <li>
               <Button
                 variant='link'
-                className='text-lg font-medium text-gray-400 hover:text-black md:text-base'
+                className='text-lg font-medium text-gray-500 hover:text-black md:text-base'
               >
                 Our Team
               </Button>
@@ -57,7 +57,7 @@ const Navbar = () => {
             <li>
               <Button
                 variant='link'
-                className='text-lg font-medium text-gray-400 hover:text-black md:text-base'
+                className='text-lg font-medium text-gray-500 hover:text-black md:text-base'
               >
                 Projects
               </Button>

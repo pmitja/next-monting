@@ -27,9 +27,9 @@ const Testimonial = ({ blok }: { blok: TestimonialStoryblok }) => {
           <AvatarFallback>CN</AvatarFallback>
         </Avatar>
         <div className='flex flex-col justify-start gap-1'>
-          <h5 className='w-fit text-xs sm:text-base md:text-lg lg:text-lg'>
+          <p className='w-fit text-xs sm:text-base md:text-lg lg:text-lg'>
             {blok.author[0].name}
-          </h5>
+          </p>
           <span className='w-fit text-[10px] sm:text-[12px] md:text-[14px] lg:text-[16px]'>
             {blok.author[0].position}
           </span>

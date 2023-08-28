@@ -20,9 +20,9 @@ const Services = ({ blok }: { blok: ServicesStoryblok }) => {
             <Image
               src={blok.icons[0].filename}
               alt={blok.icons[0].alt ?? 'Building icon'}
-              width={100}
-              height={100}
-              className='h-auto w-24'
+              width={84}
+              height={84}
+              className='h-auto w-auto object-cover'
             />
             <h3 className='text-xl font-bold md:text-2xl'>
               {blok.primaryTitle}
@@ -38,9 +38,9 @@ const Services = ({ blok }: { blok: ServicesStoryblok }) => {
             <Image
               src={blok.icons[1].filename}
               alt={blok.icons[1].alt ?? 'Building icon'}
-              width={100}
-              height={100}
-              className='h-auto w-24'
+              width={84}
+              height={84}
+              className='h-auto w-auto object-cover'
             />
             <h3 className='text-xl font-bold md:text-2xl'>
               {blok.secondaryTitle}
@@ -56,9 +56,9 @@ const Services = ({ blok }: { blok: ServicesStoryblok }) => {
             <Image
               src={blok.icons[2].filename}
               alt={blok.icons[2].alt ?? 'Building icon'}
-              width={100}
-              height={100}
-              className='h-auto w-24'
+              width={84}
+              height={84}
+              className='h-auto w-auto object-cover'
             />
             <h3 className='text-xl font-bold md:text-2xl'>
               {blok.tertiaryTitle}

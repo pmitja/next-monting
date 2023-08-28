@@ -53,12 +53,14 @@ const Contact = ({ blok }: { blok: ContactStoryblok }) => {
           <p className='mb-4 text-lg'>{blok.text}</p>
           <div className='flex gap-4'>
             <Link href='https://facebook.com' target='_blank'>
+              <span className='sr-only'>Facebook</span>
               <Facebook
                 className='transition-colors duration-300 hover:fill-transparent hover:text-red-600'
                 size={28}
               />
             </Link>
             <Link href='https://linkedin.com' target='_blank'>
+              <span className='sr-only'>Linkedin</span>
               <Linkedin
                 className='transition-colors duration-300 hover:fill-transparent hover:text-red-600'
                 size={28}

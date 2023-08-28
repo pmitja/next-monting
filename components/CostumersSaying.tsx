@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowRight, Quote } from 'lucide-react';
 import Testimonial from './Testimonial';
 import { useState } from 'react';
 import clsx from 'clsx';
+import { Button } from './ui/button';
 import {
   TestimonialStoryblok,
   WhatCostumersAreSayingStoryblok,
@@ -37,20 +38,22 @@ const CostumersSaying = ({
             {blok.title}
           </h2>
           <div className='flex w-full justify-between lg:gap-10'>
-            <button
+            <Button
               onClick={handleClick}
               disabled={nextTwo}
-              className='text-red-600 transition-colors duration-300 disabled:text-gray-300'
+              className='bg-transparent text-red-600 transition-colors duration-300 hover:bg-transparent disabled:text-gray-300'
+              aria-label='Previous testimonial'
             >
               <ArrowLeft size={32} strokeWidth={3} />
-            </button>
-            <button
+            </Button>
+            <Button
               onClick={handleClick}
               disabled={!nextTwo}
-              className=' text-red-600 transition-colors duration-300 disabled:text-gray-300'
+              className=' bg-transparent text-red-600 transition-colors duration-300 hover:bg-transparent disabled:text-gray-300'
+              aria-label='Next testimonial'
             >
               <ArrowRight size={32} strokeWidth={3} />
-            </button>
+            </Button>
           </div>
         </div>
         <div className='grid grid-cols-1 gap-3 transition-all md:grid-cols-2'>
