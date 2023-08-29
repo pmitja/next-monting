@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import { Button } from './ui/button';
 import Link from 'next/link';
 import { Facebook, Linkedin } from 'lucide-react';
 
@@ -31,52 +30,52 @@ const Footer = () => {
 
             <ul className='flex list-none flex-col gap-3'>
               <li>
-                <Button
-                  variant='link'
+                <Link
+                  href='/#about'
                   className='text-neutral-300 hover:text-white'
                 >
                   About us
-                </Button>
+                </Link>
               </li>
               <li>
-                <Button
-                  variant='link'
+                <Link
+                  href='/#services'
                   className='text-neutral-300 hover:text-white'
                 >
                   Serices
-                </Button>
+                </Link>
               </li>
               <li>
-                <Button
-                  variant='link'
+                <Link
+                  href='/#testimonials'
                   className='text-neutral-300 hover:text-white'
                 >
                   Testimonials
-                </Button>
+                </Link>
               </li>
               <li>
-                <Button
-                  variant='link'
+                <Link
+                  href='/#projects'
                   className='text-neutral-300 hover:text-white'
                 >
                   Projects
-                </Button>
+                </Link>
               </li>
               <li>
-                <Button
-                  variant='link'
+                <Link
+                  href='/#services'
+                  className='text-neutral-300 hover:text-white'
+                >
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href='/#hire'
                   className='text-neutral-300 hover:text-white'
                 >
                   Hiring
-                </Button>
-              </li>
-              <li>
-                <Button
-                  variant='link'
-                  className='text-neutral-300 hover:text-white'
-                >
-                  Resources
-                </Button>
+                </Link>
               </li>
             </ul>
           </div>
