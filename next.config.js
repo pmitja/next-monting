@@ -6,6 +6,7 @@ const nextConfig = {
   },
   env: {
     STORYBLOK_TOKEN: process.env.STORYBLOK_TOKEN,
+    RESEND_API_KEY: process.env.RESEND_API_KEY,
   },
 };
 

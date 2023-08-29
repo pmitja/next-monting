@@ -16,6 +16,7 @@ import {
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { ContactStoryblok } from '@/component-types-sb';
+import { data } from 'autoprefixer';
 
 const phoneRegex = new RegExp(
   /^\+?(386)?0([1-7][0-9]{7}|([347]0|[3457]1|6[4589]){6})$/
@@ -51,13 +52,31 @@ const ContactForm = ({ formElements }: { formElements: ContactStoryblok }) => {
     },
   });
 
+  const sendEmail = async (e) => {
+    e.preventDefault();
+    const response = await fetch('/api/send', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    if (response.status === 200) {
+      alert('Email sent!');
+    }
+  };
+
   const onSubmit = (data: z.infer<typeof FormSchema>) => {
     console.log(data);
   };
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-6'>
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className='space-y-6'
+        action={(e) => sendEmail(e)}
+      >
         <FormField
           control={form.control}
           name='name'
