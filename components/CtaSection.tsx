@@ -9,6 +9,7 @@ import { CtaSectionStoryblok } from '@/component-types-sb';
 const CtaSection = ({ blok }: { blok: CtaSectionStoryblok }) => {
   return (
     <div
+      id='hire-us'
       {...storyblokEditable(blok)}
       className='relative inset-0 my-10 flex min-h-[300px] flex-col justify-center bg-gradient-to-r from-red-600 to-transparent lg:mb-16'
     >

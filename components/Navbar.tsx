@@ -11,6 +11,12 @@ import { scrollToElement } from '@/utils/scrollIntoView';
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  const closeMobileMenu = () => {
+    if (isMobileMenuOpen) {
+      setIsMobileMenuOpen(false);
+    }
+  };
+
   return (
     <header>
       <nav className='mx-auto flex max-w-[92%] items-center justify-between py-6'>
@@ -31,39 +37,58 @@ const Navbar = () => {
         >
           <ul className='flex flex-col gap-6 md:flex-row md:items-center md:gap-8'>
             <li>
-              <Button
-                variant='link'
+              <Link
+                href='/'
                 className='text-lg font-medium text-black md:text-base'
+                onClick={closeMobileMenu}
               >
                 Home
-              </Button>
+              </Link>
             </li>
             <li>
-              <Button
-                variant='link'
+              <Link
+                href='/#about'
                 className='text-lg font-medium text-gray-500 hover:text-black md:text-base'
+                onClick={closeMobileMenu}
               >
                 About us
-              </Button>
+              </Link>
             </li>
             <li>
-              <Button
-                variant='link'
+              <Link
+                href='/#services'
                 className='text-lg font-medium text-gray-500 hover:text-black md:text-base'
+                onClick={closeMobileMenu}
               >
-                Our Team
-              </Button>
+                Services
+              </Link>
             </li>
             <li>
-              <Button
-                variant='link'
+              <Link
+                href='/#projects'
                 className='text-lg font-medium text-gray-500 hover:text-black md:text-base'
+                onClick={closeMobileMenu}
               >
                 Projects
-              </Button>
+              </Link>
             </li>
             <li>
-              <Button variant='primary' onClick={() => scrollToElement('hire')}>
+              <Link
+                href='/#testimonials'
+                className='text-lg font-medium text-gray-500 hover:text-black md:text-base'
+                onClick={closeMobileMenu}
+              >
+                Testimonials
+              </Link>
+            </li>
+            <li>
+              <Button
+                variant='primary'
+                onClick={() => {
+                  scrollToElement('hire');
+                  closeMobileMenu();
+                }}
+              >
                 Hire us
               </Button>
             </li>

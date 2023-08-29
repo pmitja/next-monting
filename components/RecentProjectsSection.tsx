@@ -13,6 +13,7 @@ const RecentProjectsSection = ({
 }) => {
   return (
     <div
+      id='projects'
       {...storyblokEditable(blok)}
       className='container mx-auto my-8 flex flex-col place-content-center gap-5 sm:my-7 sm:gap-7 lg:my-16 lg:gap-10'
     >
@@ -28,7 +29,7 @@ const RecentProjectsSection = ({
             height={639}
             key={index}
             className={clsx(
-              'overflow-hidden rounded-lg shadow-lg sm:max-w-[49%]',
+              'cursor-pointer overflow-hidden rounded-lg shadow-lg transition duration-500 hover:scale-105 sm:max-w-[49%]',
               index < 3 ? 'lg:max-w-[32%]' : 'w-full lg:max-w-[49%]'
             )}
           />
