@@ -1,10 +1,17 @@
 'use client';
 
-import React from 'react';
 import { Button } from './ui/button';
 import Image from 'next/image';
 import { storyblokEditable } from '@storyblok/react';
 import { CtaSectionStoryblok } from '@/component-types-sb';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/ui/dialog';
 
 const CtaSection = ({ blok }: { blok: CtaSectionStoryblok }) => {
   return (
@@ -23,9 +30,22 @@ const CtaSection = ({ blok }: { blok: CtaSectionStoryblok }) => {
         <h2 className='w-fit text-2xl font-bold text-white sm:text-3xl md:text-4xl lg:text-5xl'>
           {blok.title}
         </h2>
-        <Button variant='secondary' className='w-fit'>
-          {blok.text}
-        </Button>
+        <Dialog>
+          <DialogTrigger asChild>
+            <Button variant='secondary' className='w-fit'>
+              {blok.text}
+            </Button>
+          </DialogTrigger>
+          <DialogContent>
+            <DialogHeader>
+              <DialogTitle>Contact us</DialogTitle>
+              <DialogDescription>
+                We will get back to you in 24 hours.
+              </DialogDescription>
+            </DialogHeader>
+            Form data will come here
+          </DialogContent>
+        </Dialog>
       </div>
     </div>
   );
