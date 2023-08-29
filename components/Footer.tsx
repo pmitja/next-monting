@@ -86,7 +86,7 @@ const Footer = () => {
 
             <ul className='flex list-none items-center gap-2'>
               <li>
-                <Link href='https://facebook.com'>
+                <Link href='https://www.facebook.com/montingplus'>
                   <span className='sr-only'>Facebook</span>
                   <Facebook
                     className='text-neutral-300 transition-colors duration-300 hover:text-white'
