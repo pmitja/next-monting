@@ -1,6 +1,6 @@
 import Image from 'next/image';
+import { Button } from './ui/button';
 import Link from 'next/link';
-
 import { Facebook, Linkedin } from 'lucide-react';
 
 const Footer = () => {
@@ -27,72 +27,80 @@ const Footer = () => {
           </div>
 
           <div className='mb-6 basis-1/2 md:basis-1/4'>
-            <h5 className='mb-4 text-xl font-bold md:text-2xl'>Quick Links</h5>
+            <h3 className='mb-4 text-xl font-bold md:text-2xl'>Quick Links</h3>
 
             <ul className='flex list-none flex-col gap-3'>
               <li>
-                <Link
-                  href='/about'
+                <Button
+                  variant='link'
                   className='text-neutral-300 hover:text-white'
                 >
                   About us
-                </Link>
+                </Button>
               </li>
               <li>
-                <Link
-                  href='/services'
+                <Button
+                  variant='link'
                   className='text-neutral-300 hover:text-white'
                 >
-                  Services
-                </Link>
+                  Serices
+                </Button>
               </li>
               <li>
-                <Link
-                  href='/testimonials'
+                <Button
+                  variant='link'
                   className='text-neutral-300 hover:text-white'
                 >
                   Testimonials
-                </Link>
+                </Button>
               </li>
               <li>
-                <Link
-                  href='/projects'
+                <Button
+                  variant='link'
                   className='text-neutral-300 hover:text-white'
                 >
-                  Recent Projects
-                </Link>
+                  Projects
+                </Button>
               </li>
               <li>
-                <Link
-                  href='/hiring'
+                <Button
+                  variant='link'
                   className='text-neutral-300 hover:text-white'
                 >
-                  We are hiring
-                </Link>
+                  Hiring
+                </Button>
               </li>
               <li>
-                <Link
-                  href='/resources'
+                <Button
+                  variant='link'
                   className='text-neutral-300 hover:text-white'
                 >
                   Resources
-                </Link>
+                </Button>
               </li>
             </ul>
           </div>
 
           <div className='mb-6 basis-1/2 md:basis-1/4'>
-            <h5 className='mb-4 text-xl font-bold md:text-2xl'>Socials</h5>
+            <h3 className='mb-4 text-xl font-bold md:text-2xl'>Socials</h3>
 
-            <ul className='flex list-none items-center gap-4'>
+            <ul className='flex list-none items-center gap-2'>
               <li>
                 <Link href='https://facebook.com'>
-                  <Facebook size={26} />
+                  <span className='sr-only'>Facebook</span>
+                  <Facebook
+                    className='text-neutral-300 transition-colors duration-300 hover:text-white'
+                    size={26}
+                  />
                 </Link>
               </li>
               <li>
                 <Link href='https://linkedin.com'>
-                  <Linkedin size={26} />
+                  <span className='sr-only'>Linkedin</span>
+                  <Linkedin
+                    className='text-neutral-300 transition-colors duration-300 hover:text-white'
+                    size={26}
+                  />
                 </Link>
               </li>
             </ul>

@@ -55,8 +55,6 @@ const ContactForm = ({ formElements }: { formElements: ContactStoryblok }) => {
     console.log(data);
   };
 
-  console.log(formElements);
-
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-6'>
@@ -69,6 +67,7 @@ const ContactForm = ({ formElements }: { formElements: ContactStoryblok }) => {
               <FormControl>
                 <Input
                   type='text'
+                  autoComplete='name'
                   placeholder={formElements.namePlaceholder}
                   {...field}
                 />
@@ -85,6 +84,7 @@ const ContactForm = ({ formElements }: { formElements: ContactStoryblok }) => {
               <FormLabel>{formElements.emailLabel}</FormLabel>
               <FormControl>
                 <Input
+                  autoComplete='email'
                   type='email'
                   placeholder={formElements.emailPlaceholder}
                   {...field}
@@ -102,6 +102,7 @@ const ContactForm = ({ formElements }: { formElements: ContactStoryblok }) => {
               <FormLabel>{formElements.phoneNumberLabel}</FormLabel>
               <FormControl>
                 <Input
+                  autoComplete='tel'
                   type='tel'
                   placeholder={formElements.numberPlaceholder}
                   {...field}
@@ -119,6 +120,7 @@ const ContactForm = ({ formElements }: { formElements: ContactStoryblok }) => {
               <FormLabel>{formElements.subjectLabel}</FormLabel>
               <FormControl>
                 <Input
+                  autoComplete='subject'
                   type='text'
                   placeholder={formElements.subjectPlaceholder}
                   {...field}
@@ -136,6 +138,7 @@ const ContactForm = ({ formElements }: { formElements: ContactStoryblok }) => {
               <FormLabel>{formElements.messageLabel}</FormLabel>
               <FormControl>
                 <Textarea
+                  autoComplete='message'
                   placeholder={formElements.messagePlaceholder}
                   {...field}
                 />
@@ -144,7 +147,7 @@ const ContactForm = ({ formElements }: { formElements: ContactStoryblok }) => {
             </FormItem>
           )}
         />
-        <Button className='rounded-full bg-red-600 px-7' type='submit'>
+        <Button variant='primary' type='submit'>
           Submit
         </Button>
       </form>
