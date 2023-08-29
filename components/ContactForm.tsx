@@ -51,8 +51,22 @@ const ContactForm = ({ formElements }: { formElements: ContactStoryblok }) => {
     },
   });
 
+  const sendEmail = async (data: z.infer<typeof FormSchema>) => {
+    const response = await fetch('/api/send', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+
+    if (response.status === 200) {
+      alert('Email sent!');
+    }
+  };
+
   const onSubmit = (data: z.infer<typeof FormSchema>) => {
-    console.log(data);
+    sendEmail(data);
   };
 
   return (
