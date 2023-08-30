@@ -14,7 +14,7 @@ export async function getFormElements(): Promise<ContactStoryblok | null> {
     const formElements = res.data.story.content.body.find(
       (item: any) => item.component === 'contact'
     );
-    return formElements || null;
+    return formElements as ContactStoryblok;
   } catch (err) {
     console.log(err);
     return null;
