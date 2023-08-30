@@ -16,6 +16,7 @@ export default async function Home() {
     <>
       <Navbar />
       <main>
+        <h1 className='absolute hidden'>Monting Plus d.o.o</h1>
         <StoryblokStory story={data.story} />
       </main>
       <Footer />
