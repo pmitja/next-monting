@@ -72,17 +72,15 @@ const Hero = ({ blok }: { blok: HeroStoryblok }) => {
         onTouchEnd={handleChangeSlide}
       >
         <div className='flex min-h-[55vh] w-full md:min-h-[75vh]'>
+          <motion.div className='absolute inset-0 z-10 bg-gradient-to-r from-black to-transparent' />
           {blok.image.map((img, index: number) => (
-            <motion.div
-              key={index}
-              className='absolute inset-0 bg-gradient-to-r from-black to-transparent'
-            >
+            <motion.div key={index} className=' absolute inset-0'>
               <Image
                 priority
                 src={img.filename}
                 alt={img.alt ?? 'Hero image'}
                 fill
-                className={`object-cover transition-all duration-700 ease-out ${
+                className={`object-cover transition-all duration-700 ease-out  ${
                   index === currentSlide ? 'opacity-100' : 'opacity-0'
                 }`}
               />
@@ -90,7 +88,7 @@ const Hero = ({ blok }: { blok: HeroStoryblok }) => {
           ))}
         </div>
 
-        <div className='absolute inset-0 flex max-w-2xl flex-col items-start justify-center gap-8 px-4 text-left md:max-w-4xl md:px-8 lg:px-20'>
+        <div className='absolute inset-0 z-20 flex max-w-2xl flex-col items-start justify-center gap-8 px-4 text-left md:max-w-4xl md:px-8 lg:px-20'>
           <h2 className='font-inter text-2xl font-bold uppercase text-white md:text-3xl lg:text-4xl'>
             {blok.title}
           </h2>
