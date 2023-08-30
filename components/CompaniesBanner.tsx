@@ -17,7 +17,7 @@ const CompaniesBanner = ({ blok }: { blok: CompaniesBannerStoryblok }) => {
           alt={company.alt ?? 'Company logo'}
           width={120}
           height={210}
-          className='h-auto w-28 object-contain md:w-36 lg:w-44'
+          className='h-auto w-24 object-contain md:w-32 lg:w-40'
         />
       ))}
     </div>

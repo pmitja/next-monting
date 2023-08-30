@@ -145,12 +145,12 @@ const Hero = ({ blok }: { blok: HeroStoryblok }) => {
         </Button>
 
         <div className='absolute bottom-4 left-0 right-0'>
-          <div className='flex items-start justify-center gap-2'>
+          <div className='flex items-start justify-center gap-2 lg:gap-3'>
             {blok.image.map((_: unknown, index: number) => (
               <Button
                 key={index}
                 onClick={() => setCurrentSlide(index)}
-                className={`h-3 w-3 rounded-full shadow hover:bg-red-700 md:h-4 md:w-4 ${
+                className={`h-3 w-3 rounded-full shadow hover:bg-red-700 lg:h-4 lg:w-4 ${
                   index === currentSlide ? 'bg-red-600' : 'bg-white'
                 }`}
                 type='button'

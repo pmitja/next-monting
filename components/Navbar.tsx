@@ -75,6 +75,7 @@ const Navbar = () => {
             className='px-5 py-3 text-base md:px-6 md:py-4 md:text-lg'
             onClick={() => setIsMobileMenuOpen((prev) => !prev)}
           >
+            <div className='sr-only'>Mobile navigation button</div>
             {!isMobileMenuOpen ? <Menu size={32} /> : <X size={32} />}
           </Button>
         </div>

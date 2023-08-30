@@ -1,9 +1,12 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import { Button } from './ui/button';
 import Image from 'next/image';
+import ContactForm from './ContactForm';
+import { getFormElements } from '@/utils/fetchData';
 import { storyblokEditable } from '@storyblok/react';
-import { CtaSectionStoryblok } from '@/component-types-sb';
+import { CtaSectionStoryblok, ContactStoryblok } from '@/component-types-sb';
 import {
   Dialog,
   DialogContent,
@@ -14,6 +17,23 @@ import {
 } from '@/components/ui/dialog';
 
 const CtaSection = ({ blok }: { blok: CtaSectionStoryblok }) => {
+  const [formElements, setFormElements] = useState<ContactStoryblok | null>(
+    null
+  );
+
+  useEffect(() => {
+    async function fetchFormElements() {
+      try {
+        const elements = await getFormElements();
+        setFormElements(elements);
+      } catch (error) {
+        console.error('Error fetching form elements:', error);
+      }
+    }
+
+    fetchFormElements();
+  }, []);
+
   return (
     <div
       {...storyblokEditable(blok)}
@@ -46,7 +66,7 @@ const CtaSection = ({ blok }: { blok: CtaSectionStoryblok }) => {
                 We will get back to you in 24 hours.
               </DialogDescription>
             </DialogHeader>
-            Form data will come here
+            {formElements && <ContactForm formElements={formElements} />}
           </DialogContent>
         </Dialog>
       </div>
