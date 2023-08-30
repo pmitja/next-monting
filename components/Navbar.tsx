@@ -3,13 +3,14 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
-
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { scrollToElement } from '@/utils/scrollIntoView';
+import { ConfigStoryblok, LinkStoryblok } from '@/component-types-sb';
 
-const Navbar = () => {
+const Navbar = ({ data }: ConfigStoryblok) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { header } = data.content;
 
   const closeMobileMenu = () => {
     if (isMobileMenuOpen) {
@@ -23,8 +24,8 @@ const Navbar = () => {
         <div>
           <Link href='/'>
             <Image
-              src='/images/logo.png'
-              alt='Monting logo'
+              src={data.content.logo.filename}
+              alt={data.content.logo.alt}
               width={48}
               height={48}
             />
@@ -36,51 +37,17 @@ const Navbar = () => {
           } flex w-full items-center px-5 py-8 md:w-auto md:px-6 md:py-0`}
         >
           <ul className='flex flex-col gap-6 md:flex-row md:items-center md:gap-8'>
-            <li>
-              <Link
-                href='/'
-                className='text-lg font-medium text-black md:text-base'
-                onClick={closeMobileMenu}
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link
-                href='/#about'
-                className='text-lg font-medium text-gray-500 hover:text-black md:text-base'
-                onClick={closeMobileMenu}
-              >
-                About us
-              </Link>
-            </li>
-            <li>
-              <Link
-                href='/#services'
-                className='text-lg font-medium text-gray-500 hover:text-black md:text-base'
-                onClick={closeMobileMenu}
-              >
-                Services
-              </Link>
-            </li>
-            <li>
-              <Link
-                href='/#projects'
-                className='text-lg font-medium text-gray-500 hover:text-black md:text-base'
-                onClick={closeMobileMenu}
-              >
-                Projects
-              </Link>
-            </li>
-            <li>
-              <Link
-                href='/#testimonials'
-                className='text-lg font-medium text-gray-500 hover:text-black md:text-base'
-                onClick={closeMobileMenu}
-              >
-                Testimonials
-              </Link>
-            </li>
+            {header[0].links.map((link: LinkStoryblok) => (
+              <li key={link._uid}>
+                <Link
+                  href={link.link ?? ''}
+                  className='text-lg font-medium text-gray-500 hover:text-black md:text-base'
+                  onClick={closeMobileMenu}
+                >
+                  {link.text}
+                </Link>
+              </li>
+            ))}
             <li>
               <Button
                 variant='primary'
@@ -89,7 +56,7 @@ const Navbar = () => {
                   closeMobileMenu();
                 }}
               >
-                Hire us
+                {header[0].buttonText}
               </Button>
             </li>
           </ul>
