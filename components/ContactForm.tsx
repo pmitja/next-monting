@@ -17,9 +17,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { ContactStoryblok } from '@/component-types-sb';
 
-const phoneRegex = new RegExp(
-  /^\+?(386)?0([1-7][0-9]{7}|([347]0|[3457]1|6[4589]){6})$/
-);
+const phoneRegex = new RegExp(/^\+?[0-9]{1,15}$/);
 
 const FormSchema = z.object({
   name: z.string().min(3, {
