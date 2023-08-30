@@ -17,7 +17,7 @@ const RecentProjectsSection = ({
       {...storyblokEditable(blok)}
       className='container mx-auto my-8 flex flex-col place-content-center gap-5 sm:my-7 sm:gap-7 lg:my-16 lg:gap-10'
     >
-      <h2 className='text-2xl font-bold sm:text-3xl md:text-4xl lg:text-5xl'>
+      <h2 className='text-2xl font-bold md:text-3xl lg:text-4xl'>
         {blok.title}
       </h2>
       <div className='flex flex-col place-content-center justify-between gap-y-5 sm:flex-row sm:flex-wrap lg:flex-wrap'>

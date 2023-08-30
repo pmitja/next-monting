@@ -71,7 +71,7 @@ const Hero = ({ blok }: { blok: HeroStoryblok }) => {
         onClick={handleChangeSlide}
         onTouchEnd={handleChangeSlide}
       >
-        <div className='flex h-[75vh] w-full'>
+        <div className='flex min-h-[55vh] w-full md:min-h-[75vh]'>
           {blok.image.map((img, index: number) => (
             <motion.div
               key={index}
@@ -91,18 +91,26 @@ const Hero = ({ blok }: { blok: HeroStoryblok }) => {
         </div>
 
         <div className='absolute inset-0 flex max-w-2xl flex-col items-start justify-center gap-8 px-4 text-left md:max-w-4xl md:px-8 lg:px-20'>
-          <h2 className='font-inter text-3xl font-bold uppercase text-white md:text-4xl lg:text-5xl'>
+          <h2 className='font-inter text-2xl font-bold uppercase text-white md:text-3xl lg:text-4xl'>
             {blok.title}
           </h2>
-          <p className='text-lg text-white md:text-xl lg:text-2xl'>
+          <p className='text-base text-white sm:text-lg md:text-2xl lg:text-xl'>
             {blok.subtitle}
           </p>
           <div className='flex gap-2 md:gap-4'>
-            <Button variant='primary' type='button'>
+            <Button
+              variant='primary'
+              type='button'
+              className='px-4 py-3 text-xs sm:px-5 sm:py-3 sm:text-sm md:text-base'
+            >
               {blok.primaryButton[0].text}
-              <ChevronRight className='ml-2 inline h-6 w-6' />
+              <ChevronRight className='ml-2 inline h-4 w-4 md:h-6 md:w-6' />
             </Button>
-            <Button type='button' variant='secondary'>
+            <Button
+              type='button'
+              variant='secondary'
+              className='px-4 py-3 text-xs sm:px-5 sm:py-3 sm:text-sm md:text-base'
+            >
               {blok.secondaryButton[0].text}
             </Button>
           </div>
@@ -137,12 +145,12 @@ const Hero = ({ blok }: { blok: HeroStoryblok }) => {
         </Button>
 
         <div className='absolute bottom-4 left-0 right-0'>
-          <div className='flex items-start justify-center gap-2'>
+          <div className='flex items-start justify-center gap-2 lg:gap-3'>
             {blok.image.map((_: unknown, index: number) => (
               <Button
                 key={index}
                 onClick={() => setCurrentSlide(index)}
-                className={`h-3 w-3 rounded-full shadow ${
+                className={`h-3 w-3 rounded-full shadow hover:bg-red-700 lg:h-4 lg:w-4 ${
                   index === currentSlide ? 'bg-red-600' : 'bg-white'
                 }`}
                 type='button'

@@ -30,7 +30,7 @@ const CostumersSaying = ({
     >
       <div className='md:px-18 flex w-full max-w-[1534px] flex-col place-items-center justify-center gap-8 px-8 py-8 md:pb-3 md:pt-3 lg:gap-16 lg:px-24'>
         <div className='flex w-full flex-col place-items-center justify-between gap-5'>
-          <h2 className='relative flex w-fit min-w-fit max-w-[40%] flex-row justify-between gap-2 justify-self-center pl-9 text-start text-2xl font-bold sm:text-3xl md:text-4xl lg:text-5xl'>
+          <h2 className='relative flex w-fit min-w-fit max-w-[40%] flex-row justify-between gap-2 justify-self-center pl-9 text-start text-2xl font-bold md:text-3xl lg:text-4xl'>
             <span className='absolute left-0 h-8 w-8 rounded-full bg-red-600'></span>
             <Quote
               className='absolute left-[2%] top-[10%] z-10 text-white'

@@ -11,7 +11,7 @@ const Services = ({ blok }: { blok: ServicesStoryblok }) => {
       {...storyblokEditable(blok)}
     >
       <div className='flex flex-col items-center justify-center'>
-        <h2 className='text-3xl font-bold uppercase md:text-4xl lg:text-5xl'>
+        <h2 className='text-2xl font-bold uppercase md:text-3xl lg:text-4xl'>
           {blok.title}
         </h2>
       </div>
@@ -31,7 +31,10 @@ const Services = ({ blok }: { blok: ServicesStoryblok }) => {
             <p className='max-w-md text-base text-neutral-500 md:text-lg'>
               {blok.primaryText}
             </p>
-            <Button variant='primary' className='uppercase'>
+            <Button
+              variant='primary'
+              className='px-4 py-3 text-sm uppercase md:px-5 md:py-4 md:text-base'
+            >
               See Apartment projects
             </Button>
           </div>
@@ -49,7 +52,10 @@ const Services = ({ blok }: { blok: ServicesStoryblok }) => {
             <p className='max-w-md text-base text-neutral-500 md:text-lg'>
               {blok.secondaryText}
             </p>
-            <Button variant='primary' className='uppercase'>
+            <Button
+              variant='primary'
+              className='px-4 py-3 text-sm uppercase md:px-5 md:py-4 md:text-base'
+            >
               See Housing Projects
             </Button>
           </div>
@@ -67,7 +73,10 @@ const Services = ({ blok }: { blok: ServicesStoryblok }) => {
             <p className='max-w-md text-base text-neutral-500 md:text-lg'>
               {blok.tertiaryText}
             </p>
-            <Button variant='primary' className='uppercase'>
+            <Button
+              variant='primary'
+              className='px-4 py-3 text-sm uppercase md:px-5 md:py-4 md:text-base'
+            >
               See Business Projects
             </Button>
           </div>

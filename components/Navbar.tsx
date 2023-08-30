@@ -25,8 +25,8 @@ const Navbar = () => {
             <Image
               src='/images/logo.png'
               alt='Monting logo'
-              width={40}
-              height={40}
+              width={48}
+              height={48}
             />
           </Link>
         </div>
@@ -97,8 +97,10 @@ const Navbar = () => {
         <div className='flex items-center gap-6 md:hidden'>
           <Button
             variant='link'
+            className='px-5 py-3 text-base md:px-6 md:py-4 md:text-lg'
             onClick={() => setIsMobileMenuOpen((prev) => !prev)}
           >
+            <div className='sr-only'>Mobile navigation button</div>
             {!isMobileMenuOpen ? <Menu size={32} /> : <X size={32} />}
           </Button>
         </div>

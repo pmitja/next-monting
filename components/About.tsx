@@ -18,7 +18,7 @@ const About = ({ blok }: { blok: AboutStoryblok }) => {
           <div className='w-10 border-t border-gray-400'></div>
           <span className='mx-2 flex-shrink text-lg'>About us</span>
         </div>
-        <h2 className='text-3xl font-bold uppercase md:text-4xl lg:text-5xl'>
+        <h2 className='text-2xl font-bold uppercase md:text-3xl lg:text-4xl'>
           {blok.title}
         </h2>
         <p>{blok.text}</p>
@@ -35,9 +35,9 @@ const About = ({ blok }: { blok: AboutStoryblok }) => {
           alt={blok.image.alt ?? 'Image alt'}
           width={550}
           height={660}
-          className='max-w-[250px] rounded-xl lg:max-w-sm'
+          className='max-w-[14rem] rounded-xl md:max-w-xs lg:max-w-sm'
         />
-        <div className='absolute -bottom-5 -right-5 z-[-1] h-28 w-28 rounded-xl bg-red-600'></div>
+        <div className='absolute -bottom-5 -right-5 z-[-1] h-20 w-20 rounded-xl bg-red-600 md:h-28 md:w-28'></div>
       </div>
     </div>
   );

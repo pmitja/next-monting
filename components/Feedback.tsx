@@ -9,7 +9,7 @@ const Feedback = () => {
     <div className='bg-[#f3f3f3] px-8 py-12 md:px-16 md:py-16 lg:flex-row lg:px-24'>
       <div className='grid gap-8 md:gap-16'>
         <div className='flex flex-wrap justify-center gap-8 md:justify-between md:gap-0'>
-          <h2 className='max-w-xl text-center text-3xl font-bold md:text-left md:text-4xl lg:text-5xl'>
+          <h2 className='max-w-xl text-center text-2xl font-bold md:text-left md:text-3xl lg:text-4xl'>
             What our customers are saying
           </h2>
           <div className='flex gap-4'>
