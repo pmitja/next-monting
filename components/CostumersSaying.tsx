@@ -26,7 +26,7 @@ const CostumersSaying = ({
     <div
       id='testimonials'
       {...storyblokEditable(blok)}
-      className=' flex place-content-center bg-slate-200 sm:py-7 lg:py-16'
+      className=' flex place-content-center bg-neutral-100 sm:py-7 lg:py-16'
     >
       <div className='md:px-18 flex w-full max-w-[1534px] flex-col place-items-center justify-center gap-8 px-8 py-8 md:pb-3 md:pt-3 lg:gap-16 lg:px-24'>
         <div className='flex w-full flex-col place-items-center justify-between gap-5'>

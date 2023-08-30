@@ -1,7 +1,7 @@
 'use client';
 
 import { MouseEvent, TouchEvent } from 'react';
-import { useEffect, useState, useCallback, useRef } from 'react';
+import { useState, useRef } from 'react';
 import { storyblokEditable } from '@storyblok/react/rsc';
 import { HeroStoryblok } from '@/component-types-sb';
 import Image from 'next/image';
@@ -12,18 +12,6 @@ import { motion } from 'framer-motion';
 const Hero = ({ blok }: { blok: HeroStoryblok }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const carouselRef = useRef<HTMLDivElement>(null);
-
-  const changeSlide = useCallback(() => {
-    setCurrentSlide((prevSlide) => (prevSlide + 1) % blok.image.length);
-  }, [blok.image.length]);
-
-  useEffect(() => {
-    const interval = setInterval(changeSlide, 7000);
-
-    return () => {
-      clearInterval(interval);
-    };
-  }, [changeSlide]);
 
   const prev = () => {
     setCurrentSlide(
@@ -71,7 +59,7 @@ const Hero = ({ blok }: { blok: HeroStoryblok }) => {
         onClick={handleChangeSlide}
         onTouchEnd={handleChangeSlide}
       >
-        <div className='flex min-h-[55vh] w-full md:min-h-[75vh]'>
+        <div className='flex min-h-[58vh] w-full md:min-h-[70vh]'>
           {blok.image.map((img, index: number) => (
             <motion.div
               key={index}
