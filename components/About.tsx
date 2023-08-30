@@ -31,7 +31,7 @@ const About = ({ blok }: { blok: AboutStoryblok }) => {
           </span>
         </span>
         <Image
-          src={blok.image.filename}
+          src={`${blok.image.filename}/m/550x0/smart`}
           alt={blok.image.alt ?? 'Image alt'}
           width={550}
           height={660}
