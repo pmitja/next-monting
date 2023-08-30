@@ -96,6 +96,10 @@ export interface FooterStoryblok {
   links?: LinkStoryblok[];
   text?: string;
   logo?: AssetStoryblok;
+  linksTitle?: string;
+  socialTitle?: string;
+  facebookUrl?: string;
+  linkedinUrl?: string;
   _uid: string;
   component: "footer";
   [k: string]: any;

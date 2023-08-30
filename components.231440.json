@@ -341,7 +341,7 @@
       "name": "footer",
       "display_name": null,
       "created_at": "2023-08-30T20:37:27.181Z",
-      "updated_at": "2023-08-30T20:53:43.857Z",
+      "updated_at": "2023-08-30T21:12:46.767Z",
       "id": 4501480,
       "schema": {
         "links": {
@@ -357,6 +357,18 @@
         },
         "logo": {
           "type": "asset"
+        },
+        "linksTitle": {
+          "type": "text"
+        },
+        "socialTitle": {
+          "type": "text"
+        },
+        "facebookUrl": {
+          "type": "text"
+        },
+        "linkedinUrl": {
+          "type": "text"
         }
       },
       "image": null,
