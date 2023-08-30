@@ -13,7 +13,7 @@ const CompaniesBanner = ({ blok }: { blok: CompaniesBannerStoryblok }) => {
       {blok.companiesLogo.map((company) => (
         <Image
           key={company.id}
-          src={company.filename}
+          src={`${company.filename}/m/200x0/smart`}
           alt={company.alt ?? 'Company logo'}
           width={120}
           height={210}

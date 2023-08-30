@@ -6,7 +6,8 @@ import Image from 'next/image';
 
 const About = ({ blok }: { blok: AboutStoryblok }) => {
   return (
-    <div
+    <section
+      id='about'
       className='lg:px-18 container relative mx-auto flex flex-col justify-center gap-8 px-8 py-12 text-left md:px-12 md:py-16 lg:flex-row'
       {...storyblokEditable(blok)}
     >
@@ -31,7 +32,7 @@ const About = ({ blok }: { blok: AboutStoryblok }) => {
           </span>
         </span>
         <Image
-          src={blok.image.filename}
+          src={`${blok.image.filename}/m/550x0/smart`}
           alt={blok.image.alt ?? 'Image alt'}
           width={550}
           height={660}
@@ -39,7 +40,7 @@ const About = ({ blok }: { blok: AboutStoryblok }) => {
         />
         <div className='absolute -bottom-5 -right-5 z-[-1] h-20 w-20 rounded-xl bg-red-600 md:h-28 md:w-28'></div>
       </div>
-    </div>
+    </section>
   );
 };
 

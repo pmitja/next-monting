@@ -12,7 +12,7 @@ const RecentProjectsSection = ({
   blok: RecentProjectSectionStoryblok;
 }) => {
   return (
-    <div
+    <section
       id='projects'
       {...storyblokEditable(blok)}
       className='container mx-auto my-8 flex flex-col place-content-center gap-5 sm:my-7 sm:gap-7 lg:my-16 lg:gap-10'
@@ -23,7 +23,7 @@ const RecentProjectsSection = ({
       <div className='flex flex-col place-content-center justify-between gap-y-5 sm:flex-row sm:flex-wrap lg:flex-wrap'>
         {blok.images.map((image, index) => (
           <Image
-            src={image.filename}
+            src={`${image.filename}/m/555x0/smart`}
             alt={image.alt ?? 'Recent project image'}
             width={555}
             height={639}
@@ -35,7 +35,7 @@ const RecentProjectsSection = ({
           />
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

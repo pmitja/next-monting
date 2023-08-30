@@ -1,4 +1,4 @@
-import { StoryblokStory } from 'storyblok-generate-ts';
+import {StoryblokStory} from 'storyblok-generate-ts'
 
 export interface AssetStoryblok {
   alt?: string;
@@ -17,7 +17,7 @@ export interface AboutStoryblok {
   years: string;
   image: AssetStoryblok;
   _uid: string;
-  component: 'about';
+  component: "about";
   [k: string]: any;
 }
 
@@ -26,7 +26,7 @@ export interface AuthorStoryblok {
   position: string;
   image: AssetStoryblok;
   _uid: string;
-  component: 'author';
+  component: "author";
   [k: string]: any;
 }
 
@@ -34,7 +34,7 @@ export interface ButtonStoryblok {
   text?: string;
   link?: string;
   _uid: string;
-  component: 'button';
+  component: "button";
   [k: string]: any;
 }
 
@@ -51,7 +51,16 @@ export type MultiassetStoryblok = {
 export interface CompaniesBannerStoryblok {
   companiesLogo: MultiassetStoryblok;
   _uid: string;
-  component: 'companiesBanner';
+  component: "companiesBanner";
+  [k: string]: any;
+}
+
+export interface ConfigStoryblok {
+  logo?: AssetStoryblok;
+  header?: HeaderStoryblok[];
+  footer?: FooterStoryblok[];
+  _uid: string;
+  component: "config";
   [k: string]: any;
 }
 
@@ -70,7 +79,7 @@ export interface ContactStoryblok {
   messageLabel?: string;
   formTitle: string;
   _uid: string;
-  component: 'contact';
+  component: "contact";
   [k: string]: any;
 }
 
@@ -79,15 +88,36 @@ export interface CtaSectionStoryblok {
   image: AssetStoryblok;
   text: string;
   _uid: string;
-  component: 'ctaSection';
+  component: "ctaSection";
+  [k: string]: any;
+}
+
+export interface FooterStoryblok {
+  links?: LinkStoryblok[];
+  text?: string;
+  logo?: AssetStoryblok;
+  linksTitle?: string;
+  socialTitle?: string;
+  facebookUrl?: string;
+  linkedinUrl?: string;
+  _uid: string;
+  component: "footer";
   [k: string]: any;
 }
 
 export interface FormElementStoryblok {
-  type: '' | 'text' | 'email' | 'tel' | 'textarea';
+  type: "" | "text" | "email" | "tel" | "textarea";
   label: string;
   _uid: string;
-  component: 'formElement';
+  component: "formElement";
+  [k: string]: any;
+}
+
+export interface HeaderStoryblok {
+  links?: LinkStoryblok[];
+  buttonText?: string;
+  _uid: string;
+  component: "header";
   [k: string]: any;
 }
 
@@ -98,14 +128,22 @@ export interface HeroStoryblok {
   primaryButton: ButtonStoryblok[];
   secondaryButton: ButtonStoryblok[];
   _uid: string;
-  component: 'hero';
+  component: "hero";
+  [k: string]: any;
+}
+
+export interface LinkStoryblok {
+  text?: string;
+  link?: string;
+  _uid: string;
+  component: "link";
   [k: string]: any;
 }
 
 export interface PageStoryblok {
   body: any[];
   _uid: string;
-  component: 'page';
+  component: "page";
   uuid?: string;
   [k: string]: any;
 }
@@ -114,7 +152,7 @@ export interface RecentProjectSectionStoryblok {
   title: string;
   images: MultiassetStoryblok;
   _uid: string;
-  component: 'recentProjectSection';
+  component: "recentProjectSection";
   [k: string]: any;
 }
 
@@ -129,7 +167,7 @@ export interface ServicesStoryblok {
   icons: MultiassetStoryblok;
   items?: any;
   _uid: string;
-  component: 'services';
+  component: "services";
   [k: string]: any;
 }
 
@@ -138,7 +176,7 @@ export interface TestimonialStoryblok {
   text: string;
   author: AuthorStoryblok[];
   _uid: string;
-  component: 'testimonial';
+  component: "testimonial";
   [k: string]: any;
 }
 
@@ -146,6 +184,6 @@ export interface WhatCostumersAreSayingStoryblok {
   title: string;
   testimonials: TestimonialStoryblok[];
   _uid: string;
-  component: 'whatCostumersAreSaying';
+  component: "whatCostumersAreSaying";
   [k: string]: any;
 }

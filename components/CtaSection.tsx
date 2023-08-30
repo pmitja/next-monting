@@ -41,10 +41,11 @@ const CtaSection = ({ blok }: { blok: CtaSectionStoryblok }) => {
       className='relative inset-0 my-10 flex min-h-[300px] flex-col justify-center bg-gradient-to-r from-red-600 to-transparent lg:mb-16'
     >
       <Image
-        src={blok.image.filename}
+        src={`${blok.image.filename}/m/1920x200/smart`}
         alt={blok.image.alt ?? 'Cta image'}
         width={1920}
         height={200}
+        priority={true}
         className='absolute -z-20 h-full w-full object-cover'
       />
       <div className='container relative z-10 flex flex-col gap-5 place-self-start md:gap-10'>
