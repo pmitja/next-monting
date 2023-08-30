@@ -23,7 +23,7 @@ const CostumersSaying = ({
   };
 
   return (
-    <div
+    <section
       id='testimonials'
       {...storyblokEditable(blok)}
       className=' flex place-content-center bg-neutral-100 sm:py-7 lg:py-16'
@@ -102,7 +102,7 @@ const CostumersSaying = ({
             )}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

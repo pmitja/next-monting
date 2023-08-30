@@ -12,7 +12,7 @@ const RecentProjectsSection = ({
   blok: RecentProjectSectionStoryblok;
 }) => {
   return (
-    <div
+    <section
       id='projects'
       {...storyblokEditable(blok)}
       className='container mx-auto my-8 flex flex-col place-content-center gap-5 sm:my-7 sm:gap-7 lg:my-16 lg:gap-10'
@@ -35,7 +35,7 @@ const RecentProjectsSection = ({
           />
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

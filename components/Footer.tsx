@@ -1,11 +1,15 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
+import { Button } from '@/components/ui/button';
 import { Facebook, Linkedin } from 'lucide-react';
 import {
   ConfigStoryblok,
   FooterStoryblok,
   LinkStoryblok,
 } from '@/component-types-sb';
+import { scrollToElement } from '@/utils/scrollIntoView';
 
 const Footer = ({ data }: { data: ConfigStoryblok }) => {
   const { footer }: { footer: FooterStoryblok } = data.content;
@@ -37,12 +41,13 @@ const Footer = ({ data }: { data: ConfigStoryblok }) => {
             <ul className='flex list-none flex-col gap-3'>
               {footer[0].links.map((link: LinkStoryblok) => (
                 <li key={link._uid}>
-                  <Link
-                    href={link.link ?? ''}
+                  <Button
+                    variant='link'
                     className='text-neutral-300 hover:text-white'
+                    onClick={() => scrollToElement(link.link ?? '')}
                   >
                     {link.text}
-                  </Link>
+                  </Button>
                 </li>
               ))}
             </ul>

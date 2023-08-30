@@ -39,13 +39,16 @@ const Navbar = ({ data }: ConfigStoryblok) => {
           <ul className='flex flex-col gap-6 md:flex-row md:items-center md:gap-8'>
             {header[0].links.map((link: LinkStoryblok) => (
               <li key={link._uid}>
-                <Link
-                  href={link.link ?? ''}
+                <Button
+                  variant='link'
                   className='text-lg font-medium text-gray-500 hover:text-black md:text-base'
-                  onClick={closeMobileMenu}
+                  onClick={() => {
+                    closeMobileMenu();
+                    scrollToElement(link.link ?? '');
+                  }}
                 >
                   {link.text}
-                </Link>
+                </Button>
               </li>
             ))}
             <li>
