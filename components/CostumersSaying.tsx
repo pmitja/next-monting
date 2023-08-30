@@ -41,7 +41,7 @@ const CostumersSaying = ({
           <div className='flex w-full justify-between lg:gap-10'>
             <Button
               onClick={handleClick}
-              disabled={nextTwo}
+              disabled={!nextTwo}
               className='bg-transparent text-red-600 transition-colors duration-300 hover:bg-transparent disabled:text-gray-300'
               aria-label='Previous testimonial'
             >
@@ -49,7 +49,7 @@ const CostumersSaying = ({
             </Button>
             <Button
               onClick={handleClick}
-              disabled={!nextTwo}
+              disabled={nextTwo}
               className=' bg-transparent text-red-600 transition-colors duration-300 hover:bg-transparent disabled:text-gray-300'
               aria-label='Next testimonial'
             >
