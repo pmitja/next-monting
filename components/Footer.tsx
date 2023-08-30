@@ -1,10 +1,14 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Facebook, Linkedin } from 'lucide-react';
-import { ConfigStoryblok, LinkStoryblok } from '@/component-types-sb';
+import {
+  ConfigStoryblok,
+  FooterStoryblok,
+  LinkStoryblok,
+} from '@/component-types-sb';
 
-const Footer = ({ data }: ConfigStoryblok) => {
-  const { footer } = data.content;
+const Footer = ({ data }: { data: ConfigStoryblok }) => {
+  const { footer }: { footer: FooterStoryblok } = data.content;
 
   return (
     <footer className=' bg-neutral-950 text-white'>
@@ -27,7 +31,7 @@ const Footer = ({ data }: ConfigStoryblok) => {
 
           <div className='mb-6 basis-1/2 md:basis-1/4'>
             <h3 className='mb-4 text-lg font-bold md:text-xl lg:text-2xl'>
-              Quick Links
+              {footer[0].linksTitle}
             </h3>
 
             <ul className='flex list-none flex-col gap-3'>
@@ -46,12 +50,12 @@ const Footer = ({ data }: ConfigStoryblok) => {
 
           <div className='mb-6 basis-1/2 md:basis-1/4'>
             <h3 className='mb-4 text-lg font-bold md:text-xl lg:text-2xl'>
-              Socials
+              {footer[0].socialTitle}
             </h3>
 
             <ul className='flex list-none items-center gap-2'>
               <li>
-                <Link href='https://www.facebook.com/montingplus'>
+                <Link href={footer[0].facebookUrl ?? null}>
                   <span className='sr-only'>Facebook</span>
                   <Facebook
                     className='text-neutral-300 transition-colors duration-300 hover:text-white'
@@ -60,7 +64,7 @@ const Footer = ({ data }: ConfigStoryblok) => {
                 </Link>
               </li>
               <li>
-                <Link href='https://linkedin.com'>
+                <Link href={footer[0].linkedinUrl ?? null}>
                   <span className='sr-only'>Linkedin</span>
                   <Linkedin
                     className='text-neutral-300 transition-colors duration-300 hover:text-white'
