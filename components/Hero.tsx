@@ -87,7 +87,7 @@ const Hero = ({ blok }: { blok: HeroStoryblok }) => {
             <Button
               variant='primary'
               type='button'
-              className='px-4 py-3 text-xs sm:px-5 sm:py-3 sm:text-sm md:text-base'
+              className='z-20 px-4 py-3 text-xs sm:px-5 sm:py-3 sm:text-sm md:text-base'
             >
               {blok.primaryButton[0].text}
               <ChevronRight className='ml-2 inline h-4 w-4 md:h-6 md:w-6' />
@@ -95,7 +95,7 @@ const Hero = ({ blok }: { blok: HeroStoryblok }) => {
             <Button
               type='button'
               variant='secondary'
-              className='px-4 py-3 text-xs sm:px-5 sm:py-3 sm:text-sm md:text-base'
+              className='z-20 px-4 py-3 text-xs sm:px-5 sm:py-3 sm:text-sm md:text-base'
             >
               {blok.secondaryButton[0].text}
             </Button>
@@ -105,7 +105,7 @@ const Hero = ({ blok }: { blok: HeroStoryblok }) => {
         <Button
           onClick={prev}
           variant='primary'
-          className={`absolute left-4 top-1/2 flex h-8 w-8 -translate-y-1/2 transform items-center justify-center rounded-full border-[1px] p-1 hover:border-red-700 md:h-10 md:w-10 ${
+          className={`absolute left-4 top-1/2 z-20 flex h-8 w-8 -translate-y-1/2 transform items-center justify-center rounded-full border-[1px] p-1 hover:border-red-700 md:h-10 md:w-10 ${
             currentSlide === 0
               ? 'border-red-600 bg-red-600'
               : 'border-white bg-transparent'
@@ -119,7 +119,7 @@ const Hero = ({ blok }: { blok: HeroStoryblok }) => {
         <Button
           onClick={next}
           variant='primary'
-          className={`absolute bottom-1/2 right-4 flex h-8 w-8 translate-y-1/2 transform items-center justify-center rounded-full border-[1px] p-1 hover:border-red-700 md:h-10 md:w-10 ${
+          className={`absolute bottom-1/2 right-4 z-20 flex h-8 w-8 translate-y-1/2 transform items-center justify-center rounded-full border-[1px] p-1 hover:border-red-700 md:h-10 md:w-10 ${
             currentSlide === blok.image.length - 1
               ? 'border-red-600 bg-red-600'
               : 'border-white bg-transparent'
@@ -130,7 +130,7 @@ const Hero = ({ blok }: { blok: HeroStoryblok }) => {
           <ChevronRight />
         </Button>
 
-        <div className='absolute bottom-4 left-0 right-0'>
+        <div className='absolute bottom-4 left-0 right-0 z-20'>
           <div className='flex items-start justify-center gap-2 lg:gap-3'>
             {blok.image.map((_: unknown, index: number) => (
               <Button
