@@ -16,12 +16,12 @@ export default async function Home() {
 
   return (
     <>
-      <Navbar data={config.story} _uid={''} component={'config'} />
+      <Navbar data={config.story} />
       <main>
         <h1 className='absolute hidden'>Monting Plus d.o.o</h1>
         <StoryblokStory story={data.story} />
       </main>
-      <Footer data={config.story} _uid={''} component={'config'} />
+      <Footer data={config.story} />
     </>
   );
 }

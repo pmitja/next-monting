@@ -6,11 +6,15 @@ import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { scrollToElement } from '@/utils/scrollIntoView';
-import { ConfigStoryblok, LinkStoryblok } from '@/component-types-sb';
+import {
+  ConfigStoryblok,
+  HeaderStoryblok,
+  LinkStoryblok,
+} from '@/component-types-sb';
 
-const Navbar = ({ data }: ConfigStoryblok) => {
+const Navbar = ({ data }: { data: ConfigStoryblok }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { header } = data.content;
+  const { header }: { header: HeaderStoryblok } = data.content;
 
   const closeMobileMenu = () => {
     if (isMobileMenuOpen) {
