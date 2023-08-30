@@ -26,7 +26,7 @@ const Navbar = ({ data }: { data: ConfigStoryblok }) => {
     <header>
       <nav className='mx-auto flex max-w-[92%] items-center justify-between py-6'>
         <div>
-          <Link href='/'>
+          <Link href='/' aria-label='Monting Plus logo'>
             <Image
               src={data.content.logo.filename}
               alt={data.content.logo.alt}

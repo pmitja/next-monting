@@ -65,7 +65,7 @@ const Hero = ({ blok }: { blok: HeroStoryblok }) => {
             <motion.div key={index} className=' absolute inset-0'>
               <Image
                 priority
-                src={img.filename}
+                src={`${img.filename}/m/1500x0/smart`}
                 alt={img.alt ?? 'Hero image'}
                 fill
                 className={`object-cover transition-all duration-700 ease-out  ${
