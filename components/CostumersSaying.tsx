@@ -24,6 +24,7 @@ const CostumersSaying = ({
 
   return (
     <div
+      id='testimonials'
       {...storyblokEditable(blok)}
       className=' flex place-content-center bg-slate-200 sm:py-7 lg:py-16'
     >

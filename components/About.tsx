@@ -10,7 +10,10 @@ const About = ({ blok }: { blok: AboutStoryblok }) => {
       className='lg:px-18 container relative mx-auto flex flex-col justify-center gap-8 px-8 py-12 text-left md:px-12 md:py-16 lg:flex-row'
       {...storyblokEditable(blok)}
     >
-      <div className='flex flex-col place-content-center gap-4 sm:gap-5 md:gap-6 lg:gap-8'>
+      <div
+        className='flex flex-col place-content-center gap-4 sm:gap-5 md:gap-6 lg:gap-8'
+        id='about'
+      >
         <div className='relative flex items-center'>
           <div className='w-10 border-t border-gray-400'></div>
           <span className='mx-2 flex-shrink text-lg'>About us</span>
