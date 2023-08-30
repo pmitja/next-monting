@@ -19,8 +19,8 @@ const Navbar = () => {
             <Image
               src='/images/logo.png'
               alt='Monting logo'
-              width={40}
-              height={40}
+              width={48}
+              height={48}
             />
           </Link>
         </div>
@@ -33,7 +33,7 @@ const Navbar = () => {
             <li>
               <Button
                 variant='link'
-                className='text-lg font-medium text-black md:text-base'
+                className='text-base font-medium text-black md:text-lg'
               >
                 Home
               </Button>
@@ -41,7 +41,7 @@ const Navbar = () => {
             <li>
               <Button
                 variant='link'
-                className='text-lg font-medium text-gray-500 hover:text-black md:text-base'
+                className='text-base font-medium text-gray-500 hover:text-black md:text-lg'
               >
                 About us
               </Button>
@@ -49,7 +49,7 @@ const Navbar = () => {
             <li>
               <Button
                 variant='link'
-                className='text-lg font-medium text-gray-500 hover:text-black md:text-base'
+                className='text-base font-medium text-gray-500 hover:text-black md:text-lg'
               >
                 Our Team
               </Button>
@@ -57,7 +57,7 @@ const Navbar = () => {
             <li>
               <Button
                 variant='link'
-                className='text-lg font-medium text-gray-500 hover:text-black md:text-base'
+                className='text-base font-medium text-gray-500 hover:text-black md:text-lg'
               >
                 Projects
               </Button>
@@ -72,6 +72,7 @@ const Navbar = () => {
         <div className='flex items-center gap-6 md:hidden'>
           <Button
             variant='link'
+            className='px-5 py-3 text-base md:px-6 md:py-4 md:text-lg'
             onClick={() => setIsMobileMenuOpen((prev) => !prev)}
           >
             {!isMobileMenuOpen ? <Menu size={32} /> : <X size={32} />}

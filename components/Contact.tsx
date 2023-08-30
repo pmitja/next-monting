@@ -47,10 +47,10 @@ const Contact = ({ blok }: { blok: ContactStoryblok }) => {
               className='absolute left-[7.43rem] top-0 h-auto w-24'
             ></Image>
           </div>
-          <h2 className='mb-4 max-w-xl text-3xl font-bold text-red-600 md:text-left md:text-4xl lg:text-5xl'>
+          <h2 className='mb-4 max-w-xl text-2xl font-bold text-red-600 md:text-left md:text-3xl lg:text-4xl'>
             {blok.title}
           </h2>
-          <p className='mb-4 text-lg'>{blok.text}</p>
+          <p className='mb-4 text-base lg:text-lg'>{blok.text}</p>
           <div className='flex gap-4'>
             <Link href='https://www.facebook.com/montingplus' target='_blank'>
               <span className='sr-only'>Facebook</span>
@@ -68,7 +68,7 @@ const Contact = ({ blok }: { blok: ContactStoryblok }) => {
             </Link>
           </div>
         </div>
-        <Card className='w-full shadow-lg'>
+        <Card className='mt-5 w-full shadow-lg md:mt-0'>
           <CardHeader>
             <CardTitle>{blok.formTitle}</CardTitle>
           </CardHeader>

@@ -7,7 +7,7 @@ import Image from 'next/image';
 const CompaniesBanner = ({ blok }: { blok: CompaniesBannerStoryblok }) => {
   return (
     <div
-      className='flex min-h-[4rem] flex-row flex-wrap justify-between gap-4 bg-gray-300 p-7'
+      className='flex min-h-[4rem] flex-row flex-wrap justify-evenly gap-4 bg-gray-300 p-7'
       {...storyblokEditable(blok)}
     >
       {blok.companiesLogo.map((company) => (
@@ -15,9 +15,9 @@ const CompaniesBanner = ({ blok }: { blok: CompaniesBannerStoryblok }) => {
           key={company.id}
           src={company.filename}
           alt={company.alt ?? 'Company logo'}
-          width={140}
-          height={230}
-          className='h-auto w-auto object-contain'
+          width={120}
+          height={210}
+          className='h-auto w-28 object-contain md:w-36 lg:w-44'
         />
       ))}
     </div>

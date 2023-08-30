@@ -63,11 +63,14 @@ const ContactForm = ({ formElements }: { formElements: ContactStoryblok }) => {
           name='name'
           render={({ field }) => (
             <FormItem className='text-left'>
-              <FormLabel>{formElements.nameLabel}</FormLabel>
+              <FormLabel className='text-sm md:text-base'>
+                {formElements.nameLabel}
+              </FormLabel>
               <FormControl>
                 <Input
                   type='text'
                   autoComplete='name'
+                  className='text-sm md:text-base'
                   placeholder={formElements.namePlaceholder}
                   {...field}
                 />
@@ -81,11 +84,14 @@ const ContactForm = ({ formElements }: { formElements: ContactStoryblok }) => {
           name='email'
           render={({ field }) => (
             <FormItem className='text-left'>
-              <FormLabel>{formElements.emailLabel}</FormLabel>
+              <FormLabel className='text-sm md:text-base'>
+                {formElements.emailLabel}
+              </FormLabel>
               <FormControl>
                 <Input
                   autoComplete='email'
                   type='email'
+                  className='text-sm md:text-base'
                   placeholder={formElements.emailPlaceholder}
                   {...field}
                 />
@@ -99,11 +105,14 @@ const ContactForm = ({ formElements }: { formElements: ContactStoryblok }) => {
           name='phoneNumber'
           render={({ field }) => (
             <FormItem className='text-left'>
-              <FormLabel>{formElements.phoneNumberLabel}</FormLabel>
+              <FormLabel className='text-sm md:text-base'>
+                {formElements.phoneNumberLabel}
+              </FormLabel>
               <FormControl>
                 <Input
                   autoComplete='tel'
                   type='tel'
+                  className='text-sm md:text-base'
                   placeholder={formElements.numberPlaceholder}
                   {...field}
                 />
@@ -117,9 +126,12 @@ const ContactForm = ({ formElements }: { formElements: ContactStoryblok }) => {
           name='subject'
           render={({ field }) => (
             <FormItem className='text-left'>
-              <FormLabel>{formElements.subjectLabel}</FormLabel>
+              <FormLabel className='text-sm md:text-base'>
+                {formElements.subjectLabel}
+              </FormLabel>
               <FormControl>
                 <Input
+                  className='text-sm md:text-base'
                   autoComplete='subject'
                   type='text'
                   placeholder={formElements.subjectPlaceholder}
@@ -135,9 +147,12 @@ const ContactForm = ({ formElements }: { formElements: ContactStoryblok }) => {
           name='message'
           render={({ field }) => (
             <FormItem className='text-left'>
-              <FormLabel>{formElements.messageLabel}</FormLabel>
+              <FormLabel className='text-sm md:text-base'>
+                {formElements.messageLabel}
+              </FormLabel>
               <FormControl>
                 <Textarea
+                  className='text-sm md:text-base'
                   autoComplete='message'
                   placeholder={formElements.messagePlaceholder}
                   {...field}

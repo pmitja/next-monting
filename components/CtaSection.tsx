@@ -27,12 +27,15 @@ const CtaSection = ({ blok }: { blok: CtaSectionStoryblok }) => {
         className='absolute -z-20 h-full w-full object-cover'
       />
       <div className='container relative z-10 flex flex-col gap-5 place-self-start md:gap-10'>
-        <h2 className='w-fit text-2xl font-bold text-white sm:text-3xl md:text-4xl lg:text-5xl'>
+        <h2 className='w-fit text-2xl font-bold text-white md:text-3xl lg:text-4xl'>
           {blok.title}
         </h2>
         <Dialog>
           <DialogTrigger asChild>
-            <Button variant='secondary' className='w-fit'>
+            <Button
+              variant='secondary'
+              className='w-fit px-6 py-3 text-sm md:px-6 md:py-4 md:text-base'
+            >
               {blok.text}
             </Button>
           </DialogTrigger>
