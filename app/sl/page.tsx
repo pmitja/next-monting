@@ -10,14 +10,15 @@ export const metadata: Metadata = {
   description: 'MONTING Plus, your partner in heavy metal solutions.',
 };
 
-export default async function Home() {
-  const { data } = await fetchData('en');
+export default async function Domov() {
+  const { data } = await fetchData('sl');
   const { data: config } = await fetchConfig();
 
   return (
     <>
       <Navbar data={config.story} />
       <main>
+        SLovenija
         <h1 className='absolute hidden'>Monting Plus d.o.o</h1>
         <StoryblokStory story={data.story} />
       </main>

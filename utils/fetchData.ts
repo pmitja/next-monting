@@ -1,9 +1,12 @@
 import { getStoryblokApi } from '@storyblok/react/rsc';
 import { ContactStoryblok } from '@/component-types-sb';
 
-export async function fetchData() {
+export async function fetchData(lang?: string) {
   const storyblokApi = getStoryblokApi();
-  return storyblokApi.get(`cdn/stories/home`, { version: 'draft' });
+  return storyblokApi.get(`cdn/stories/home`, {
+    version: 'draft',
+    language: lang,
+  });
 }
 
 export async function getFormElements(): Promise<ContactStoryblok | null> {
