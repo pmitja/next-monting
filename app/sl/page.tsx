@@ -18,7 +18,6 @@ export default async function Domov() {
     <>
       <Navbar data={config.story} />
       <main>
-        SLovenija
         <h1 className='absolute hidden'>Monting Plus d.o.o</h1>
         <StoryblokStory story={data.story} />
       </main>

@@ -11,6 +11,7 @@ import {
   HeaderStoryblok,
   LinkStoryblok,
 } from '@/component-types-sb';
+import { LanguageSwitcher } from './LanguageSwitcher';
 
 const Navbar = ({ data }: { data: ConfigStoryblok }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -66,6 +67,7 @@ const Navbar = ({ data }: { data: ConfigStoryblok }) => {
                 {header[0].buttonText}
               </Button>
             </li>
+            <LanguageSwitcher />
           </ul>
         </div>
         <div className='flex items-center gap-6 md:hidden'>
