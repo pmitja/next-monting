@@ -11,6 +11,7 @@ import {
   HeaderStoryblok,
   LinkStoryblok,
 } from '@/component-types-sb';
+import { LanguageSwitcher } from './LanguageSwitcher';
 
 const Navbar = ({ data }: { data: ConfigStoryblok }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -36,11 +37,11 @@ const Navbar = ({ data }: { data: ConfigStoryblok }) => {
           </Link>
         </div>
         <div
-          className={`absolute left-0 z-40 min-h-[18rem] bg-white md:static md:min-h-fit ${
+          className={`absolute left-0 z-40 min-h-[18rem] bg-white lg:static lg:min-h-fit ${
             isMobileMenuOpen ? 'top-[5.5rem]' : 'top-[-100%]'
-          } flex w-full items-center px-5 py-8 md:w-auto md:px-6 md:py-0`}
+          } flex w-full items-center px-5 py-8 lg:w-auto lg:px-6 lg:py-0`}
         >
-          <ul className='flex flex-col gap-6 md:flex-row md:items-center md:gap-8'>
+          <ul className='flex flex-col gap-6 md:gap-6 lg:flex-row lg:items-center lg:gap-8'>
             {header[0].links.map((link: LinkStoryblok) => (
               <li key={link._uid}>
                 <Button
@@ -66,9 +67,10 @@ const Navbar = ({ data }: { data: ConfigStoryblok }) => {
                 {header[0].buttonText}
               </Button>
             </li>
+            <LanguageSwitcher />
           </ul>
         </div>
-        <div className='flex items-center gap-6 md:hidden'>
+        <div className='flex items-center gap-6 lg:hidden'>
           <Button
             variant='link'
             className='px-5 py-3 text-base md:px-6 md:py-4 md:text-lg'
