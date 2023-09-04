@@ -60,7 +60,7 @@ export function LanguageSwitcher() {
 
   return (
     <Select onValueChange={(e) => router.push(`/${e}`)}>
-      <SelectTrigger className='w-[180px]'>
+      <SelectTrigger className='w-[100px] border-none'>
         <SelectValue placeholder={currentLanguage()} />
       </SelectTrigger>
       <SelectContent>
