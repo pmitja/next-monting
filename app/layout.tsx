@@ -3,7 +3,6 @@ import type { Metadata } from 'next';
 import { Lexend } from 'next/font/google';
 import { storyblokInit, apiPlugin } from '@storyblok/react/rsc';
 
-import StoryblokProvider from '@/components/StoryblokProvider';
 import Page from '@/components/Page';
 import Hero from '@/components/Hero';
 import CompaniesBanner from '@/components/CompaniesBanner';
@@ -13,6 +12,7 @@ import CostumersSaying from '@/components/CostumersSaying';
 import RecentProjectsSection from '@/components/RecentProjectsSection';
 import CtaSection from '@/components/CtaSection';
 import Contact from '@/components/Contact';
+import StoryblokBridgeLoader from '@storyblok/react/bridge-loader';
 
 storyblokInit({
   accessToken: process.env.STORYBLOK_TOKEN,
@@ -46,10 +46,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <StoryblokProvider>
-      <html lang='en' className='scroll-smooth'>
-        <body className={`${lexend.variable} font-sans`}>{children}</body>
-      </html>
-    </StoryblokProvider>
+    <html lang='en' className='scroll-smooth'>
+      <body className={`${lexend.variable} font-sans`}>{children}</body>
+      <StoryblokBridgeLoader options={{}} />
+    </html>
   );
 }
