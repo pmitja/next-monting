@@ -48,7 +48,7 @@ export function LanguageSwitcher() {
         <div className='grid gap-1.5 p-1.5'>
           <DropdownMenuRadioGroup onValueChange={(e) => router.push(`/${e}`)}>
             <DropdownMenuRadioItem
-              value='sl'
+              value='en'
               className='flex cursor-pointer gap-2 p-2'
             >
               <span className='fi fi-gb'></span> English
@@ -66,7 +66,7 @@ export function LanguageSwitcher() {
               <span className='fi fi-de'></span> Deutsch
             </DropdownMenuRadioItem>
             <DropdownMenuRadioItem
-              value='gb'
+              value='sl'
               className='flex cursor-pointer gap-2 p-2'
             >
               <span className='fi fi-si'></span> Slovenščina

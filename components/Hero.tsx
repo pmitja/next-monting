@@ -8,7 +8,6 @@ import Image from 'next/image';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from './ui/button';
 import { motion } from 'framer-motion';
-import Link from 'next/link';
 
 const Hero = ({ blok }: { blok: HeroStoryblok }) => {
   const [currentSlide, setCurrentSlide] = useState(0);

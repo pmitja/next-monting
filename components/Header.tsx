@@ -33,7 +33,7 @@ const Header = ({ data }: { data: ConfigStoryblok }) => {
           />
         </Link>
         <div className='flex ml-auto lg:order-1 lg:ml-0 gap-5'>
-          <LanguageSwitcher />
+          <div className='hidden lg:block'><LanguageSwitcher /></div>
           <Button
             variant='primary'
             onClick={() => {
@@ -83,6 +83,7 @@ const Header = ({ data }: { data: ConfigStoryblok }) => {
             </li>
           ))}
         </ul>
+        {isMenuOpen && <LanguageSwitcher />}
       </div>
     </header>
   );
