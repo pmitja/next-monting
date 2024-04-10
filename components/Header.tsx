@@ -22,7 +22,7 @@ const Header = ({ data }: { data: ConfigStoryblok }) => {
   };
 
   return (
-    <header className='min-h-70px fixed top-0 z-50 w-full bg-white px-4 py-4 font-sans shadow-md sm:px-10'>
+    <header className='min-h-70px sticky top-0 z-50 w-full bg-white px-4 py-4 font-sans shadow-md sm:px-10'>
       <div className='relative flex flex-wrap items-center justify-between gap-5'>
         <Link href='/' aria-label='Monting Plus logo'>
           <Image

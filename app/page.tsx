@@ -20,7 +20,7 @@ export default async function Home() {
   return (
     <>
       <Header data={config.story} />
-      <main className='mt-[88px]'>
+      <main>
         <h1 className='absolute hidden'>Monting Plus d.o.o</h1>
         {data.story.content.body.map((nestedBlok: NestedBlok) => (
           <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
