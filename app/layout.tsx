@@ -12,6 +12,7 @@ import CostumersSaying from '@/components/CostumersSaying';
 import RecentProjectsSection from '@/components/RecentProjectsSection';
 import CtaSection from '@/components/CtaSection';
 import Contact from '@/components/Contact';
+import CarRentalSection from '@/components/CarRentalSection';
 import StoryblokBridgeLoader from '@storyblok/react/bridge-loader';
 
 storyblokInit({
@@ -27,6 +28,7 @@ storyblokInit({
     recentProjectSection: RecentProjectsSection,
     ctaSection: CtaSection,
     contact: Contact,
+    carRental: CarRentalSection,
   },
 });
 

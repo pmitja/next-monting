@@ -35,6 +35,9 @@
       "component_group_uuid": "be02d562-c742-44cb-8153-b03083d5007a",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "About"
     },
     {
@@ -76,17 +79,21 @@
       "component_group_uuid": "e4a8aaee-cd49-4d30-8b5a-3492395c2baf",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Costumers"
     },
     {
       "name": "button",
       "display_name": null,
       "created_at": "2023-08-20T11:22:38.314Z",
-      "updated_at": "2023-08-20T11:23:01.748Z",
+      "updated_at": "2023-08-31T18:43:05.870Z",
       "id": 4446232,
       "schema": {
         "text": {
-          "type": "text"
+          "type": "text",
+          "translatable": true
         },
         "link": {
           "type": "text"
@@ -102,7 +109,116 @@
       "real_name": "button",
       "component_group_uuid": null,
       "color": null,
-      "icon": null
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null
+    },
+    {
+      "name": "Car card",
+      "display_name": null,
+      "created_at": "2024-04-10T15:19:23.159Z",
+      "updated_at": "2024-04-10T15:47:30.215Z",
+      "id": 5633894,
+      "schema": {
+        "name": {
+          "type": "text",
+          "required": true
+        },
+        "type": {
+          "type": "text",
+          "translatable": true,
+          "required": true
+        },
+        "doors": {
+          "type": "text",
+          "translatable": true,
+          "required": true
+        },
+        "price": {
+          "type": "number",
+          "required": true
+        },
+        "image": {
+          "type": "asset",
+          "required": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Car card",
+      "component_group_uuid": "c6d1018b-3bb6-4161-9e9b-bc562a940ea5",
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "Car Rental"
+    },
+    {
+      "name": "carRental",
+      "display_name": null,
+      "created_at": "2024-04-10T15:18:30.216Z",
+      "updated_at": "2024-04-10T15:47:59.106Z",
+      "id": 5633892,
+      "schema": {
+        "title": {
+          "type": "text",
+          "required": true,
+          "translatable": true
+        },
+        "text": {
+          "type": "textarea",
+          "required": true,
+          "translatable": true
+        },
+        "cards": {
+          "type": "bloks",
+          "required": true,
+          "minimum": 1,
+          "maximum": 3,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "Car card"
+          ]
+        },
+        "buttonText": {
+          "type": "text",
+          "required": true,
+          "translatable": true
+        },
+        "dialogTitle": {
+          "type": "text",
+          "required": true,
+          "translatable": true
+        },
+        "phone": {
+          "type": "text",
+          "translatable": false,
+          "required": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "carRental",
+      "component_group_uuid": "c6d1018b-3bb6-4161-9e9b-bc562a940ea5",
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "Car Rental"
     },
     {
       "name": "companiesBanner",
@@ -130,6 +246,9 @@
       "component_group_uuid": "1f77a328-80b3-433b-9348-246cc6784444",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "CompanyBanner"
     },
     {
@@ -173,6 +292,9 @@
       "component_group_uuid": "1f50ce5d-8ad8-486a-9aab-21b937fa78d1",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Config"
     },
     {
@@ -284,6 +406,9 @@
       "component_group_uuid": "3bd621c9-df59-4c6c-b5ec-d3410a166d15",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Form"
     },
     {
@@ -335,6 +460,9 @@
       "component_group_uuid": "9bcc1cc7-ec6f-451f-84a6-d32e2fd7fdb8",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "CTA"
     },
     {
@@ -382,6 +510,9 @@
       "component_group_uuid": "1f50ce5d-8ad8-486a-9aab-21b937fa78d1",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Config"
     },
     {
@@ -445,6 +576,9 @@
       "component_group_uuid": "3bd621c9-df59-4c6c-b5ec-d3410a166d15",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Form"
     },
     {
@@ -477,13 +611,16 @@
       "component_group_uuid": "1f50ce5d-8ad8-486a-9aab-21b937fa78d1",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Config"
     },
     {
       "name": "hero",
       "display_name": null,
       "created_at": "2023-08-20T11:21:54.470Z",
-      "updated_at": "2023-08-27T14:20:15.989Z",
+      "updated_at": "2023-08-31T18:42:56.584Z",
       "id": 4446231,
       "schema": {
         "title": {
@@ -495,7 +632,8 @@
         "subtitle": {
           "type": "text",
           "pos": 1,
-          "required": true
+          "required": true,
+          "translatable": true
         },
         "image": {
           "type": "multiasset",
@@ -545,6 +683,9 @@
       "component_group_uuid": "3bd114b5-8773-476c-be35-57a3e30da368",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Hero"
     },
     {
@@ -572,6 +713,9 @@
       "component_group_uuid": "1f50ce5d-8ad8-486a-9aab-21b937fa78d1",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Config"
     },
     {
@@ -596,7 +740,10 @@
       "real_name": "page",
       "component_group_uuid": null,
       "color": null,
-      "icon": null
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null
     },
     {
       "name": "recentProjectSection",
@@ -638,6 +785,9 @@
       "component_group_uuid": "767ec5c9-65b9-4aae-a8e1-7b0e627e8cc1",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Recent Projects"
     },
     {
@@ -729,6 +879,9 @@
       "component_group_uuid": "ddfba326-cfdd-4a31-8adc-89e15e8a6fd8",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Services"
     },
     {
@@ -781,6 +934,9 @@
       "component_group_uuid": "e4a8aaee-cd49-4d30-8b5a-3492395c2baf",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Costumers"
     },
     {
@@ -826,6 +982,9 @@
       "component_group_uuid": "e4a8aaee-cd49-4d30-8b5a-3492395c2baf",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Costumers"
     }
   ]

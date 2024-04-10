@@ -38,6 +38,29 @@ export interface ButtonStoryblok {
   [k: string]: any;
 }
 
+export interface CarCardStoryblok {
+  name: string;
+  type: string;
+  doors: string;
+  price: number;
+  image: AssetStoryblok;
+  _uid: string;
+  component: "Car card";
+  [k: string]: any;
+}
+
+export interface CarRentalStoryblok {
+  title: string;
+  text: string;
+  cards: CarCardStoryblok[];
+  buttonText: string;
+  dialogTitle: string;
+  phone: string;
+  _uid: string;
+  component: "carRental";
+  [k: string]: any;
+}
+
 export type MultiassetStoryblok = {
   alt?: string;
   copyright?: string;

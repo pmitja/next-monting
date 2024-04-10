@@ -10,6 +10,7 @@ import CostumersSaying from './CostumersSaying';
 import RecentProjectsSection from './RecentProjectsSection';
 import CtaSection from './CtaSection';
 import Contact from './Contact';
+import CarRentalSection from './CarRentalSection';
 
 /** 2. Initialize it as usual */
 storyblokInit({
@@ -25,6 +26,7 @@ storyblokInit({
     recentProjectSection: RecentProjectsSection,
     ctaSection: CtaSection,
     contact: Contact,
+    carRental: CarRentalSection
   },
 });
 

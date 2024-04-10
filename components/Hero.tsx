@@ -8,7 +8,6 @@ import Image from 'next/image';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from './ui/button';
 import { motion } from 'framer-motion';
-import CarRentalSection from './CarRentalSection';
 
 const Hero = ({ blok }: { blok: HeroStoryblok }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -138,7 +137,6 @@ const Hero = ({ blok }: { blok: HeroStoryblok }) => {
           </div>
         </div>
       </section>
-      <CarRentalSection />
       {/* <section className='w-full py-12 md:py-24 lg:py-32'>
         <div className='container grid items-center gap-10 px-4 md:px-6 lg:grid-cols-[1fr_600px] lg:gap-16'>
           <div className='space-y-2'>
