@@ -3,15 +3,17 @@
 import { useRouter, usePathname } from 'next/navigation';
 import * as React from 'react';
 
+import { Button } from './ui/button';
+import '/node_modules/flag-icons/css/flag-icons.min.css';
 import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select';
-import Image from 'next/image';
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuLabel,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from './ui/dropdown-menu';
 
 export function LanguageSwitcher() {
   const router = useRouter();
@@ -20,85 +22,58 @@ export function LanguageSwitcher() {
   const currentLanguage = () => {
     const language = params.substring(1);
     if (language === 'sl') {
-      return (
-        <Image
-          src={'/images/slovenia.png'}
-          width={50}
-          height={50}
-          alt='Slovenian flag'
-        />
-      );
+      return <span className='fi fi-si'></span>;
     } else if (language === 'sr') {
-      return (
-        <Image
-          src={'/images/serbia.png'}
-          width={50}
-          height={50}
-          alt='Serbian flag'
-        />
-      );
+      return <span className='fi fi-rs'></span>;
     } else if (language === 'de') {
-      return (
-        <Image
-          src={'/images/de.png'}
-          width={50}
-          height={50}
-          alt='German flag'
-        />
-      );
+      return <span className='fi fi-de'></span>;
     } else {
-      return (
-        <Image
-          src={'/images/greatBritain.png'}
-          width={50}
-          height={50}
-          alt='British flag'
-        />
-      );
+      return <span className='fi fi-gb'></span>;
     }
   };
 
   return (
-    <Select onValueChange={(e) => router.push(`/${e}`)}>
-      <SelectTrigger className='w-[100px] border-none'>
-        <SelectValue placeholder={currentLanguage()} />
-      </SelectTrigger>
-      <SelectContent>
-        <SelectGroup>
-          <SelectItem value='sl'>
-            <Image
-              src={'/images/slovenia.png'}
-              width={50}
-              height={50}
-              alt='Slovenian flag'
-            />
-          </SelectItem>
-          <SelectItem value='sr'>
-            <Image
-              src={'/images/serbia.png'}
-              width={50}
-              height={50}
-              alt='Slovenian flag'
-            />
-          </SelectItem>
-          <SelectItem value='de'>
-            <Image
-              src={'/images/de.png'}
-              width={50}
-              height={50}
-              alt='Slovenian flag'
-            />
-          </SelectItem>
-          <SelectItem value=''>
-            <Image
-              src={'/images/greatBritain.png'}
-              width={50}
-              height={50}
-              alt='Slovenian flag'
-            />
-          </SelectItem>
-        </SelectGroup>
-      </SelectContent>
-    </Select>
+    <DropdownMenu modal={false}>
+      <DropdownMenuTrigger asChild className='overflow'>
+        <Button
+          className='grid h-10 w-10 place-items-center rounded-full'
+          variant='outline'
+        >
+          {currentLanguage()}
+        </Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent className='mt-2'>
+        <DropdownMenuLabel>Choose a language</DropdownMenuLabel>
+        <DropdownMenuSeparator />
+        <div className='grid gap-1.5 p-1.5'>
+          <DropdownMenuRadioGroup onValueChange={(e) => router.push(`/${e}`)}>
+            <DropdownMenuRadioItem
+              value='sl'
+              className='flex cursor-pointer gap-2 p-2'
+            >
+              <span className='fi fi-gb'></span> English
+            </DropdownMenuRadioItem>
+            <DropdownMenuRadioItem
+              value='sr'
+              className='flex cursor-pointer gap-2 p-2'
+            >
+              <span className='fi fi-rs'></span> Srbščina
+            </DropdownMenuRadioItem>
+            <DropdownMenuRadioItem
+              value='de'
+              className='flex cursor-pointer gap-2 p-2'
+            >
+              <span className='fi fi-de'></span> Deutsch
+            </DropdownMenuRadioItem>
+            <DropdownMenuRadioItem
+              value='gb'
+              className='flex cursor-pointer gap-2 p-2'
+            >
+              <span className='fi fi-si'></span> Slovenščina
+            </DropdownMenuRadioItem>
+          </DropdownMenuRadioGroup>
+        </div>
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 }

@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { fetchData } from '@/utils/fetchData';
 import { fetchConfig } from '@/utils/fetchConfig';
@@ -7,6 +6,7 @@ import {
   StoryblokComponent
 } from "@storyblok/react/rsc";
 import { NestedBlok } from '@/types';
+import Header from '@/components/Header';
 
 export const metadata: Metadata = {
   title: 'MONTING Plus',
@@ -19,8 +19,8 @@ export default async function Home() {
   
   return (
     <>
-      <Navbar data={config.story} />
-      <main>
+      <Header data={config.story} />
+      <main className='mt-[88px]'>
         <h1 className='absolute hidden'>Monting Plus d.o.o</h1>
         {data.story.content.body.map((nestedBlok: NestedBlok) => (
           <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />

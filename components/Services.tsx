@@ -1,84 +1,80 @@
 import { storyblokEditable } from '@storyblok/react/rsc';
 import { ServicesStoryblok } from '@/component-types-sb';
-import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 
 const Services = ({ blok }: { blok: ServicesStoryblok }) => {
   return (
     <section
       id='services'
-      className='lg:px-18 container mx-auto px-8 py-12 md:px-12 md:py-16'
+      className='w-full py-12 md:py-24 lg:py-32'
       {...storyblokEditable(blok)}
     >
-      <div className='flex flex-col items-center justify-center'>
-        <h2 className='text-2xl font-bold uppercase md:text-3xl lg:text-4xl'>
-          {blok.title}
-        </h2>
-      </div>
-      <div className='mt-10 flex flex-col md:flex-row md:items-center md:justify-center md:gap-8'>
-        <div className='grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3'>
-          <div className='flex flex-col items-center justify-center gap-6'>
-            <Image
-              src={blok.icons[0].filename}
-              alt={blok.icons[0].alt ?? 'Building icon'}
-              width={84}
-              height={84}
-              className='h-auto w-auto object-cover'
-            />
-            <h3 className='text-xl font-bold md:text-2xl'>
-              {blok.primaryTitle}
-            </h3>
-            <p className='max-w-md text-base text-neutral-500 md:text-lg'>
+      <div className='container grid items-center justify-center gap-4 px-4 text-center md:px-6 lg:gap-10'>
+        <div className='space-y-3'>
+          <h2 className='text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl'>
+            {blok.title}
+          </h2>
+        </div>
+        <div className='grid grid-cols-1 gap-6 sm:grid-cols-2 lg:gap-8 xl:grid-cols-3'>
+          <div className='flex flex-col items-stretch gap-2'>
+            <div className='flex aspect-[300/181] w-full place-content-center items-center overflow-hidden rounded-lg'>
+              <Image
+                alt={blok.icons[0].alt ?? 'Image'}
+                className='object-contain object-center'
+                height='181'
+                src={blok.icons[0].filename}
+                style={{
+                  aspectRatio: '300/181',
+                }}
+                width='300'
+              />
+            </div>
+            <h3 className='text-xl font-bold'>{blok.primaryTitle}</h3>
+            <p className='text-sm text-gray-500/70 dark:text-gray-400/70'>
               {blok.primaryText}
             </p>
-            <Button
-              variant='primary'
-              className='px-4 py-3 text-sm uppercase md:px-5 md:py-4 md:text-base'
-            >
-              See Apartment projects
-            </Button>
           </div>
-          <div className='flex flex-col items-center justify-center gap-6'>
-            <Image
-              src={blok.icons[1].filename}
-              alt={blok.icons[1].alt ?? 'Building icon'}
-              width={84}
-              height={84}
-              className='h-auto w-auto object-cover'
-            />
-            <h3 className='text-xl font-bold md:text-2xl'>
-              {blok.secondaryTitle}
-            </h3>
-            <p className='max-w-md text-base text-neutral-500 md:text-lg'>
+          <div className='flex flex-col items-stretch gap-2'>
+            <div className='flex aspect-[300/181] w-full place-content-center items-center overflow-hidden rounded-lg'>
+              <Image
+                alt={blok.icons[1].alt ?? 'Image'}
+                className='object-contain object-center'
+                height='181'
+                src={blok.icons[1].filename}
+                style={{
+                  aspectRatio: '300/181',
+                }}
+                width='300'
+              />
+            </div>
+            <h3 className='text-xl font-bold'>{blok.secondaryTitle}</h3>
+            <p className='text-sm text-gray-500/70 dark:text-gray-400/70'>
               {blok.secondaryText}
             </p>
-            <Button
-              variant='primary'
-              className='px-4 py-3 text-sm uppercase md:px-5 md:py-4 md:text-base'
-            >
-              See Housing Projects
-            </Button>
           </div>
-          <div className='flex flex-col items-center justify-center gap-6'>
-            <Image
-              src={blok.icons[2].filename}
-              alt={blok.icons[2].alt ?? 'Building icon'}
-              width={84}
-              height={84}
-              className='h-auto w-auto object-cover'
-            />
-            <h3 className='text-xl font-bold md:text-2xl'>
-              {blok.tertiaryTitle}
-            </h3>
-            <p className='max-w-md text-base text-neutral-500 md:text-lg'>
+          <div className='flex flex-col items-stretch gap-2'>
+            <div className='flex aspect-[300/181] w-full place-content-center items-center overflow-hidden rounded-lg'>
+              <Image
+                alt={blok.icons[2].alt ?? 'Image'}
+                className='object-contain object-center'
+                height='181'
+                src={blok.icons[2].filename}
+                style={{
+                  aspectRatio: '300/181',
+                }}
+                width='300'
+              />
+            </div>
+            <h3 className='text-xl font-bold'>{blok.tertiaryTitle}</h3>
+            <p className='text-sm text-gray-500/70 dark:text-gray-400/70'>
               {blok.tertiaryText}
             </p>
-            <Button
-              variant='primary'
-              className='px-4 py-3 text-sm uppercase md:px-5 md:py-4 md:text-base'
-            >
-              See Business Projects
-            </Button>
+            {/* <Link
+                className='inline-flex h-10 items-center justify-center rounded-md border border-gray-200 border-gray-200 bg-white px-8 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-800 dark:border-gray-800 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus-visible:ring-gray-300'
+                href='#'
+              >
+                Contact Sales
+              </Link> */}
           </div>
         </div>
       </div>
