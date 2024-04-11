@@ -8,7 +8,7 @@ export const sendEmail = async (formData: FormData) => {
   try {
     const resend = new Resend(process.env.RESEND_API_KEY)
     await resend.emails.send({
-      from: 'Acme <onboarding@resend.dev>',
+      from: 'Monting Plus <onboarding@resend.dev>',
       to: ['pmitja1@gmail.com'],
       subject: subject,
       react: EmailTemplate({ validationCode: name }),
