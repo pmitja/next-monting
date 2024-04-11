@@ -15,7 +15,7 @@ import {
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { ContactStoryblok } from '@/component-types-sb';
+import { HireFormStoryblok } from '@/component-types-sb';
 import { sendEmail } from '@/actions/send-email';
 
 const phoneRegex = new RegExp(/^\+?[0-9]{1,15}$/);
@@ -27,26 +27,24 @@ const FormSchema = z.object({
   email: z.string().email({
     message: 'Please enter a valid email.',
   }),
-  message: z.string().min(10, {
+  text: z.string().min(10, {
     message: 'Message must be at least 10 characters.',
-  }),
-  subject: z.string().min(3, {
-    message: 'Subject must be at least 3 characters.',
   }),
   phoneNumber: z.string().regex(phoneRegex, {
     message: 'Please enter a valid phone number.',
   }),
+  subject: z.string(),
 });
 
-const ContactForm = ({ formElements }: { formElements: ContactStoryblok }) => {
+const HireForm = ({ formElements }: { formElements: HireFormStoryblok }) => {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
       name: '',
       email: '',
       phoneNumber: '',
-      subject: '',
-      message: '',
+      text: '',
+      subject: 'Ponudba',
     },
   });
 
@@ -101,14 +99,14 @@ const ContactForm = ({ formElements }: { formElements: ContactStoryblok }) => {
           render={({ field }) => (
             <FormItem className='text-left'>
               <FormLabel className='text-sm md:text-base'>
-                {formElements.phoneNumberLabel}
+                {formElements.phoneLabel}
               </FormLabel>
               <FormControl>
                 <Input
                   autoComplete='tel'
                   type='tel'
                   className='text-sm md:text-base'
-                  placeholder={formElements.numberPlaceholder}
+                  placeholder={formElements.phonePlaceholder}
                   {...field}
                 />
               </FormControl>
@@ -118,38 +116,17 @@ const ContactForm = ({ formElements }: { formElements: ContactStoryblok }) => {
         />
         <FormField
           control={form.control}
-          name='subject'
+          name='text'
           render={({ field }) => (
             <FormItem className='text-left'>
               <FormLabel className='text-sm md:text-base'>
-                {formElements.subjectLabel}
-              </FormLabel>
-              <FormControl>
-                <Input
-                  className='text-sm md:text-base'
-                  autoComplete='subject'
-                  type='text'
-                  placeholder={formElements.subjectPlaceholder}
-                  {...field}
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name='message'
-          render={({ field }) => (
-            <FormItem className='text-left'>
-              <FormLabel className='text-sm md:text-base'>
-                {formElements.messageLabel}
+                {formElements.textLabel}
               </FormLabel>
               <FormControl>
                 <Textarea
                   className='text-sm md:text-base'
                   autoComplete='message'
-                  placeholder={formElements.messagePlaceholder}
+                  placeholder={formElements.textPlaceholder}
                   {...field}
                 />
               </FormControl>
@@ -165,4 +142,4 @@ const ContactForm = ({ formElements }: { formElements: ContactStoryblok }) => {
   );
 };
 
-export default ContactForm;
+export default HireForm;

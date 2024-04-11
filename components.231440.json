@@ -415,38 +415,57 @@
       "name": "ctaSection",
       "display_name": null,
       "created_at": "2023-08-27T08:48:01.874Z",
-      "updated_at": "2023-08-27T09:10:08.625Z",
+      "updated_at": "2024-04-11T08:19:39.392Z",
       "id": 4481471,
       "schema": {
+        "form": {
+          "type": "bloks",
+          "minimum": 1,
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "hireForm"
+          ]
+        },
         "title": {
           "type": "text",
           "required": true,
-          "pos": 0
+          "pos": 6
         },
         "tab-fa8aac4e-62c5-44bb-b124-376ffe7feb2b": {
           "display_name": "Button",
           "keys": [
             "text"
           ],
-          "pos": 0,
+          "pos": 7,
+          "type": "tab"
+        },
+        "text": {
+          "type": "text",
+          "required": true,
+          "pos": 8
+        },
+        "tab-9e359148-4929-4069-9c93-3ced97def13b": {
+          "display_name": "Form",
+          "keys": [
+            "form"
+          ],
+          "pos": 9,
           "type": "tab"
         },
         "image": {
           "type": "asset",
           "required": true,
-          "pos": 1
+          "pos": 10
         },
         "tab-311b25f2-9fdd-4e51-bc55-117e22a7b753": {
           "display_name": "Image",
           "keys": [
             "image"
           ],
-          "pos": 2,
+          "pos": 11,
           "type": "tab"
-        },
-        "text": {
-          "type": "text",
-          "required": true
         }
       },
       "image": null,
@@ -687,6 +706,54 @@
       "internal_tag_ids": [],
       "content_type_asset_preview": null,
       "component_group_name": "Hero"
+    },
+    {
+      "name": "hireForm",
+      "display_name": null,
+      "created_at": "2024-04-11T08:18:26.808Z",
+      "updated_at": "2024-04-11T08:19:15.347Z",
+      "id": 5637367,
+      "schema": {
+        "nameLabel": {
+          "type": "text"
+        },
+        "namePlaceholder": {
+          "type": "text"
+        },
+        "phoneLabel": {
+          "type": "text"
+        },
+        "phonePlaceholder": {
+          "type": "text"
+        },
+        "emailLabel": {
+          "type": "text"
+        },
+        "emailPlaceholder": {
+          "type": "text"
+        },
+        "textLabel": {
+          "type": "text"
+        },
+        "textPlaceholder": {
+          "type": "text"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "hireForm",
+      "component_group_uuid": "9bcc1cc7-ec6f-451f-84a6-d32e2fd7fdb8",
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "CTA"
     },
     {
       "name": "link",

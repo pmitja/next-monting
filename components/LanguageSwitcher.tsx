@@ -23,7 +23,7 @@ export function LanguageSwitcher() {
     const language = params.substring(1);
     if (language === 'sl') {
       return <span className='fi fi-si'></span>;
-    } else if (language === 'sr') {
+    } else if (language === 'rs') {
       return <span className='fi fi-rs'></span>;
     } else if (language === 'de') {
       return <span className='fi fi-de'></span>;
@@ -54,7 +54,7 @@ export function LanguageSwitcher() {
               <span className='fi fi-gb'></span> English
             </DropdownMenuRadioItem>
             <DropdownMenuRadioItem
-              value='sr'
+              value='rs'
               className='flex cursor-pointer gap-2 p-2'
             >
               <span className='fi fi-rs'></span> Srbščina

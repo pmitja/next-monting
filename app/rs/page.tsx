@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 export default async function Domov() {
-  const { data } = await fetchData('sr');
+  const { data } = await fetchData('rs');
   const { data: config } = await fetchConfig();
 
   return (

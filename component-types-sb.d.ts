@@ -107,9 +107,10 @@ export interface ContactStoryblok {
 }
 
 export interface CtaSectionStoryblok {
+  form?: HireFormStoryblok[];
   title: string;
-  image: AssetStoryblok;
   text: string;
+  image: AssetStoryblok;
   _uid: string;
   component: "ctaSection";
   [k: string]: any;
@@ -152,6 +153,20 @@ export interface HeroStoryblok {
   secondaryButton: ButtonStoryblok[];
   _uid: string;
   component: "hero";
+  [k: string]: any;
+}
+
+export interface HireFormStoryblok {
+  nameLabel?: string;
+  namePlaceholder?: string;
+  phoneLabel?: string;
+  phonePlaceholder?: string;
+  emailLabel?: string;
+  emailPlaceholder?: string;
+  textLabel?: string;
+  textPlaceholder?: string;
+  _uid: string;
+  component: "hireForm";
   [k: string]: any;
 }
 

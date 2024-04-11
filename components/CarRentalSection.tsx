@@ -14,7 +14,7 @@ import { Phone } from "lucide-react";
 
 export default function CarRentalSection({ blok }: { blok: CarRentalStoryblok }) {
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32" {...storyblokEditable(blok)}>
+    <section className="w-full py-12 md:py-16" {...storyblokEditable(blok)}>
       <div className="container px-4 grid items-center justify-center gap-4 text-center md:px-6">
         <div className="space-y-2">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">{blok.title}</h2>

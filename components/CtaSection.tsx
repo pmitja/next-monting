@@ -1,12 +1,9 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import { Button } from './ui/button';
 import Image from 'next/image';
-import ContactForm from './ContactForm';
-import { getFormElements } from '@/utils/fetchData';
 import { storyblokEditable } from '@storyblok/react';
-import { CtaSectionStoryblok, ContactStoryblok } from '@/component-types-sb';
+import { CtaSectionStoryblok } from '@/component-types-sb';
 import {
   Dialog,
   DialogContent,
@@ -15,25 +12,9 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog';
+import HireForm from './HireForm';
 
 const CtaSection = ({ blok }: { blok: CtaSectionStoryblok }) => {
-  const [formElements, setFormElements] = useState<ContactStoryblok | null>(
-    null
-  );
-
-  useEffect(() => {
-    async function fetchFormElements() {
-      try {
-        const elements = await getFormElements();
-        setFormElements(elements);
-      } catch (error) {
-        console.error('Error fetching form elements:', error);
-      }
-    }
-
-    fetchFormElements();
-  }, []);
-
   return (
     <div
       id='hire-us'
@@ -68,7 +49,7 @@ const CtaSection = ({ blok }: { blok: CtaSectionStoryblok }) => {
                 We will get back to you in 24 hours.
               </DialogDescription>
             </DialogHeader>
-            {formElements && <ContactForm formElements={formElements} />}
+            {blok.form && <HireForm formElements={blok.form[0]} />}
           </DialogContent>
         </Dialog>
       </div>
