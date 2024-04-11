@@ -17,6 +17,8 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { ContactStoryblok } from '@/component-types-sb';
 import { sendEmail } from '@/actions/send-email';
+import { startTransition, useState } from 'react';
+import { toast } from './ui/use-toast';
 
 const phoneRegex = new RegExp(/^\+?[0-9]{1,15}$/);
 
@@ -39,6 +41,10 @@ const FormSchema = z.object({
 });
 
 const ContactForm = ({ formElements }: { formElements: ContactStoryblok }) => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [error, setError] = useState<boolean | undefined>(false);
+   // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [success, setSuccess] = useState<boolean | undefined>(true);
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
@@ -50,9 +56,36 @@ const ContactForm = ({ formElements }: { formElements: ContactStoryblok }) => {
     },
   });
 
+  const onSubmit = (data: z.infer<typeof FormSchema>) => {
+    startTransition(() => {
+      sendEmail({values: data})
+        .then((data) => {
+          if (data?.error) {
+            form.reset();
+            setError(data.error);
+            toast({
+              title: 'Something went wrong',
+              variant: 'destructive'
+            })
+          }
+
+          if (data?.success) {
+            form.reset();
+            setSuccess(data.success);
+            toast({
+              title: 'Sporočilo je bilo poslano. Hvala!',
+              variant: 'success',
+            })
+          }
+        })
+        .catch(() => setError(true));
+
+    })
+  }
+
   return (
     <Form {...form}>
-      <form action={sendEmail} className='space-y-6'>
+      <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-6'>
         <FormField
           control={form.control}
           name='name'

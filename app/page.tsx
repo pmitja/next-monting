@@ -7,6 +7,7 @@ import {
 } from "@storyblok/react/rsc";
 import { NestedBlok } from '@/types';
 import Header from '@/components/Header';
+import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
   title: 'MONTING Plus',
@@ -25,6 +26,7 @@ export default async function Home() {
         {data.story.content.body.map((nestedBlok: NestedBlok) => (
           <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
         ))}
+        <Toaster />
       </main>
       <Footer data={config.story} />
     </>
