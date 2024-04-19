@@ -6,7 +6,6 @@ import { fetchConfig } from '@/utils/fetchConfig';
 import { NestedBlok } from '@/types';
 import Header from '@/components/Header';
 import { Toaster } from '@/components/ui/toaster';
-import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'MONTING Plus',
@@ -14,14 +13,13 @@ export const metadata: Metadata = {
 };
 
 export default async function Domov() {
-  const { data } = await fetchData('rs');
+  const { data } = await fetchData('sl');
   const { data: config } = await fetchConfig();
 
   return (
     <>
       <Header data={config.story} />
       <main>
-        <Link href='/rs/another'>Link to another page</Link>
         <h1 className='absolute hidden'>Monting Plus d.o.o</h1>
         {data.story.content.body.map((nestedBlok: NestedBlok) => (
           <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />

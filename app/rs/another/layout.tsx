@@ -1,11 +1,7 @@
-import './globals.css';
+import '../../globals.css';
 import type { Metadata } from 'next';
 import { Lexend } from 'next/font/google';
-import {
-  storyblokInit,
-  apiPlugin,
-  StoryblokBridgeLoader,
-} from '@storyblok/react/rsc';
+import { storyblokInit, apiPlugin } from '@storyblok/react';
 
 import Page from '@/components/Page';
 import Hero from '@/components/Hero';
@@ -17,6 +13,7 @@ import RecentProjectsSection from '@/components/RecentProjectsSection';
 import CtaSection from '@/components/CtaSection';
 import Contact from '@/components/Contact';
 import CarRentalSection from '@/components/CarRentalSection';
+import StoryblokBridgeLoader from '@storyblok/react/bridge-loader';
 
 storyblokInit({
   accessToken: process.env.STORYBLOK_TOKEN,
